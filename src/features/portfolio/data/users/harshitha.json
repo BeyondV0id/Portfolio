@@ -18,7 +18,7 @@
     "website": "",
     "jobTitle": "Full Stack Developer",
     "jobs": [],
-    "about": "Hi, I’m **Harsha Vardhan** — a **Full Stack Developer** from **Vizag, India**. I build **clean, modern web applications** using **TypeScript, React.js, and Node.js**, with a strong focus on performance, scalability, and intuitive user experience.\n\nI also work at the intersection of **software and machine learning**, using **Python and data-driven approaches** to create **intelligent features** that solve real problems. My goal is to combine **solid engineering** with **practical AI** to build products that are both impactful and thoughtfully designed.",
+    "about": "Hi, I’m Harsha Vardhan — a **Full Stack Developer** from **Vizag, India**. I build **clean, modern web applications** using **TypeScript, React.js, and Node.js**, with a strong focus on performance, scalability, and intuitive user experience.\n\nI also work at the intersection of **software and machine learning**, using **Python and data-driven approaches** to create **intelligent features** that solve real problems. My goal is to combine **solid engineering** with **practical AI** to build products that are both impactful and thoughtfully designed.",
     "avatar": "/images/image.png",
     "ogImage": "/images/preview-card-dark.png",
     "timeZone": "Asia/Kolkata",
@@ -170,12 +170,6 @@
       "title": "LeetCode",
       "description": "BeyondVoid",
       "href": "https://leetcode.com/BeyondVoid"
-    },
-    {
-      "icon": "reddit.svg",
-      "title": "Reddit",
-      "description": "Direct_Sorbet_1631",
-      "href": "https://www.reddit.com/user/Direct_Sorbet_1631/"
     },
     {
       "icon": "x.svg",

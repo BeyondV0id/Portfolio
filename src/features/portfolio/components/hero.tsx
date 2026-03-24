@@ -62,16 +62,6 @@ function getSocialIcon(title: string) {
         />
       </>
     );
-  if (t === "reddit")
-    return (
-      <Image 
-        src="/icons/reddit.svg" 
-        alt="Reddit" 
-        width={14} 
-        height={14} 
-        className="size-3.5" 
-      />
-    );
   if (t === "daily.dev")
     return (
       <>
@@ -130,7 +120,7 @@ export function Hero() {
           {/* Bottom row: name and title */}
           <div>
             <h1 
-              className="font-bold tracking-tight text-foreground sm:text-4xl text-3xl" 
+              className="font-normal tracking-tight text-foreground sm:text-4xl text-3xl" 
               style={{ fontFamily: 'var(--font-serif)' }}
             >
               {USER.displayName}

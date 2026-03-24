@@ -23,7 +23,7 @@ export function ProfileHeader() {
 
 
         <div className="border-t border-edge">
-          <h1 className="flex items-center pl-4 text-3xl font-semibold">
+          <h1 className="flex items-center pl-4 text-3xl font-normal">
             {USER.displayName}
             &nbsp;
 
