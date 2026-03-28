@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { House, Code, BookOpen, Briefcase } from "@phosphor-icons/react/dist/ssr";
 import { cn } from "@/lib/utils";
+import { USER } from "@/features/portfolio/data";
 
 export function FloatingNav() {
   const pathname = usePathname();
@@ -61,9 +63,19 @@ export function FloatingNav() {
   return (
     <div
       id="navigation-menu"
-      className="fixed bottom-4 left-1/2 h-fit -translate-x-1/2 rounded-full px-6 py-2.5 sm:bottom-8 border border-border/50 bg-white/80 dark:bg-[#1A1B1C]/80 shadow-md backdrop-blur-md z-[999]"
+      className="fixed top-4 left-1/2 h-fit -translate-x-1/2 rounded-full px-6 py-2.5 sm:top-8 border border-border/50 bg-white/80 dark:bg-[#1A1B1C]/80 shadow-md backdrop-blur-md z-[999]"
     >
-      <div className="flex flex-row gap-8">
+      <div className="flex flex-row items-center gap-6">
+        <div className="hidden sm:block shrink-0 pr-4 border-r border-border/50">
+          <Image
+            src={USER.avatar}
+            alt={USER.displayName}
+            width={28}
+            height={28}
+            className="rounded-full object-cover ring-1 ring-border"
+            unoptimized
+          />
+        </div>
         {navItems.map((item) => {
           const isActive: boolean = !!(pathname === item.href || (item.matcher && pathname.startsWith(item.matcher)));
           return (

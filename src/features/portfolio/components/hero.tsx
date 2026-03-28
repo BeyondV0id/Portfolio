@@ -16,7 +16,6 @@ import {
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LinkIcon } from "lucide-react";
 
-import { FlickeringGrid } from "@/components/ui/flickering-grid";
 
 function getSocialIcon(title: string) {
   const t = title.toLowerCase();
@@ -91,22 +90,9 @@ export function Hero() {
 
   return (
     <Panel className="flex flex-col">
-      {/* Flickering Grid Cover */}
-      <div className="relative h-[250px] w-full p-4">
-        <div className="relative size-full overflow-hidden  bg-background/50">
-          <FlickeringGrid
-            className="absolute inset-0 z-0 size-full"
-            squareSize={4}
-            gridGap={4}
-            color="#6B7280"
-            maxOpacity={0.4}
-            flickerChance={0.05}
-          />
-        </div>
-      </div>
 
       {/* Header section wrapped in Panel */}
-      <Panel className="flex w-full rounded-none border-x-0 border-t-0 bg-transparent px-6 py-6 shadow-none">
+      <Panel className="flex w-full rounded-none border-x-0 border-t-0 bg-transparent px-6 py-6 pt-24 shadow-none">
         {/* Avatar — switches between dark and light mode versions */}
         <div className="relative mr-5 size-20 shrink-0 sm:size-24">
           {/* Dark mode avatar */}

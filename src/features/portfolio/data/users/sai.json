@@ -35,14 +35,14 @@
   "experiences": [
     {
       "id": "vrinchisala-labs",
-      "companyName": "Vrinchisala Labs (IIT Ropar)",
-      "companyLogo": "",
+      "companyName": "IIT Ropar - Winter Internship",
+      "companyLogo": "/images/iitrpr-logo.png",
       "positions": [
         {
           "id": "mern-stack-intern",
-          "title": "MERN Stack Intern",
+          "title": "Full Stack Web Developer Intern",
           "employmentPeriod": {
-            "start": "Feb. 2026",
+            "start": "Jan 2026",
             "end": "Present"
           },
           "employmentType": "Internship",
@@ -61,7 +61,7 @@
     {
       "id": "eduskills-intern",
       "companyName": "Eduskills",
-      "companyLogo": "",
+      "companyLogo": "/images/eduskills.png",
       "positions": [
         {
           "id": "ai-ml-intern",

@@ -14,22 +14,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     <>
       <main className="w-full overflow-x-hidden px-2">{children}</main>
       
-      {/* Bottom Flickering Grid */}
-      <Panel className="mx-auto md:max-w-3xl mb-24">
-        <div className="relative h-[250px] w-full p-4">
-          <div className="relative size-full overflow-hidden bg-background/50">
-            <FlickeringGrid
-              className="absolute inset-0 z-0 size-full"
-              squareSize={4}
-              gridGap={4}
-              color="#6B7280"
-              maxOpacity={0.4}
-              flickerChance={0.05}
-            />
-          </div>
-        </div>
-      </Panel>
-
       {/* <SiteFooter /> */}
       <FloatingNav />
       <ScrollToTop />
