@@ -18,7 +18,7 @@
     "website": "https://saiwith.tech",
     "jobTitle": "MERN Stack Intern",
     "jobs": [],
-    "about": "Sai Teja Mantha is a **Bachelor in Computer Science** student at **Gayatri Vidya Parishad College of Engineering (Autonomous)** with a CGPA of **8.65/10.0**. Currently a **MERN Stack Intern** at **Vrinchisala Labs (IIT Ropar)**, focusing on architecting and deploying scalable web applications. Also experienced as an **AI ML Intern** at **Eduskills**, working with **AWS SageMaker** and cloud infrastructure.",
+    "about": "I am a **Bachelor in Computer Science** student at **Gayatri Vidya Parishad College of Engineering (Autonomous)** with a CGPA of **8.65/10.0**. Currently a **MERN Stack Intern** at **Vrinchisala Labs (IIT Ropar)**, focusing on architecting and deploying scalable web applications. Also experienced as an **AI ML Intern** at **Eduskills**, working with **AWS SageMaker** and cloud infrastructure.",
     "avatar": "/images/image.png",
     "ogImage": "/images/preview-card-dark.png",
     "timeZone": "Asia/Kolkata",
@@ -81,7 +81,7 @@
       "skills": ["Django", "PostgreSQL", "Bootstrap 5", "JavaScript"],
       "description": "Architected a full-stack classifieds platform with a multi-category system for properties, vehicles, and electronics with advanced search and filtering. Developed a responsive front-end and custom admin dashboard. Engineered secure RESTful API endpoints and integrated a view-counting analytics system.",
       "links": [
-        { "type": "render", "href": "https://render.com" }
+        { "type": "render", "href": "https://property-hub-gjav.onrender.com/" }
       ],
       "isExpanded": true
     }
@@ -110,7 +110,7 @@
   ],
   "socialLinks": [
     { "icon": "github.webp", "title": "GitHub", "description": "SaiTejaMantha03", "href": "https://github.com/SaiTejaMantha03" },
-    { "icon": "linkedin.webp", "title": "LinkedIn", "description": "sai-teja-mantha", "href": "https://linkedin.com/in/sai-teja-mantha" }
+    { "icon": "linkedin.webp", "title": "LinkedIn", "description": "sai-teja-mantha", "href": "https://www.linkedin.com/in/sai-teja-mantha-76a301287/" }
   ],
   "publications": [
     {
