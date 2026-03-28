@@ -107,11 +107,21 @@ export function Hero() {
 
       {/* Header section wrapped in Panel */}
       <Panel className="flex w-full rounded-none border-x-0 border-t-0 bg-transparent px-6 py-6 shadow-none">
+        {/* Avatar — switches between dark and light mode versions */}
         <div className="relative mr-5 size-20 shrink-0 sm:size-24">
+          {/* Dark mode avatar */}
           <Image
             src={USER.avatar}
             alt={`${USER.displayName}'s avatar`}
-            className="rounded-xl object-cover ring-1 ring-border"
+            className="rounded-xl object-cover ring-1 ring-border hidden dark:block"
+            fill
+            unoptimized
+          />
+          {/* Light mode avatar */}
+          <Image
+            src="/images/avatar-light.png"
+            alt={`${USER.displayName}'s avatar`}
+            className="rounded-xl object-cover ring-1 ring-border block dark:hidden"
             fill
             unoptimized
           />
@@ -122,12 +132,12 @@ export function Hero() {
           <Container delay={0.1}>
             <div>
               <h1 
-                className="font-normal tracking-tight text-foreground sm:text-4xl text-3xl" 
+                className="font-normal tracking-tight text-foreground sm:text-4xl text-3xl text-zinc-950 dark:text-foreground" 
                 style={{ fontFamily: 'var(--font-serif)' }}
               >
                 {USER.displayName}
               </h1>
-              <p className="mt-1 text-sm tracking-tight text-muted-foreground">
+              <p className="mt-1 text-sm tracking-tight text-zinc-600 dark:text-muted-foreground">
                 {USER.jobTitle}
               </p>
             </div>

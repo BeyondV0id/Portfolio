@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { House, Code, Feather, Briefcase } from "@phosphor-icons/react/dist/ssr";
+import { House, Code, BookOpen, Briefcase } from "@phosphor-icons/react/dist/ssr";
 import { cn } from "@/lib/utils";
 
 export function FloatingNav() {
@@ -33,11 +33,11 @@ export function FloatingNav() {
       )
     },
     {
-      name: "Skills",
-      href: "/skills",
-      matcher: "/skills",
+      name: "Research",
+      href: "/research",
+      matcher: "/research",
       svg: (isActive: boolean) => (
-        <Feather 
+        <BookOpen 
           size={18} 
           weight="duotone" 
           className={cn("mb-0.5", isActive ? "opacity-100" : "opacity-30")} 

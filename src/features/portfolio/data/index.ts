@@ -10,6 +10,7 @@
 import type { OssContributions } from "../types/contributions";
 import type { Experience } from "../types/experiences";
 import type { Project } from "../types/projects";
+import type { Publication } from "../types/publications";
 import type { SocialLink } from "../types/social-links";
 import type { TechStack } from "../types/tech-stack";
 import type { User } from "../types/user";
@@ -28,6 +29,7 @@ export const TECH_STACK: TechStack[] = profileData.techStack;
 export const SOCIAL_LINKS: SocialLink[] = profileData.socialLinks;
 export const OSSContributions: OssContributions[] =
   profileData.ossContributions;
+export const PUBLICATIONS: Publication[] = profileData.publications ?? [];
 
 /** The GitHub username for fetching contributions */
 export const GITHUB_USERNAME: string =

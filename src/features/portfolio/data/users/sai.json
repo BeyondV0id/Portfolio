@@ -19,7 +19,7 @@
     "jobTitle": "MERN Stack Intern",
     "jobs": [],
     "about": "I am a **Bachelor in Computer Science** student at **Gayatri Vidya Parishad College of Engineering (Autonomous)** with a CGPA of **8.65/10.0**. Currently a **MERN Stack Intern** at **Vrinchisala Labs (IIT Ropar)**, focusing on architecting and deploying scalable web applications. Also experienced as an **AI ML Intern** at **Eduskills**, working with **AWS SageMaker** and cloud infrastructure.",
-    "avatar": "/images/image.png",
+    "avatar": "/images/image.jpg",
     "ogImage": "/images/preview-card-dark.png",
     "timeZone": "Asia/Kolkata",
     "keywords": [
@@ -78,11 +78,12 @@
       "title": "Property Hub",
       "image": "",
       "pinned": true,
+      "status": "live",
+      "category": "Full-Stack App",
       "skills": ["Django", "PostgreSQL", "Bootstrap 5", "JavaScript"],
       "description": "Architected a full-stack classifieds platform with a multi-category system for properties, vehicles, and electronics with advanced search and filtering. Developed a responsive front-end and custom admin dashboard. Engineered secure RESTful API endpoints and integrated a view-counting analytics system.",
-      "links": [
-        { "type": "render", "href": "https://property-hub-gjav.onrender.com/" }
-      ],
+      "liveLink": "https://property-hub-gjav.onrender.com/",
+      "githubLink": "",
       "isExpanded": true
     }
   ],
@@ -116,12 +117,18 @@
     {
       "title": "Comparative Study of Machine Learning and Text Vectorization Techniques for Spam Detection",
       "publisher": "TechRxiv",
-      "year": "2025"
+      "year": "2025",
+      "url": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.173644065.34354272/v1",
+      "description": "This paper presents a comparative analysis of machine learning algorithms — including Naive Bayes, SVM, Logistic Regression, and Random Forest — combined with text vectorization techniques such as TF-IDF and Count Vectorizer. The study evaluates their effectiveness in detecting spam messages across benchmark datasets, identifying optimal model-vectorizer pairings.",
+      "keywords": ["Machine Learning", "Spam Detection", "NLP", "TF-IDF", "SVM", "Naive Bayes"]
     },
     {
       "title": "Comparative Study of Machine Learning Algorithms for Breast Cancer Diagnosis",
       "publisher": "IJSDR",
-      "year": "2025"
+      "year": "2025",
+      "url": "https://ijsdr.org/viewpaperforall.php?paper=IJSDR2508152",
+      "description": "An in-depth comparison of supervised machine learning algorithms — including Decision Trees, Random Forest, KNN, and Logistic Regression — applied to breast cancer classification using the Wisconsin Diagnostic Breast Cancer (WDBC) dataset. The paper benchmarks accuracy, precision, recall, and F1-score to identify the most reliable model for clinical decision support.",
+      "keywords": ["Machine Learning", "Breast Cancer", "Classification", "Healthcare AI", "Python", "scikit-learn"]
     }
   ]
 }
