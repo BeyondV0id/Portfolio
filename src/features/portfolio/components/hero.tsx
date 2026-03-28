@@ -119,7 +119,7 @@ export function Hero() {
           />
           {/* Light mode avatar */}
           <Image
-            src="/images/avatar-light.png"
+            src="/images/image.png"
             alt={`${USER.displayName}'s avatar`}
             className="rounded-xl object-cover ring-1 ring-border block dark:hidden"
             fill

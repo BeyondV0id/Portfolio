@@ -76,7 +76,7 @@
     {
       "id": "property-hub",
       "title": "Property Hub",
-      "image": "",
+      "image": "/images/property-hub.png",
       "pinned": true,
       "status": "live",
       "category": "Full-Stack App",
@@ -98,16 +98,16 @@
   ],
   "techStack": [
     { "key": "python", "title": "Python", "icon": "python.svg", "categories": ["Programming"] },
-    { "key": "java", "title": "Java", "icon": "java.svg", "categories": ["Programming"] },
-    { "key": "sql", "title": "SQL", "icon": "sql.svg", "categories": ["Programming"] },
     { "key": "javascript", "title": "JavaScript", "icon": "javascript.svg", "categories": ["Programming"] },
-    { "key": "django", "title": "Django", "icon": "django.svg", "categories": ["Frameworks"] },
-    { "key": "flask", "title": "Flask", "icon": "flask.svg", "categories": ["Frameworks"] },
-    { "key": "tensorflow", "title": "TensorFlow", "icon": "tensorflow.svg", "categories": ["Frameworks"] },
+    { "key": "typescript", "title": "TypeScript", "icon": "typescript.svg", "categories": ["Programming"] },
+    { "key": "flask", "title": "Flask", "icon": "Flask.svg", "categories": ["Frameworks"] },
+    { "key": "nodejs", "title": "Node.js", "icon": "nodejs.svg", "categories": ["Frameworks"] },
+    { "key": "react", "title": "React", "icon": "react.svg", "categories": ["Frameworks"] },
     { "key": "scikit-learn", "title": "Scikit-learn", "icon": "scikit-learn.svg", "categories": ["Frameworks"] },
     { "key": "postgresql", "title": "PostgreSQL", "icon": "postgresql.svg", "categories": ["Tools"] },
-    { "key": "github", "title": "GitHub", "icon": "github.svg", "categories": ["Tools"] },
-    { "key": "git", "title": "Git", "icon": "git.svg", "categories": ["Tools"] }
+    { "key": "mongodb", "title": "MongoDB", "icon": "mongodb.svg", "categories": ["Tools"] },
+    { "key": "git", "title": "Git", "icon": "git.svg", "categories": ["Tools"] },
+    { "key": "postman", "title": "Postman", "icon": "postman.svg", "categories": ["Tools"] }
   ],
   "socialLinks": [
     { "icon": "github.webp", "title": "GitHub", "description": "SaiTejaMantha03", "href": "https://github.com/SaiTejaMantha03" },
