@@ -1,0 +1,127 @@
+{
+  "profile": {
+    "firstName": "Sai Teja",
+    "lastName": "Mantha",
+    "displayName": "Sai Teja Mantha",
+    "username": "SaiTejaMantha03",
+    "gender": "male",
+    "pronouns": "he/him",
+    "bio": "MERN Stack Intern",
+    "flipSentences": [
+      "MERN Stack Intern",
+      "AI ML Intern",
+      "Bachelor in Computer Science"
+    ],
+    "address": "Visakhapatnam",
+    "phoneNumber": "+91 9182189891",
+    "email": "mst4offl@gmail.com",
+    "website": "https://saiwith.tech",
+    "jobTitle": "MERN Stack Intern",
+    "jobs": [],
+    "about": "Sai Teja Mantha is a **Bachelor in Computer Science** student at **Gayatri Vidya Parishad College of Engineering (Autonomous)** with a CGPA of **8.65/10.0**. Currently a **MERN Stack Intern** at **Vrinchisala Labs (IIT Ropar)**, focusing on architecting and deploying scalable web applications. Also experienced as an **AI ML Intern** at **Eduskills**, working with **AWS SageMaker** and cloud infrastructure.",
+    "avatar": "/images/image.png",
+    "ogImage": "/images/preview-card-dark.png",
+    "timeZone": "Asia/Kolkata",
+    "keywords": [
+      "Sai Teja Mantha",
+      "SaiTejaMantha03",
+      "MERN Stack",
+      "AI ML",
+      "Computer Science"
+    ],
+    "dateCreated": "2026-03-28",
+    "githubUsername": "SaiTejaMantha03"
+  },
+  "experiences": [
+    {
+      "id": "vrinchisala-labs",
+      "companyName": "Vrinchisala Labs (IIT Ropar)",
+      "companyLogo": "",
+      "positions": [
+        {
+          "id": "mern-stack-intern",
+          "title": "MERN Stack Intern",
+          "employmentPeriod": {
+            "start": "Feb. 2026",
+            "end": "Present"
+          },
+          "employmentType": "Internship",
+          "description": "Architected and deployed scalable web applications using the MERN stack (MongoDB, Express.js, Angular, and Node.js). Developed and optimized secure REST APIs using Node.js and Express to handle asynchronous data requests and improve application response times.",
+          "icon": "code",
+          "skills": ["MongoDB", "Express.js", "Angular", "Node.js", "REST APIs"]
+        }
+      ]
+    },
+    {
+      "id": "eduskills-intern",
+      "companyName": "Eduskills",
+      "companyLogo": "",
+      "positions": [
+        {
+          "id": "ai-ml-intern",
+          "title": "AI ML Intern",
+          "employmentPeriod": {
+            "start": "Jan. 2025",
+            "end": "March 2025"
+          },
+          "employmentType": "Internship",
+          "description": "Created AWS buckets and instances like EC2. Built models and worked with AWS tools like AWS SageMaker. Gained experience covering the entire machine learning lifecycle, including data preprocessing, model training, evaluation, and deployment within a cloud environment.",
+          "icon": "school",
+          "skills": ["AWS", "EC2", "SageMaker", "ML Pipeline", "Python"]
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "property-hub",
+      "title": "Property Hub",
+      "image": "",
+      "pinned": true,
+      "skills": ["Django", "PostgreSQL", "Bootstrap 5", "JavaScript"],
+      "description": "Architected a full-stack classifieds platform with a multi-category system for properties, vehicles, and electronics with advanced search and filtering. Developed a responsive front-end and custom admin dashboard. Engineered secure RESTful API endpoints and integrated a view-counting analytics system.",
+      "links": [
+        { "type": "render", "href": "https://render.com" }
+      ],
+      "isExpanded": true
+    }
+  ],
+  "education": [
+    {
+      "institution": "Gayatri Vidya Parishad College of Engineering (Autonomous)",
+      "degree": "Bachelor in Computer Science",
+      "period": "Sept. 2023 - Present",
+      "score": "8.65/10.0",
+      "details": "Coursework includes Data Structures, Algorithms, Databases, Computer Systems, and Machine Learning. Published two research papers with TechRXiv and IJSDR."
+    }
+  ],
+  "techStack": [
+    { "key": "python", "title": "Python", "icon": "python.svg", "categories": ["Programming"] },
+    { "key": "java", "title": "Java", "icon": "java.svg", "categories": ["Programming"] },
+    { "key": "sql", "title": "SQL", "icon": "sql.svg", "categories": ["Programming"] },
+    { "key": "javascript", "title": "JavaScript", "icon": "javascript.svg", "categories": ["Programming"] },
+    { "key": "django", "title": "Django", "icon": "django.svg", "categories": ["Frameworks"] },
+    { "key": "flask", "title": "Flask", "icon": "flask.svg", "categories": ["Frameworks"] },
+    { "key": "tensorflow", "title": "TensorFlow", "icon": "tensorflow.svg", "categories": ["Frameworks"] },
+    { "key": "scikit-learn", "title": "Scikit-learn", "icon": "scikit-learn.svg", "categories": ["Frameworks"] },
+    { "key": "postgresql", "title": "PostgreSQL", "icon": "postgresql.svg", "categories": ["Tools"] },
+    { "key": "github", "title": "GitHub", "icon": "github.svg", "categories": ["Tools"] },
+    { "key": "git", "title": "Git", "icon": "git.svg", "categories": ["Tools"] }
+  ],
+  "socialLinks": [
+    { "icon": "github.webp", "title": "GitHub", "description": "SaiTejaMantha03", "href": "https://github.com/SaiTejaMantha03" },
+    { "icon": "linkedin.webp", "title": "LinkedIn", "description": "sai-teja-mantha", "href": "https://linkedin.com/in/sai-teja-mantha" }
+  ],
+  "publications": [
+    {
+      "title": "Comparative Study of Machine Learning and Text Vectorization Techniques for Spam Detection",
+      "publisher": "TechRxiv",
+      "year": "2025"
+    },
+    {
+      "title": "Comparative Study of Machine Learning Algorithms for Breast Cancer Diagnosis",
+      "publisher": "IJSDR",
+      "year": "2025"
+    }
+  ]
+}
