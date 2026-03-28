@@ -7,10 +7,8 @@ import {
   CollapsibleWithContext,
 } from "@/components/ui/collapsible";
 import { Tag } from "@/components/ui/tag";
-import { Prose } from "@/components/ui/typography";
-import { Markdown } from "@/components/markdown";
 import { cn } from "@/lib/utils";
-import { BookOpen } from "lucide-react";
+import { BookOpen, ExternalLink, FileText } from "lucide-react";
 
 import type { Publication } from "../../types/publications";
 
@@ -34,26 +32,11 @@ export function ResearchPaperItem({ publication }: { publication: Publication })
       </div>
 
       <h4 className="flex-1 font-medium text-balance leading-snug">
-        {publication.url ? (
-          <a
-            href={publication.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline underline-offset-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {publication.title}
-          </a>
-        ) : (
-          publication.title
-        )}
+        {publication.title}
       </h4>
 
       {hasDescription && (
-        <div
-          className="shrink-0 text-muted-foreground [&_svg]:size-4"
-          aria-hidden
-        >
+        <div className="shrink-0 text-muted-foreground [&_svg]:size-4" aria-hidden>
           <CollapsibleChevronsIcon />
         </div>
       )}
@@ -102,22 +85,49 @@ export function ResearchPaperItem({ publication }: { publication: Publication })
         </CollapsibleTrigger>
 
         <CollapsibleContent className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-fade-up data-[state=open]:animate-collapsible-fade-down">
-          {publication.description && (
-            <Prose className="pt-2 pl-9 text-sm text-muted-foreground/90 leading-relaxed">
-              <Markdown>{publication.description}</Markdown>
-            </Prose>
-          )}
-        </CollapsibleContent>
+          <div className="mt-3 ml-9 rounded-lg border border-border/60 bg-muted/30 dark:bg-muted/20 overflow-hidden">
 
-        {hasKeywords && (
-          <ul className="flex flex-wrap gap-1.5 pt-2 pl-9">
-            {publication.keywords!.map((kw) => (
-              <li key={kw} className="flex">
-                <Tag>{kw}</Tag>
-              </li>
-            ))}
-          </ul>
-        )}
+            {/* Abstract label bar */}
+            <div className="flex items-center gap-2 px-3 py-2 border-b border-border/40 bg-muted/50 dark:bg-muted/30">
+              <FileText className="size-3.5 text-muted-foreground shrink-0" />
+              <span className="text-[10px] font-mono font-semibold uppercase tracking-widest text-muted-foreground">
+                Abstract
+              </span>
+            </div>
+
+            {/* Description */}
+            {publication.description && (
+              <p className="px-4 py-3 text-[13px] leading-relaxed text-muted-foreground/90">
+                {publication.description}
+              </p>
+            )}
+
+            {/* Keyword chips */}
+            {hasKeywords && (
+              <div className="px-4 pb-3 pt-2 flex flex-wrap gap-1.5 border-t border-border/30">
+                {publication.keywords!.map((kw) => (
+                  <Tag key={kw}>{kw}</Tag>
+                ))}
+              </div>
+            )}
+
+            {/* Read Paper link */}
+            {publication.url && (
+              <div className="px-4 py-2.5 border-t border-border/30">
+                <a
+                  href={publication.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1.5 text-[12px] font-medium text-foreground/60 hover:text-foreground transition-colors hover:underline underline-offset-4"
+                >
+                  Read Paper
+                  <ExternalLink className="size-3" />
+                </a>
+              </div>
+            )}
+          </div>
+        </CollapsibleContent>
       </div>
     </CollapsibleWithContext>
   );
