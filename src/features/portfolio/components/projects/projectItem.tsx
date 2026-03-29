@@ -1,5 +1,6 @@
 import { Github, Globe, PinIcon, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import type { Project } from "../../types/projects";
@@ -72,14 +73,12 @@ export function ProjectItem2({ project, hideBorders = false }: { project: Projec
         </div>
 
         <div className="mt-1">
-            <a 
-              href={project.liveLink || project.githubLink || "#"} 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link
+              href={`/projects/${project.id}`}
               className="inline-flex items-center gap-1.5 text-[15px] font-medium text-zinc-500 dark:text-zinc-400 hover:text-foreground transition-colors group/link hover:underline underline-offset-4"
             >
               View Project <ArrowUpRight className="size-4 opacity-70" />
-            </a>
+            </Link>
         </div>
       </div>
     </div>

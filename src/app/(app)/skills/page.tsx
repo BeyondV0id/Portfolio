@@ -208,14 +208,7 @@ export default function SkillsPage() {
         </Container>
 
       </div>
-      
-      {/* Bottom Footer Section */}
-      <div className="mx-auto md:max-w-3xl relative" style={{ backgroundImage: "repeating-linear-gradient(to bottom, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px), repeating-linear-gradient(to bottom, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "1px 100%, 1px 100%", backgroundPosition: "left top, right top", backgroundRepeat: "no-repeat" }}>
-        {/* Bottom viewport boundary line stretching out */}
-        <div className="w-full h-px relative z-10 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(to right, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "100% 1px", backgroundRepeat: "no-repeat" }}>
-          <div className="pointer-events-none absolute bottom-0 left-[-1000px] right-[-1000px] h-px -z-1" style={{ backgroundImage: "repeating-linear-gradient(to right, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "100% 1px", backgroundRepeat: "no-repeat" }} />
-        </div>
-      </div>
     </div>
   );
 }
+

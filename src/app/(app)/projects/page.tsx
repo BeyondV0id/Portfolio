@@ -93,29 +93,7 @@ export default function ProjectsPage() {
           </div>
         </Container>
       </div>
-      
-      <div className="mx-auto md:max-w-3xl relative" style={{ backgroundImage: "repeating-linear-gradient(to bottom, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px), repeating-linear-gradient(to bottom, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "1px 100%, 1px 100%", backgroundPosition: "left top, right top", backgroundRepeat: "no-repeat" }}>
-        <div className="w-full h-px" style={{ backgroundImage: "repeating-linear-gradient(to right, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "100% 1px", backgroundRepeat: "no-repeat" }}></div>
-        <div className="pointer-events-none absolute top-0 -left-[100vw] w-[200vw] h-px -z-1" style={{ backgroundImage: "repeating-linear-gradient(to right, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "100% 1px", backgroundRepeat: "no-repeat" }}></div>
-        <div className="flex flex-wrap items-center gap-2 p-3 justify-center">
-          <p className="text-foreground flex items-center gap-1">
-            <span className="hidden sm:block">For more cool projects, visit my</span>
-            <span className="block sm:hidden">For more projects, visit my</span>
-            <a 
-              className="group text-strong transition-colors select-none font-medium duration-300 inline-flex items-center" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              href={SOCIAL_LINKS.find(s => s.title.toLowerCase() === "github")?.href ?? "https://github.com/SreeHarshitha-12"}
-            >
-              <span className="relative">Github
-                <span className="absolute left-0 bottom-0 w-full h-px bg-title origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-              </span>
-              <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="ml-0.5 group-hover:opacity-100 opacity-100 md:opacity-0 transition-opacity duration-300" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>
-          </p>
-        </div>
-        <div className="pointer-events-none absolute top-0 -left-[100vw] w-[200vw] h-px -z-1" style={{ backgroundImage: "repeating-linear-gradient(to right, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "100% 1px", backgroundRepeat: "no-repeat" }}></div>
-      </div>
     </div>
   );
 }
+

@@ -1,3 +1,9 @@
+export type ProjectLink = {
+  type: "github" | "website" | "post";
+  href: string;
+  label?: string;
+};
+
 export type Project = {
   /** Stable unique identifier (used as list key/anchor). */
   id: string;
@@ -14,7 +20,7 @@ export type Project = {
   };
   /** Public URL (site, repository, demo, or video). */
   liveLink?: string;
-  githubLink: string;
+  githubLink?: string;
   image?: string;
   video?: string;
   pinned?: boolean;
@@ -22,12 +28,13 @@ export type Project = {
   skills: string[];
   /** Optional rich description; Markdown and line breaks supported. */
   description?: string;
-  /** Logo image URL (absolute or path under /public). */
   /** Whether the project card is expanded by default in the UI. */
   isExpanded?: boolean;
   /** Optional project status for UI (e.g., 'live', 'building'). */
   status?: string;
   /** Optional project category for UI (e.g., 'Mobile App', 'Dashboard'). */
   category?: string;
+  /** Typed links: github, website, post etc. */
+  links?: ProjectLink[];
 };
 
