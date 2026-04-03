@@ -35,8 +35,8 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto md:max-w-3xl">
         <div className="border-x border-edge select-none screen-line-before screen-line-after before:-top-px after:-bottom-px">
-          <div className="overflow-hidden p-5">
-            <div className="h-full min-h-[70px] w-full bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center px-[5px] sm:min-h-[110px] [--pattern-foreground:color-mix(in_oklab,var(--color-zinc-400)_60%,transparent)] dark:[--pattern-foreground:color-mix(in_oklab,var(--color-zinc-600)_60%,transparent)]"></div>
+          <div className="overflow-hidden p-2 sm:p-5">
+            <div className="h-full min-h-[60px] w-full bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center px-[5px] sm:min-h-[110px] [--pattern-foreground:color-mix(in_oklab,var(--color-zinc-400)_60%,transparent)] dark:[--pattern-foreground:color-mix(in_oklab,var(--color-zinc-600)_60%,transparent)]"></div>
           </div>
         </div>
       </div>

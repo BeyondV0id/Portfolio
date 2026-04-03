@@ -22,7 +22,7 @@ export function DesktopNav({ items }: { items: NavItem[] }) {
     );
 
   return (
-    <nav className='flex items-center px-6 gap-4 max-sm:hidden'>
+    <nav className='flex items-center gap-4 sm:gap-6'>
       {items.map((item) => (
         <Link
           key={item.href}

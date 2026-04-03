@@ -83,11 +83,11 @@ export default function SkillsPage() {
         <div className="pointer-events-none absolute top-0 left-[-1000px] right-[-1000px] h-px -z-1" style={{ backgroundImage: "repeating-linear-gradient(to right, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "100% 1px", backgroundRepeat: "no-repeat" }} />
 
         {/* Flickering Grid Cover */}
-        <div className="relative h-[250px] w-full p-4">
+        <div className="relative h-[100px] sm:h-[250px] w-full p-2 sm:p-4">
           <div className="relative size-full overflow-hidden bg-background/50">
-            <div className="overflow-hidden p-5 h-full">
+            <div className="overflow-hidden p-2 sm:p-5 h-full">
               <div
-                className="h-full min-h-[70px] w-full bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center px-[5px] sm:min-h-[110px] [--pattern-foreground:color-mix(in_oklab,var(--color-zinc-400)_60%,transparent)] dark:[--pattern-foreground:color-mix(in_oklab,var(--color-zinc-600)_60%,transparent)]"
+                className="h-full min-h-[60px] w-full bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center px-[5px] sm:min-h-[110px] [--pattern-foreground:color-mix(in_oklab,var(--color-zinc-400)_60%,transparent)] dark:[--pattern-foreground:color-mix(in_oklab,var(--color-zinc-600)_60%,transparent)]"
               />
             </div>
           </div>

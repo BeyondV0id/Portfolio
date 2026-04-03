@@ -99,11 +99,11 @@ export default async function ProjectDetailPage({ params }: Props) {
         <HDash />
 
         {/* Pattern Grid */}
-        <div className="relative h-[250px] w-full p-4">
+        <div className="relative h-[100px] sm:h-[250px] w-full p-2 sm:p-4">
           <div className="relative size-full overflow-hidden bg-background/50">
-            <div className="overflow-hidden p-5 h-full">
+            <div className="overflow-hidden p-2 sm:p-5 h-full">
               <div
-                className="h-full min-h-[70px] w-full bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center px-[5px] sm:min-h-[110px] [--pattern-foreground:color-mix(in_oklab,var(--color-zinc-400)_60%,transparent)] dark:[--pattern-foreground:color-mix(in_oklab,var(--color-zinc-600)_60%,transparent)]"
+                className="h-full min-h-[60px] w-full bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center px-[5px] sm:min-h-[110px] [--pattern-foreground:color-mix(in_oklab,var(--color-zinc-400)_60%,transparent)] dark:[--pattern-foreground:color-mix(in_oklab,var(--color-zinc-600)_60%,transparent)]"
               />
             </div>
           </div>
