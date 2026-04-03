@@ -81,12 +81,10 @@
     from {
       opacity: 0;
       filter: blur(10px);
-      transform: translateY(10px);
     }
     to {
       opacity: 1;
       filter: blur(0);
-      transform: translateY(0);
     }
   }
 }
@@ -114,12 +112,17 @@
   line-height: 0.75rem;
 }
 
+@utility bg-dot-grid {
+  background-image: radial-gradient(var(--border) 1px, transparent 0);
+  background-size: 10px 10px;
+}
+
 @utility screen-line-before {
-  @apply relative before:absolute before:top-0 before:-left-[100vw] before:-z-1 before:h-px before:w-[200vw] before:bg-[image:repeating-linear-gradient(to_right,var(--dash-border)_0,var(--dash-border)_6px,transparent_6px,transparent_14px)];
+  @apply relative before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:-z-1 before:h-px before:w-screen before:bg-[image:repeating-linear-gradient(to_right,var(--dash-border)_0,var(--dash-border)_6px,transparent_6px,transparent_14px)];
 }
 
 @utility screen-line-after {
-  @apply relative after:absolute after:bottom-0 after:-left-[100vw] after:-z-1 after:h-px after:w-[200vw] after:bg-[image:repeating-linear-gradient(to_right,var(--dash-border)_0,var(--dash-border)_6px,transparent_6px,transparent_14px)];
+  @apply relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:-z-1 after:h-px after:w-screen after:bg-[image:repeating-linear-gradient(to_right,var(--dash-border)_0,var(--dash-border)_6px,transparent_6px,transparent_14px)];
 }
 
 @utility screen-border-x {
@@ -138,8 +141,12 @@
       transparent 6px,
       transparent 14px
     );
-  background-size: 1px 100%, 1px 100%;
-  background-position: left top, right top;
+  background-size:
+    1px 100%,
+    1px 100%;
+  background-position:
+    left top,
+    right top;
   background-repeat: no-repeat;
 }
 
@@ -358,11 +365,12 @@
   } */
 
   html {
-    scrollbar-gutter: stable;
+    scrollbar-gutter: stable both-edges;
   }
 
-  html, body {
-    @apply overflow-x-clip;
+  html,
+  body {
+    @apply overflow-x-hidden;
     width: 100%;
     margin: 0;
     padding: 0;

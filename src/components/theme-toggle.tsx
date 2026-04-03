@@ -5,6 +5,7 @@ import { useCallback } from "react";
 
 import { META_THEME_COLORS } from "@/config/site";
 import { useMetaColor } from "@/hooks/use-meta-color";
+import { useSound } from "@/hooks/use-sound";
 
 import { MoonIcon } from "./animated-icons/moon";
 import { SunMediumIcon } from "./animated-icons/sun-medium";
@@ -15,6 +16,7 @@ export function ThemeToggle() {
 
   const { setMetaColor } = useMetaColor();
 
+  const playSound = useSound("/audio/theme-toggle.mp3", 0.25);
 
   const switchTheme = useCallback(() => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
@@ -23,7 +25,8 @@ export function ThemeToggle() {
         ? META_THEME_COLORS.light
         : META_THEME_COLORS.dark
     );
-  }, [resolvedTheme, setTheme, setMetaColor]);
+    playSound();
+  }, [resolvedTheme, setTheme, setMetaColor, playSound]);
 
   return (
     <Button

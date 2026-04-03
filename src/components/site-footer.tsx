@@ -5,7 +5,7 @@ import { FooterCat } from "./footer-cat";
 export function SiteFooter() {
   return (
     <footer className="max-w-screen overflow-x-hidden px-2">
-      <div className="screen-line-before screen-line-after relative mx-auto border-x border-edge pt-0.5 md:max-w-3xl">
+      <div className="screen-line-before screen-line-after relative mx-auto screen-border-x pt-0.5 md:max-w-3xl">
         <div className="flex items-center justify-between px-4">
           <div className="mt-6 mb-6 flex flex-col leading-none">
             <span className="font-mono text-[12px] text-muted-foreground">© 2026 {SITE_INFO.name}</span>
@@ -34,7 +34,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mx-auto md:max-w-3xl">
-        <div className="border-x border-edge select-none screen-line-before screen-line-after before:-top-px after:-bottom-px">
+        <div className="screen-border-x select-none screen-line-before screen-line-after before:-top-px after:-bottom-px">
           <div className="overflow-hidden p-2 sm:p-5">
             <div className="h-full min-h-[60px] w-full bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center px-[5px] sm:min-h-[110px] [--pattern-foreground:color-mix(in_oklab,var(--color-zinc-400)_60%,transparent)] dark:[--pattern-foreground:color-mix(in_oklab,var(--color-zinc-600)_60%,transparent)]"></div>
           </div>

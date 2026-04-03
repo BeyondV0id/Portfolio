@@ -7,6 +7,7 @@ import { useCallback, useEffect, useRef } from "react";
  * It returns a `play` function that can be called to play the loaded sound.
  *
  * @param url - The URL of the audio file to load and play.
+ * @param volume - The volume level (0.0 to 1.0). Defaults to 1.0.
  * @returns A function that, when called, plays the loaded sound.
  *
  * @remarks
@@ -16,12 +17,12 @@ import { useCallback, useEffect, useRef } from "react";
  *
  * @example
  * ```tsx
- * const playClick = useSound('/sounds/click.mp3');
+ * const playClick = useSound('/sounds/click.mp3', 0.5);
  * // Later in an event handler:
  * playClick();
  * ```
  */
-export function useSound(url: string) {
+export function useSound(url: string, volume: number = 1) {
   const audioCtxRef = useRef<AudioContext | null>(null);
   const bufferRef = useRef<AudioBuffer | null>(null);
 
@@ -46,18 +47,30 @@ export function useSound(url: string) {
         bufferRef.current = decoded;
       })
       .catch((err) => {
-        console.log(`Failed to load click sound from ${url}:`, err);
+        console.log(`Failed to load sound from ${url}:`, err);
       });
+
+    return () => {
+      if (audioCtx.state !== "closed") {
+        audioCtx.close();
+      }
+    };
   }, [url]);
 
   const play = useCallback(() => {
     if (audioCtxRef.current && bufferRef.current) {
       const source = audioCtxRef.current.createBufferSource();
+      const gainNode = audioCtxRef.current.createGain();
+
+      gainNode.gain.value = volume;
       source.buffer = bufferRef.current;
-      source.connect(audioCtxRef.current.destination);
+
+      source.connect(gainNode);
+      gainNode.connect(audioCtxRef.current.destination);
+
       source.start(0);
     }
-  }, []);
+  }, [volume]);
 
   return play;
 }
