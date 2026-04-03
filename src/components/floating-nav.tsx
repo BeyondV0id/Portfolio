@@ -1,8 +1,9 @@
 "use client";
 
+import { Code, Feather,House } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { House, Code, Feather, Briefcase } from "@phosphor-icons/react/dist/ssr";
+
 import { cn } from "@/lib/utils";
 
 export function FloatingNav() {
@@ -43,25 +44,13 @@ export function FloatingNav() {
           className={cn("mb-0.5", isActive ? "opacity-100" : "opacity-30")} 
         />
       )
-    },
-    {
-      name: "Work",
-      href: "/work",
-      matcher: "/work",
-      svg: (isActive: boolean) => (
-        <Briefcase 
-          size={18} 
-          weight="duotone" 
-          className={cn("mb-0.5", isActive ? "opacity-100" : "opacity-30")} 
-        />
-      )
     }
   ];
 
   return (
     <div
       id="navigation-menu"
-      className="fixed bottom-4 left-1/2 h-fit -translate-x-1/2 rounded-full px-6 py-2.5 sm:bottom-8 border border-border/50 bg-white/80 dark:bg-[#1A1B1C]/80 shadow-md backdrop-blur-md z-[999]"
+      className="fixed bottom-4 left-1/2 h-fit -translate-x-1/2 rounded-full px-6 py-2.5 sm:hidden border border-border/50 bg-white/80 dark:bg-[#1A1B1C]/80 shadow-md backdrop-blur-md z-[999]"
     >
       <div className="flex flex-row gap-8">
         {navItems.map((item) => {

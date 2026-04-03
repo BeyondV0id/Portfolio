@@ -153,7 +153,7 @@
 
 :root {
   /* white */
-  --background: oklch(1 0 0);
+  --background: oklch(100% 0.00011 271.152);
 
   /* zinc-950 */
   --foreground: oklch(0.141 0.005 285.823);
@@ -357,8 +357,12 @@
     @apply motion-safe:scroll-smooth;
   } */
 
+  html {
+    scrollbar-gutter: stable;
+  }
+
   html, body {
-    @apply overflow-x-hidden;
+    @apply overflow-x-clip;
     width: 100%;
     margin: 0;
     padding: 0;

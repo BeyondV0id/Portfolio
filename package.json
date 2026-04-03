@@ -1,5 +1,5 @@
 {
-  "name": "harshitha-portfolio",
+  "name": "harsha",
   "version": "0.1.0",
   "description": "A minimal, pixel-perfect dev portfolio and blog.",
   "homepage": "https://github.com/SreeHarshitha-12/Portfolio",
@@ -51,7 +51,7 @@
     "jotai": "^2.12.5",
     "libphonenumber-js": "^1.12.4",
     "lucide-react": "^0.544.0",
-    "motion": "^12.18.1",
+    "motion": "^12.38.0",
     "next": "^16.1.3",
     "next-mdx-remote": "^6.0.0",
     "next-themes": "^0.4.6",

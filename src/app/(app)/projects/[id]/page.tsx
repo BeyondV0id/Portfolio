@@ -1,14 +1,13 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import { ArrowLeft, Github, Globe, FileText, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink,FileText, Github, Globe } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import React from "react";
 
-import { PROJECTS } from "@/features/portfolio/data";
-import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { Container } from "@/components/container";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { PROJECTS } from "@/features/portfolio/data";
 import type { ProjectLink } from "@/features/portfolio/types/projects";
 
 const DASH_H = {
@@ -93,25 +92,20 @@ export default async function ProjectDetailPage({ params }: Props) {
     .filter(Boolean);
 
   return (
-    <div className="relative z-50 bg-background min-h-screen">
+    <div className="relative bg-background">
 
       {/* ── Header ── */}
       <div className="mx-auto md:max-w-3xl relative p-[9px]" style={SIDE_DASH}>
         <HDash />
 
-        {/* Flickering Grid */}
+        {/* Pattern Grid */}
         <div className="relative h-[250px] w-full p-4">
           <div className="relative size-full overflow-hidden bg-background/50">
-            <FlickeringGrid
-              className="absolute inset-0 z-0 size-full"
-              squareSize={4}
-              gridGap={4}
-              color="#6B7280"
-              maxOpacity={0.4}
-              flickerChance={0.05}
-              height={800}
-              width={800}
-            />
+            <div className="overflow-hidden p-5 h-full">
+              <div
+                className="h-full min-h-[70px] w-full bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center px-[5px] sm:min-h-[110px] [--pattern-foreground:color-mix(in_oklab,var(--color-zinc-400)_60%,transparent)] dark:[--pattern-foreground:color-mix(in_oklab,var(--color-zinc-600)_60%,transparent)]"
+              />
+            </div>
           </div>
         </div>
 
@@ -124,7 +118,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             <div className="flex items-center gap-2">
               <Link
                 href="/projects"
-                className="relative z-10 cursor-pointer p-1 border border-transparent hover:border-border rounded-[6px] hover:bg-mutedBackground transition-colors duration-300"
+                className="relative z-10 cursor-pointer p-1 border border-border hover:border-foreground/65 rounded-[8px] hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 transition-all duration-300"
                 aria-label="Go back"
               >
                 <ArrowLeft className="w-[18px] h-[18px]" />
@@ -274,10 +268,12 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </h2>
                 <div className="flex items-center gap-1 pr-1 select-none">
                   <div className="relative flex items-center justify-center">
-                    <div
-                      className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-ping ${isLive ? "bg-emerald-500" : "bg-amber-500"}`}
-                      style={{ width: 10, height: 10, borderRadius: "50%", opacity: 0.4 }}
-                    />
+                    {!isLive && (
+                      <div
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-ping bg-amber-500"
+                        style={{ width: 10, height: 10, borderRadius: "50%", opacity: 0.4 }}
+                      />
+                    )}
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
@@ -319,9 +315,9 @@ export default async function ProjectDetailPage({ params }: Props) {
                     href={`https://www.google.com/search?q=${encodeURIComponent(skill)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative min-w-fit flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[8px] border border-border bg-transparent text-muted-foreground px-2 py-1 transition-all duration-300 hover:text-foreground/65 hover:border-foreground/65 select-none"
+                    className="group relative flex min-w-fit cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm transition-all duration-300 hover:border-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 select-none"
                   >
-                    <span className="text-sm font-medium text-muted-foreground transition-colors group-hover:text-foreground whitespace-nowrap">
+                    <span className="font-medium text-muted-foreground transition-colors group-hover:text-foreground whitespace-nowrap">
                       {skill}
                     </span>
                   </a>

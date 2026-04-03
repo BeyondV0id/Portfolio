@@ -1,38 +1,32 @@
 import dynamic from "next/dynamic";
+import Link from "next/link";
+
 import { DesktopNav } from "@/components/desktop-nav";
-import { MAIN_NAV } from "@/config/site";
+import { MAIN_NAV, SITE_INFO } from "@/config/site";
 import { cn } from "@/lib/utils";
+
 import { SiteHeaderWrapper } from "./site-header-wrapper";
 import { ThemeToggle } from "./theme-toggle";
-
-const MobileNav = dynamic(() =>
-  import("@/components/mobile-nav").then((mod) => mod.MobileNav)
-);
 
 export function SiteHeader() {
   return (
     <SiteHeaderWrapper
       className={cn(
-        "sticky top-0 z-50 max-w-screen overflow-x-hidden bg-background px-2 pt-2",
-        "data-[affix=true]:shadow-[0_0_16px_0_black]/8 dark:data-[affix=true]:shadow-[0_0_16px_0_black]",
-        "not-dark:data-[affix=true]:**:data-header-container:after:bg-border",
-        "transition-shadow duration-300"
+        "sticky inset-x-0 top-0 z-[100] bg-background/80 backdrop-blur-md px-2 pt-2",
+        "data-[affix=true]:shadow-[0_4px_12px_-4px_black]/10 dark:data-[affix=true]:shadow-[0_4px_12px_-4px_black]/50",
+        "transition-all duration-300",
       )}
     >
       <div
-        className="screen-line-before screen-line-after mx-auto flex h-12 items-center justify-between gap-2 screen-border-x px-2 after:z-1 after:transition-[background-color] sm:gap-4 md:max-w-3xl"
+        className="screen-line-before screen-line-after mx-auto flex h-12 items-center justify-between gap-2 screen-border-x px-2 after:z-1 sm:gap-4 md:max-w-3xl"
         data-header-container
       >
-        <div className="flex-1" />
-
         <DesktopNav items={MAIN_NAV} />
 
-        <div className="flex items-center *:first:mr-2">
-          {/* <CommandMenu posts={posts} /> */}
-          {/* <NavItemGitHub /> */}
-          <span className="mx-2 flex h-4 w-px bg-border" />
+        <div className="flex-1" />
+
+        <div className="flex items-center gap-2">
           <ThemeToggle />
-          <MobileNav className="sm:hidden" items={MAIN_NAV} />
         </div>
       </div>
     </SiteHeaderWrapper>

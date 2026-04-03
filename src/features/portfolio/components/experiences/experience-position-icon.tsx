@@ -3,9 +3,9 @@ import {
   BriefcaseBusinessIcon,
   CodeXmlIcon,
   DraftingCompassIcon,
+  FactoryIcon,
   GraduationCapIcon,
   LightbulbIcon,
-  FactoryIcon,
 } from "lucide-react";
 
 import type { ExperiencePositionIcon } from "../../types/experiences";

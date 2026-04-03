@@ -5,7 +5,16 @@ const Slot = SlotPrimitive.Slot;
 
 import { cn } from "@/lib/utils";
 
-function Panel({ className, children, ...props }: React.ComponentProps<"section">) {
+function Panel({
+  className,
+  children,
+  hideTopLine = false,
+  hideBottomLine = false,
+  ...props
+}: React.ComponentProps<"section"> & {
+  hideTopLine?: boolean;
+  hideBottomLine?: boolean;
+}) {
   return (
     <section
       data-slot="panel"
@@ -18,9 +27,13 @@ function Panel({ className, children, ...props }: React.ComponentProps<"section"
       }}
       {...props}
     >
-      <div className="pointer-events-none absolute top-0 left-[-1000px] right-[-1000px] h-px -z-1" style={{ backgroundImage: "repeating-linear-gradient(to right, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "100% 1px", backgroundRepeat: "no-repeat" }} />
+      {!hideTopLine && (
+        <div className="pointer-events-none absolute top-0 left-[-1000px] right-[-1000px] h-px -z-1" style={{ backgroundImage: "repeating-linear-gradient(to right, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "100% 1px", backgroundRepeat: "no-repeat" }} />
+      )}
       {children}
-      <div className="pointer-events-none absolute bottom-0 left-[-1000px] right-[-1000px] h-px -z-1" style={{ backgroundImage: "repeating-linear-gradient(to right, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "100% 1px", backgroundRepeat: "no-repeat" }} />
+      {!hideBottomLine && (
+        <div className="pointer-events-none absolute bottom-0 left-[-1000px] right-[-1000px] h-px -z-1" style={{ backgroundImage: "repeating-linear-gradient(to right, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "100% 1px", backgroundRepeat: "no-repeat" }} />
+      )}
     </section>
   );
 }
@@ -29,7 +42,7 @@ function PanelHeader({ className, children, ...props }: React.ComponentProps<"he
   return (
     <header
       data-slot="panel-header"
-      className={cn("relative px-2 py-2", className)}
+      className={cn("relative flex items-center justify-between px-6 py-2", className)}
       {...props}
     >
       {children}

@@ -1,4 +1,4 @@
-import { USER, GITHUB_USERNAME as _GH_USER } from "@/features/portfolio/data";
+import { GITHUB_USERNAME as _GH_USER, USER } from "@/features/portfolio/data";
 import type { NavItem } from "@/types/nav";
 
 export const SITE_INFO = {
@@ -18,6 +18,14 @@ export const MAIN_NAV: NavItem[] = [
   {
     title: "Home",
     href: "/",
+  },
+  {
+    title: "Projects",
+    href: "/projects",
+  },
+  {
+    title: "Skills",
+    href: "/skills",
   },
 ];
 

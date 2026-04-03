@@ -62,7 +62,7 @@ export function ExperiencePositionItem({
             {position.employmentType && (
               <>
                 <dl>
-                  <dt className="sr-only">Employment Type</dt>
+                  <dt className="sr-only">Type</dt>
                   <dd>{position.employmentType}</dd>
                 </dl>
 
@@ -74,7 +74,7 @@ export function ExperiencePositionItem({
             )}
 
             <dl>
-              <dt className="sr-only">Employment Period</dt>
+              <dt className="sr-only">Period</dt>
               <dd className="flex items-center gap-0.5">
                 <span>{start}</span>
                 {!isOngoing && end !== start && (
@@ -138,7 +138,7 @@ export function ExperiencePositionItem({
             {position.employmentType && (
               <>
                 <dl>
-                  <dt className="sr-only">Employment Type</dt>
+                  <dt className="sr-only">Type</dt>
                   <dd>{position.employmentType}</dd>
                 </dl>
 
@@ -150,7 +150,7 @@ export function ExperiencePositionItem({
             )}
 
             <dl>
-              <dt className="sr-only">Employment Period</dt>
+              <dt className="sr-only">Period</dt>
               <dd className="flex items-center gap-0.5">
                 <span>{start}</span>
                 {!isOngoing && end !== start && (

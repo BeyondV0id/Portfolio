@@ -1,8 +1,9 @@
-import { Github, Globe, PinIcon, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight,Github, Globe, PinIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
+
 import type { Project } from "../../types/projects";
 
 export function ProjectItem2({ project, hideBorders = false }: { project: Project; hideBorders?: boolean }) {
@@ -60,10 +61,15 @@ export function ProjectItem2({ project, hideBorders = false }: { project: Projec
           
           {/* Status Pill */}
           <div className="shrink-0 flex items-center gap-2 px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-950/50 border border-zinc-200 dark:border-white/5">
-            <span className={cn(
-              "size-2 rounded-full", 
-              status === 'live' ? 'bg-emerald-500' : 'bg-red-500'
-            )} />
+            <div className="relative flex items-center justify-center">
+              {status === "building" && (
+                <span className="absolute size-2 rounded-full bg-amber-500 animate-ping opacity-75" />
+              )}
+              <span className={cn(
+                "relative size-2 rounded-full", 
+                status === 'live' ? 'bg-emerald-500' : 'bg-amber-500'
+              )} />
+            </div>
             <span className="text-[13px] font-medium text-zinc-500 dark:text-zinc-400 capitalize">{status}</span>
           </div>
         </div>

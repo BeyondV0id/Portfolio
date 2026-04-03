@@ -34,35 +34,63 @@
   },
   "experiences": [
     {
-      "id": "eduskills-aict-aws",
-      "companyName": "EduSkills (AICTE Virtual Internship)",
+      "id": "gvp-college",
+      "companyName": "Gayatri Vidya Parishad College of Engineering (A)",
       "companyLogo": "",
       "positions": [
         {
-          "id": "ai-ml-intern",
-          "title": "AI-ML Virtual Intern",
+          "id": "btech-cse",
+          "title": "Bachelor of Technology in Computer Science and Engineering",
           "employmentPeriod": {
-            "start": "April",
-            "end": "June 2025"
+            "start": "2023",
+            "end": "2027"
           },
-          "employmentType": "Internship",
-          "description": "Completed a 10-week AI-ML Virtual Internship with a curriculum provided by AWS Academy.\nDeployed a fraudulent review detection system using AWS services like S3 and SageMaker.\nGained hands-on experience in AI/ML concepts and successfully completed with an 'A' grade.",
-          "icon": "school",
-          "skills": ["AI", "ML", "AWS Academy", "Python"]
+          "employmentType": "3rd Year",
+          "description": "I am currently pursuing my Bachelor of Technology in Computer Science and Engineering at Gayatri Vidya Parishad College of Engineering (A). I am in my third year of study and will graduate in 2027. • CGPA: 8.51/10",
+          "icon": "education"
+        }
+      ]
+    },
+    {
+      "id": "narayana-college",
+      "companyName": "Narayana Junior College (CBSE)",
+      "companyLogo": "",
+      "positions": [
+        {
+          "id": "junior-college",
+          "title": "Junior College",
+          "employmentPeriod": {
+            "start": "2021",
+            "end": "2023"
+          },
+          "description": "I completed my Junior College education at Narayana Junior College (CBSE). I was a student of the Junior College and I graduated in 2023 with 85%.",
+          "icon": "education"
         }
       ]
     }
   ],
   "projects": [
     {
-      "id": "price-pulse",
-      "title": "Price Pulse",
+      "id": "sourcesuf-backend",
+      "title": "SourceSurf",
       "image": "",
       "pinned": true,
-      "skills": ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS", "shadcn/ui"],
-      "description": "Comprehensive price tracker that monitors product changes in real-time with advanced search and efficient data handling.",
+      "skills": ["TypeScript", "Node.js", "Express", "PostgreSQL", "Webhooks"],
+      "description": "SourceSurf is a sophisticated project discovery and curation platform designed to serve as the central hub for a multi-service open-source ecosystem. It solves the fragmentation of high-quality repository discovery by aggregating data streams from specialized microservices. The platform features a robust webhook architecture that ingests enriched metadata—including real-time star counts, fork activity, and GSoC history—directly into a structured PostgreSQL database. \n\nKey technical achievements include designing an asynchronous data pipeline to handle high-concurrency ingestion from external scrapers and implementing a flexible schema that standardizes diverse metadata formats. SourceSurf provides developers with a unified dashboard for exploring curated, trending projects, backed by a scalable Node.js/Express backend and a type-safe TypeScript implementation that ensures data integrity across the entire discovery workflow.",
       "links": [
-        { "type": "github", "href": "https://github.com/BeyondV0id/price-pulse" }
+        { "type": "github", "href": "https://github.com/BeyondV0id/source-surf" }
+      ],
+      "isExpanded": true
+    },
+    {
+      "id": "quorum",
+      "title": "Quorum",
+      "image": "",
+      "pinned": true,
+      "skills": ["Next.js", "TypeScript", "Node.js", "Express", "PostgreSQL", "Tailwind CSS"],
+      "description": "Quorum is a comprehensive full-stack Q&A platform tailored specifically for the developer community, facilitating technical knowledge sharing and collaborative problem-solving. Built with a unified TypeScript stack, the application features a React-based frontend and a robust Express backend. The platform implements complex threaded discussions, real-time interaction, and a developer-centric UI optimized for code snippet sharing and technical discourse.\n\nTechnically, Quorum solves the challenge of maintaining end-to-end type safety between the client and server through shared TypeScript interfaces, significantly reducing integration bugs and runtime errors. The system manages a relational database of questions, answers, and user profiles, utilizing optimized PostgreSQL queries to handle nested discussion trees and high-traffic user interactions, providing a seamless and responsive experience for technical developers.",
+      "links": [
+        { "type": "github", "href": "https://github.com/BeyondV0id/Quorum" }
       ],
       "isExpanded": true
     },
@@ -70,23 +98,35 @@
       "id": "oss-trends-scraper",
       "title": "OSS Trends Scraper",
       "image": "",
-      "pinned": false,
-      "skills": ["Python", "BeautifulSoup", "Docker", "GitHub Actions", "PostgreSQL"],
-      "description": "Dockerized Python scraper for GitHub Trending repositories with webhook metadata syncing.",
+      "pinned": true,
+      "skills": ["Python", "FastAPI", "BeautifulSoup", "Docker", "PostgreSQL", "httpx"],
+      "description": "The OSS Trends Scraper is a high-performance Python microservice engineered to automate the discovery and enrichment of trending GitHub repositories. Built with FastAPI and an entirely asynchronous pipeline, it utilizes BeautifulSoup4 and httpx for high-concurrency web scraping of the GitHub Trending pages. Once a repository is discovered, the service enriches the record by interfacing with the official GitHub REST API to fetch deep metadata, including owner profiles and precise activity metrics.\n\nTo solve the challenge of GitHub's aggressive rate limiting, the service implements an intelligent scheduling and batching system using APScheduler. Enriched data is 'upserted' into a PostgreSQL database (hosted via Supabase) using asyncpg to ensure non-blocking I/O. The microservice then automatically synchronizes this data with the SourceSurf backend via secure webhooks, providing a continuous stream of fresh, high-quality open-source leads while maintaining extreme operational efficiency.",
       "links": [
         { "type": "github", "href": "https://github.com/BeyondV0id/oss-trends-scraper" }
       ],
       "isExpanded": true
     },
     {
-      "id": "sourcesuf-backend",
-      "title": "SourceSurf",
+      "id": "price-pulse",
+      "title": "Price Pulse",
+      "image": "",
+      "pinned": true,
+      "skills": ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS", "Server-Side Rendering"],
+      "description": "Price Pulse is a modern real-time price tracking application built on Next.js, designed to monitor and analyze price fluctuations across various e-commerce platforms. The application leverages Server-Side Rendering (SSR) and Edge-compatible middleware to deliver high-performance data fetching and request filtering. It provides users with automated monitoring of product URLs, visual price history charts, and instant notifications for significant price drops.\n\nOne of the primary technical challenges solved was the reliable extraction of data from dynamic e-commerce sites that rely heavily on client-side JavaScript. This was achieved through a robust background scraping layer that periodically validates product data and stores historical 'pulses' in a MongoDB database. The frontend utilizes custom React hooks and TypeScript-based charting libraries to transform raw historical data into actionable trend analysis, helping users make data-driven purchasing decisions.",
+      "links": [
+        { "type": "github", "href": "https://github.com/BeyondV0id/price-pulse" }
+      ],
+      "isExpanded": true
+    },
+    {
+      "id": "plant-disease-prediction",
+      "title": "Plant Disease Prediction",
       "image": "",
       "pinned": false,
-      "skills": ["TypeScript", "Node.js", "Express", "PostgreSQL"],
-      "description": "Centralized discovery platform for high-quality open-source projects with real-time metric tracking and GSoC history filtering.",
+      "skills": ["Python", "scikit-learn", "Pandas", "Streamlit", "Explainable AI (SHAP)"],
+      "description": "This project is an advanced agricultural AI system—the Smart Crop Stress Advisor—that predicts plant health status from IoT sensor data and provides actionable field recommendations. Unlike standard classification models, this system utilizes a Hybrid Machine Learning pipeline (combining Random Forest and SVM) to generate a 0-100 risk triage score. It processes 11 distinct sensor features, including soil moisture, chlorophyll levels, and nitrogen content, to provide a comprehensive view of crop health.\n\nA critical technical hurdle addressed was the 'Black Box' nature of AI in agriculture. By integrating SHAP (Explainable AI), the system identifies the specific sensor drivers behind a stress prediction, allowing farmers to understand *why* a plant is at risk. The solution is deployed as a dockerized Streamlit application capable of both single-plant diagnosis and high-volume batch triage from CSV data, bridging the gap between machine learning research and practical field operations.",
       "links": [
-        { "type": "github", "href": "https://github.com/BeyondV0id/source-surf" }
+        { "type": "github", "href": "https://github.com/BeyondV0id/Plant_disease_prediction" }
       ],
       "isExpanded": true
     },
@@ -95,8 +135,8 @@
       "title": "Drizzle Auth API",
       "image": "",
       "pinned": false,
-      "skills": ["Express", "TypeScript", "Drizzle ORM", "PostgreSQL"],
-      "description": "Production-ready authentication template powered by Express, TypeScript, and Drizzle ORM.",
+      "skills": ["Express 5", "TypeScript", "Drizzle ORM", "PostgreSQL", "Session Security"],
+      "description": "Drizzle Auth API is a production-ready authentication backend designed with a primary focus on security and immediate session control. Built with Express 5 and Drizzle ORM, it implements a database-backed session strategy that avoids the common pitfalls of stateless JWTs. By storing sessions in a PostgreSQL table and utilizing HTTP-only, secure cookies, the API provides a robust defense against XSS and CSRF attacks while allowing for immediate, server-side session revocation.\n\nThe project demonstrates the power of Drizzle ORM for type-safe database interactions, ensuring that the SQL schema and TypeScript interfaces remain perfectly synchronized. The authentication flow includes secure registration with password hashing, login, logout with instant session destruction, and protected profile management. This backend serves as a high-security foundation for applications requiring strict session management and end-to-end type safety across the database and API layers.",
       "links": [
         { "type": "github", "href": "https://github.com/BeyondV0id/drizzle-auth-api" }
       ],
@@ -178,10 +218,10 @@
       "href": "https://x.com/beyondV0ID"
     },
     {
-      "icon": "daily.dev_light.svg",
-      "title": "daily.dev",
-      "description": "BeyondV0id",
-      "href": "https://app.daily.dev/BeyondV0id"
+      "icon": "mail.svg",
+      "title": "Email",
+      "description": "Send an email",
+      "href": "mailto:beyondv0id@gmail.com"
     }
   ],
   "ossContributions": []

@@ -1,12 +1,37 @@
-"use client";
+'use client';
 
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-// import { Nav } from "@/components/nav";
-import type { NavItem } from "@/types/nav";
+import { cn } from '@/lib/utils';
+import type { NavItem } from '@/types/nav';
 
 export function DesktopNav({ items }: { items: NavItem[] }) {
   const pathname = usePathname();
 
-  return null; // <Nav className="max-sm:hidden" items={items} activeId={pathname} />;
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+  const linkClassName = (href: string) =>
+    cn(
+      'font-mono text-sm font-medium transition-[color] duration-300',
+      'hover:text-foreground',
+      isActive(href) ? 'text-foreground' : 'text-muted-foreground'
+    );
+
+  return (
+    <nav className='flex items-center px-6 gap-4 max-sm:hidden'>
+      {items.map((item) => (
+        <Link
+          key={item.href}
+          className={linkClassName(item.href)}
+          href={item.href}
+        >
+          {item.title}
+        </Link>
+      ))}
+    </nav>
+  );
 }

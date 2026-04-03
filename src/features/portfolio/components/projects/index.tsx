@@ -1,11 +1,15 @@
-import React from "react";
-import { PROJECTS, SOCIAL_LINKS } from "@/features/portfolio/data";
 import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
+import React from "react";
+
+import { PROJECTS, SOCIAL_LINKS } from "@/features/portfolio/data";
+
 import { Panel, PanelHeader, PanelTitle } from "../panel";
 import { ProjectItem2 } from "./projectItem";
 
 export function Projects() {
+  const pinnedProjects = PROJECTS.filter(project => project.pinned);
+
   return (
     <Panel id="projects">
       <PanelHeader className="flex items-center justify-between">
@@ -27,7 +31,7 @@ export function Projects() {
       <div className="relative grid grid-cols-1 sm:grid-cols-2">
         <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 z-0 hidden sm:block pointer-events-none z-10" style={{ backgroundImage: "repeating-linear-gradient(to bottom, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "1px 100%", backgroundRepeat: "no-repeat" }} />
         
-        {PROJECTS.map((project, idx) => (
+        {pinnedProjects.map((project, idx) => (
           <React.Fragment key={idx}>
             {idx > 0 && idx % 2 === 0 && (
               <div className="hidden sm:block col-span-2 relative z-10 pointer-events-none">

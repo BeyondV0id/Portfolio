@@ -1,14 +1,29 @@
-import React from "react";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { ArrowUpRightIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+
 import { TECH_STACK } from "@/features/portfolio/data";
+import { cn } from "@/lib/utils";
+
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
 
 export function TeckStack() {
-  const DISPLAY_COUNT = 14;
-  const hasMore = TECH_STACK.length > DISPLAY_COUNT;
+  const excludedCategories = new Set(["Productivity", "Design Tool", "Automation"]);
+  const excludedKeys = new Set([
+    "tableau",
+    "mysql",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "matplotlib",
+    "seaborn",
+  ]);
+  const developmentStack = TECH_STACK.filter(
+    (tech) =>
+      !excludedKeys.has(tech.key) &&
+      !tech.categories.some((category) => excludedCategories.has(category))
+  );
 
   return (
     <Panel id="stack">
@@ -23,41 +38,39 @@ export function TeckStack() {
       </PanelHeader>
 
       <PanelContent>
-        <ul className="flex flex-wrap gap-2 select-none items-center">
-          {TECH_STACK.slice(0, DISPLAY_COUNT).map((tech) => {
+        <ul className="flex flex-wrap items-center justify-center gap-2 select-none">
+          {developmentStack.map((tech) => {
             const iconSrc = tech.theme ? `icons/${tech.icon}` : `/icons/${tech.icon}`;
             const darkIconSrc = tech.theme ? `icons/${tech.darkIcon}` : null;
 
             return (
               <li key={tech.key} className="flex">
-                <div
+                <a
+                  href={`https://www.google.com/search?q=${encodeURIComponent(tech.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
-                    "flex items-center gap-2 rounded-xl px-3 py-1.5",
-                    "border border-zinc-300/50 dark:border-zinc-600/50",
-                    "bg-transparent",
-                    "text-sm font-medium text-zinc-800 dark:text-zinc-200",
-                    "transition-colors hover:bg-zinc-100/40 dark:hover:bg-zinc-700/40 hover:border-zinc-300 dark:hover:border-zinc-500"
+                    "group relative flex min-w-fit flex-1 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[8px] border border-border bg-transparent px-2 py-1",
+                    "text-sm transition-all duration-300 select-none",
+                    "hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50",
                   )}
                   aria-label={tech.title}
                 >
                   {tech.theme && darkIconSrc ? (
                     <>
-                      <Image src={iconSrc} alt={`${tech.title} icon`} width={18} height={18} className="block dark:hidden shrink-0 w-[18px] h-[18px] object-contain" unoptimized />
-                      <Image src={darkIconSrc} alt={`${tech.title} icon`} width={18} height={18} className="hidden dark:block shrink-0 w-[18px] h-[18px] object-contain" unoptimized />
+                      <Image src={iconSrc} alt={`${tech.title} icon`} width={16} height={16} className="block h-4 w-4 shrink-0 object-contain dark:hidden" unoptimized />
+                      <Image src={darkIconSrc} alt={`${tech.title} icon`} width={16} height={16} className="hidden h-4 w-4 shrink-0 object-contain dark:block" unoptimized />
                     </>
                   ) : (
-                    <Image src={iconSrc} alt={`${tech.title} icon`} width={18} height={18} className="shrink-0 w-[18px] h-[18px] object-contain" unoptimized />
+                    <Image src={iconSrc} alt={`${tech.title} icon`} width={16} height={16} className="h-4 w-4 shrink-0 object-contain" unoptimized />
                   )}
-                  <span>{tech.title}</span>
-                </div>
+                  <span className="font-medium text-muted-foreground transition-colors group-hover:text-foreground whitespace-nowrap">
+                    {tech.title}
+                  </span>
+                </a>
               </li>
             );
           })}
-          {hasMore && (
-            <li className="px-2 font-mono text-muted-foreground select-none">
-              ....
-            </li>
-          )}
         </ul>
       </PanelContent>
     </Panel>

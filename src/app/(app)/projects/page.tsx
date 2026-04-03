@@ -1,11 +1,11 @@
-import React from "react";
-import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { PROJECTS, SOCIAL_LINKS } from "@/features/portfolio/data";
-import { ProjectItem2 } from "@/features/portfolio/components/projects/projectItem";
-import { FlickeringGrid } from "@/components/ui/flickering-grid";
+import Link from "next/link";
+import React from "react";
+
 import { Container } from "@/components/container";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ProjectItem2 } from "@/features/portfolio/components/projects/projectItem";
+import { PROJECTS, SOCIAL_LINKS } from "@/features/portfolio/data";
 
 export const metadata = {
   title: "Projects",
@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="relative z-50 bg-background min-h-screen">
+    <div className="relative bg-background">
       <div className="mx-auto md:max-w-3xl relative p-[9px]" style={{ backgroundImage: "repeating-linear-gradient(to bottom, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px), repeating-linear-gradient(to bottom, var(--dash-border) 0px, var(--dash-border) 6px, transparent 6px, transparent 14px)", backgroundSize: "1px 100%, 1px 100%", backgroundPosition: "left top, right top", backgroundRepeat: "no-repeat" }}>
         
         {/* Top viewport boundary line */}
@@ -23,16 +23,11 @@ export default function ProjectsPage() {
         {/* Flickering Grid Cover */}
         <div className="relative h-[250px] w-full p-4">
           <div className="relative size-full overflow-hidden bg-background/50">
-            <FlickeringGrid
-              className="absolute inset-0 z-0 size-full"
-              squareSize={4}
-              gridGap={4}
-              color="#6B7280"
-              maxOpacity={0.4}
-              flickerChance={0.05}
-              height={800}
-              width={800}
-            />
+            <div className="overflow-hidden p-5 h-full">
+              <div
+                className="h-full min-h-[70px] w-full bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center px-[5px] sm:min-h-[110px] [--pattern-foreground:color-mix(in_oklab,var(--color-zinc-400)_60%,transparent)] dark:[--pattern-foreground:color-mix(in_oklab,var(--color-zinc-600)_60%,transparent)]"
+              />
+            </div>
           </div>
         </div>
 
@@ -43,7 +38,7 @@ export default function ProjectsPage() {
         <Container delay={0.1}>
           <div className="flex items-center justify-between pb-2">
             <div className="flex items-center gap-2">
-              <Link href="/" className="relative z-10 cursor-pointer p-1 border border-transparent hover:border-border rounded-[6px] hover:bg-mutedBackground transition-colors duration-300" aria-label="Go back">
+              <Link href="/" className="relative z-10 cursor-pointer p-1 border border-border hover:border-foreground/65 rounded-[8px] hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 transition-all duration-300" aria-label="Go back">
                 <ArrowLeft className="w-[18px] h-[18px]" />
               </Link>
               <h1 className="text-[1.15rem] font-bold leading-tight text-title">Projects</h1>
