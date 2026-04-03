@@ -1,12 +1,36 @@
 import { GITHUB_USERNAME as _GH_USER, USER } from "@/features/portfolio/data";
 import type { NavItem } from "@/types/nav";
 
+const FALLBACK_SITE_URL = "https://portfolio.dev";
+const SITE_URL = (USER.website?.trim() || FALLBACK_SITE_URL).replace(/\/$/, "");
+const OG_IMAGE_PATH = USER.ogImage?.trim() || "/images/og.png";
+
+const toAbsoluteUrl = (path: string) =>
+  /^https?:\/\//.test(path)
+    ? path
+    : `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+
+const OG_IMAGE = toAbsoluteUrl(OG_IMAGE_PATH);
+
+const UTM_SOURCE = (() => {
+  try {
+    return new URL(SITE_URL).hostname.replace(/^www\./, "");
+  } catch {
+    return "portfolio";
+  }
+})();
+
 export const SITE_INFO = {
   name: USER.displayName,
-  url: "https://dakshyadav.com",
-  ogImage: "https://www.dakshyadav.com/images/preview-card-dark.png", // Changed from USER.ogImage
+  url: SITE_URL,
+  ogImage: OG_IMAGE,
   description: USER.bio,
   keywords: USER.keywords,
+};
+
+export const PROFILE_IMAGES = {
+  light: "/images/image2.jpg",
+  dark: "/images/image.jpg",
 };
 
 export const META_THEME_COLORS = {
@@ -29,16 +53,16 @@ export const MAIN_NAV: NavItem[] = [
   },
 ];
 
-export const GITHUB_USERNAME = "dakshydv";
-export const SOURCE_CODE_GITHUB_REPO = "dakshydv/portfolio";
-export const SOURCE_CODE_GITHUB_URL = "https://github.com/dakshydv/portfolio";
+export const GITHUB_USERNAME = _GH_USER;
+export const SOURCE_CODE_GITHUB_REPO = `${GITHUB_USERNAME}/portfolio`;
+export const SOURCE_CODE_GITHUB_URL = `https://github.com/${SOURCE_CODE_GITHUB_REPO}`;
 
 export const UTM_PARAMS = {
-  utm_source: "dakshyadav.com",
+  utm_source: UTM_SOURCE,
   utm_medium: "referral",
   utm_campaign: "portfolio",
 };
 
 export const siteConfig = {
-  ogImage: "https://www.dakshyadav.com/images/preview-card-dark.png", // Changed to absolute URL
+  ogImage: OG_IMAGE,
 };

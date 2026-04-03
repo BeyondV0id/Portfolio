@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     gender: USER.gender,
     images: [
       {
-        url: USER.avatar,
+        url: SITE_INFO.ogImage,
         width: 1200,
         height: 630,
         alt: `${USER.displayName} - Portfolio`,
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@dakshydv_", // Twitter username
-    images: [USER.avatar],
+    images: [SITE_INFO.ogImage],
   },
   icons: {
     icon: [
@@ -82,7 +82,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-
 };
 
 export const viewport: Viewport = {
