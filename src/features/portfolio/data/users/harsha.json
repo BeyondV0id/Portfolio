@@ -78,7 +78,10 @@
       "skills": ["TypeScript", "Node.js", "Express", "PostgreSQL", "Webhooks"],
       "description": "SourceSurf is a sophisticated project discovery and curation platform designed to serve as the central hub for a multi-service open-source ecosystem. It solves the fragmentation of high-quality repository discovery by aggregating data streams from specialized microservices. The platform features a robust webhook architecture that ingests enriched metadata—including real-time star counts, fork activity, and GSoC history—directly into a structured PostgreSQL database. \n\nKey technical achievements include designing an asynchronous data pipeline to handle high-concurrency ingestion from external scrapers and implementing a flexible schema that standardizes diverse metadata formats. SourceSurf provides developers with a unified dashboard for exploring curated, trending projects, backed by a scalable Node.js/Express backend and a type-safe TypeScript implementation that ensures data integrity across the entire discovery workflow.",
       "links": [
-        { "type": "github", "href": "https://github.com/BeyondV0id/source-surf" }
+        {
+          "type": "github",
+          "href": "https://github.com/BeyondV0id/source-surf"
+        }
       ],
       "isExpanded": true
     },
@@ -87,7 +90,14 @@
       "title": "Quorum",
       "image": "",
       "pinned": true,
-      "skills": ["Next.js", "TypeScript", "Node.js", "Express", "PostgreSQL", "Tailwind CSS"],
+      "skills": [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
       "description": "Quorum is a comprehensive full-stack Q&A platform tailored specifically for the developer community, facilitating technical knowledge sharing and collaborative problem-solving. Built with a unified TypeScript stack, the application features a React-based frontend and a robust Express backend. The platform implements complex threaded discussions, real-time interaction, and a developer-centric UI optimized for code snippet sharing and technical discourse.\n\nTechnically, Quorum solves the challenge of maintaining end-to-end type safety between the client and server through shared TypeScript interfaces, significantly reducing integration bugs and runtime errors. The system manages a relational database of questions, answers, and user profiles, utilizing optimized PostgreSQL queries to handle nested discussion trees and high-traffic user interactions, providing a seamless and responsive experience for technical developers.",
       "links": [
         { "type": "github", "href": "https://github.com/BeyondV0id/Quorum" }
@@ -99,10 +109,20 @@
       "title": "OSS Trends Scraper",
       "image": "",
       "pinned": true,
-      "skills": ["Python", "FastAPI", "BeautifulSoup", "Docker", "PostgreSQL", "httpx"],
+      "skills": [
+        "Python",
+        "FastAPI",
+        "BeautifulSoup",
+        "Docker",
+        "PostgreSQL",
+        "httpx"
+      ],
       "description": "The OSS Trends Scraper is a high-performance Python microservice engineered to automate the discovery and enrichment of trending GitHub repositories. Built with FastAPI and an entirely asynchronous pipeline, it utilizes BeautifulSoup4 and httpx for high-concurrency web scraping of the GitHub Trending pages. Once a repository is discovered, the service enriches the record by interfacing with the official GitHub REST API to fetch deep metadata, including owner profiles and precise activity metrics.\n\nTo solve the challenge of GitHub's aggressive rate limiting, the service implements an intelligent scheduling and batching system using APScheduler. Enriched data is 'upserted' into a PostgreSQL database (hosted via Supabase) using asyncpg to ensure non-blocking I/O. The microservice then automatically synchronizes this data with the SourceSurf backend via secure webhooks, providing a continuous stream of fresh, high-quality open-source leads while maintaining extreme operational efficiency.",
       "links": [
-        { "type": "github", "href": "https://github.com/BeyondV0id/oss-trends-scraper" }
+        {
+          "type": "github",
+          "href": "https://github.com/BeyondV0id/oss-trends-scraper"
+        }
       ],
       "isExpanded": true
     },
@@ -111,10 +131,19 @@
       "title": "Price Pulse",
       "image": "",
       "pinned": true,
-      "skills": ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS", "Server-Side Rendering"],
+      "skills": [
+        "Next.js",
+        "TypeScript",
+        "MongoDB",
+        "Tailwind CSS",
+        "Server-Side Rendering"
+      ],
       "description": "Price Pulse is a modern real-time price tracking application built on Next.js, designed to monitor and analyze price fluctuations across various e-commerce platforms. The application leverages Server-Side Rendering (SSR) and Edge-compatible middleware to deliver high-performance data fetching and request filtering. It provides users with automated monitoring of product URLs, visual price history charts, and instant notifications for significant price drops.\n\nOne of the primary technical challenges solved was the reliable extraction of data from dynamic e-commerce sites that rely heavily on client-side JavaScript. This was achieved through a robust background scraping layer that periodically validates product data and stores historical 'pulses' in a MongoDB database. The frontend utilizes custom React hooks and TypeScript-based charting libraries to transform raw historical data into actionable trend analysis, helping users make data-driven purchasing decisions.",
       "links": [
-        { "type": "github", "href": "https://github.com/BeyondV0id/price-pulse" }
+        {
+          "type": "github",
+          "href": "https://github.com/BeyondV0id/price-pulse"
+        }
       ],
       "isExpanded": true
     },
@@ -123,10 +152,19 @@
       "title": "Plant Disease Prediction",
       "image": "",
       "pinned": false,
-      "skills": ["Python", "scikit-learn", "Pandas", "Streamlit", "Explainable AI (SHAP)"],
+      "skills": [
+        "Python",
+        "scikit-learn",
+        "Pandas",
+        "Streamlit",
+        "Explainable AI (SHAP)"
+      ],
       "description": "This project is an advanced agricultural AI system—the Smart Crop Stress Advisor—that predicts plant health status from IoT sensor data and provides actionable field recommendations. Unlike standard classification models, this system utilizes a Hybrid Machine Learning pipeline (combining Random Forest and SVM) to generate a 0-100 risk triage score. It processes 11 distinct sensor features, including soil moisture, chlorophyll levels, and nitrogen content, to provide a comprehensive view of crop health.\n\nA critical technical hurdle addressed was the 'Black Box' nature of AI in agriculture. By integrating SHAP (Explainable AI), the system identifies the specific sensor drivers behind a stress prediction, allowing farmers to understand *why* a plant is at risk. The solution is deployed as a dockerized Streamlit application capable of both single-plant diagnosis and high-volume batch triage from CSV data, bridging the gap between machine learning research and practical field operations.",
       "links": [
-        { "type": "github", "href": "https://github.com/BeyondV0id/Plant_disease_prediction" }
+        {
+          "type": "github",
+          "href": "https://github.com/BeyondV0id/Plant_disease_prediction"
+        }
       ],
       "isExpanded": true
     },
@@ -135,63 +173,361 @@
       "title": "Drizzle Auth API",
       "image": "",
       "pinned": false,
-      "skills": ["Express 5", "TypeScript", "Drizzle ORM", "PostgreSQL", "Session Security"],
+      "skills": [
+        "Express 5",
+        "TypeScript",
+        "Drizzle ORM",
+        "PostgreSQL",
+        "Session Security"
+      ],
       "description": "Drizzle Auth API is a production-ready authentication backend designed with a primary focus on security and immediate session control. Built with Express 5 and Drizzle ORM, it implements a database-backed session strategy that avoids the common pitfalls of stateless JWTs. By storing sessions in a PostgreSQL table and utilizing HTTP-only, secure cookies, the API provides a robust defense against XSS and CSRF attacks while allowing for immediate, server-side session revocation.\n\nThe project demonstrates the power of Drizzle ORM for type-safe database interactions, ensuring that the SQL schema and TypeScript interfaces remain perfectly synchronized. The authentication flow includes secure registration with password hashing, login, logout with instant session destruction, and protected profile management. This backend serves as a high-security foundation for applications requiring strict session management and end-to-end type safety across the database and API layers.",
       "links": [
-        { "type": "github", "href": "https://github.com/BeyondV0id/drizzle-auth-api" }
+        {
+          "type": "github",
+          "href": "https://github.com/BeyondV0id/drizzle-auth-api"
+        }
       ],
       "isExpanded": true
     }
   ],
   "techStack": [
-    { "key": "typescript", "title": "TypeScript", "icon": "typescript.svg", "categories": ["Language"] },
-    { "key": "js", "title": "JavaScript", "icon": "javascript.svg", "categories": ["Language"] },
-    { "key": "golang", "title": "Golang", "icon": "golang.svg", "categories": ["Language"] },
-    { "key": "py", "title": "Python", "icon": "python.svg", "categories": ["Language"] },
-    { "key": "next", "title": "Next.js", "icon": "nextjs.svg", "darkIcon": "nextjs-light.svg", "categories": ["Framework"], "theme": true },
-    { "key": "react", "title": "React", "icon": "react.svg", "categories": ["Library", "UI Library"] },
-    { "key": "nodejs", "title": "Node.js", "icon": "nodejs.svg", "categories": ["Core"] },
-    { "key": "expressjs", "title": "Express.js", "icon": "express.png", "categories": ["Framework"] },
-    { "key": "trpc", "title": "tRPC", "icon": "trpc.svg", "categories": ["Framework"] },
-    { "key": "fastapi", "title": "FastAPI", "icon": "fastapi.svg", "categories": ["Framework"] },
-    { "key": "flask", "title": "Flask", "icon": "Flask.svg", "categories": ["Framework"] },
-    { "key": "streamlit", "title": "Streamlit", "icon": "Streamlit.svg", "categories": ["Framework"] },
-    { "key": "mongodb", "title": "MongoDB", "icon": "MongoDB_light.svg", "darkIcon": "MongoDB_dark.svg", "categories": ["Database"], "theme": true },
-    { "key": "postgresql", "title": "PostgreSQL", "icon": "postgresql.svg", "categories": ["Database"] },
-    { "key": "mysql", "title": "MySQL", "icon": "mysql.svg", "categories": ["Database"] },
-    { "key": "redis", "title": "Redis", "icon": "redis.svg", "categories": ["Database"] },
-    { "key": "neon", "title": "Neon", "icon": "neon.svg", "categories": ["Development Tools", "Database"] },
-    { "key": "supabase", "title": "Supabase", "icon": "supabase.svg", "categories": ["Development Tools", "Database", "BaaS"] },
-    { "key": "tailwindcss", "title": "Tailwind CSS", "icon": "tailwindcss.svg", "categories": ["Library", "UI Library"] },
-    { "key": "shadcn-ui", "title": "shadcn/ui", "icon": "shadcn.svg", "darkIcon": "shadcn-light.svg", "categories": ["Library", "Component Library"], "theme": true },
-    { "key": "motion", "title": "Motion", "icon": "motion.svg", "categories": ["Library", "Animation"] },
-    { "key": "better-auth", "title": "Better Auth", "icon": "Better Auth_light.svg", "darkIcon": "Better Auth_dark.svg", "categories": ["Auth Services", "Library", "Authentication"], "theme": true },
-    { "key": "clerk", "title": "Clerk", "icon": "Clerk_light.svg", "darkIcon": "Clerk_dark.svg", "categories": ["Auth Services", "Service", "Authentication"], "theme": true },
-    { "key": "jwt", "title": "JWT", "icon": "jwt.svg", "categories": ["Auth Services", "Library", "Authentication"] },
-    { "key": "drizzle", "title": "Drizzle ORM", "icon": "Drizzle ORM_dark.svg", "categories": ["Library", "ORM"], "theme": false },
-    { "key": "pandas", "title": "Pandas", "icon": "Pandas.svg", "categories": ["Library", "Data Analysis"] },
-    { "key": "numpy", "title": "NumPy", "icon": "numpy.svg", "categories": ["Library"] },
-    { "key": "scikit-learn", "title": "scikit-learn", "icon": "scikit-learn.svg", "categories": ["Library", "Machine Learning"] },
-    { "key": "matplotlib", "title": "Matplotlib", "icon": "Matplotlib.svg", "categories": ["Library"] },
-    { "key": "seaborn", "title": "Seaborn", "icon": "seaborn.svg", "categories": ["Library"] },
-    { "key": "tableau", "title": "Tableau", "icon": "tableau.svg", "categories": ["Library"] },
+    {
+      "key": "typescript",
+      "title": "TypeScript",
+      "icon": "typescript.svg",
+      "categories": ["Language"]
+    },
+    {
+      "key": "js",
+      "title": "JavaScript",
+      "icon": "javascript.svg",
+      "categories": ["Language"]
+    },
+    {
+      "key": "golang",
+      "title": "Golang",
+      "icon": "golang.svg",
+      "categories": ["Language"]
+    },
+    {
+      "key": "py",
+      "title": "Python",
+      "icon": "python.svg",
+      "categories": ["Language"]
+    },
+    {
+      "key": "next",
+      "title": "Next.js",
+      "icon": "nextjs.svg",
+      "darkIcon": "nextjs-light.svg",
+      "categories": ["Framework"],
+      "theme": true
+    },
+    {
+      "key": "react",
+      "title": "React",
+      "icon": "react.svg",
+      "categories": ["Library", "UI Library"]
+    },
+    {
+      "key": "nodejs",
+      "title": "Node.js",
+      "icon": "nodejs.svg",
+      "categories": ["Core"]
+    },
+    {
+      "key": "expressjs",
+      "title": "Express.js",
+      "icon": "express.png",
+      "categories": ["Framework"]
+    },
+    {
+      "key": "trpc",
+      "title": "tRPC",
+      "icon": "trpc.svg",
+      "categories": ["Framework"]
+    },
+    {
+      "key": "fastapi",
+      "title": "FastAPI",
+      "icon": "fastapi.svg",
+      "categories": ["Framework"]
+    },
+    {
+      "key": "flask",
+      "title": "Flask",
+      "icon": "Flask.svg",
+      "categories": ["Framework"]
+    },
+    {
+      "key": "streamlit",
+      "title": "Streamlit",
+      "icon": "Streamlit.svg",
+      "categories": ["Framework"]
+    },
+    {
+      "key": "mongodb",
+      "title": "MongoDB",
+      "icon": "MongoDB_light.svg",
+      "darkIcon": "MongoDB_dark.svg",
+      "categories": ["Database"],
+      "theme": true
+    },
+    {
+      "key": "postgresql",
+      "title": "PostgreSQL",
+      "icon": "postgresql.svg",
+      "categories": ["Database"]
+    },
+    {
+      "key": "mysql",
+      "title": "MySQL",
+      "icon": "mysql.svg",
+      "categories": ["Database"]
+    },
+    {
+      "key": "redis",
+      "title": "Redis",
+      "icon": "redis.svg",
+      "categories": ["Database"]
+    },
+    {
+      "key": "neon",
+      "title": "Neon",
+      "icon": "neon.svg",
+      "categories": ["Development Tools", "Database"]
+    },
+    {
+      "key": "supabase",
+      "title": "Supabase",
+      "icon": "supabase.svg",
+      "categories": ["Development Tools", "Database", "BaaS"]
+    },
+    {
+      "key": "tailwindcss",
+      "title": "Tailwind CSS",
+      "icon": "tailwindcss.svg",
+      "categories": ["Library", "UI Library"]
+    },
+    {
+      "key": "shadcn-ui",
+      "title": "shadcn/ui",
+      "icon": "shadcn.svg",
+      "darkIcon": "shadcn-light.svg",
+      "categories": ["Library", "Component Library"],
+      "theme": true
+    },
+    {
+      "key": "motion",
+      "title": "Motion",
+      "icon": "motion.svg",
+      "categories": ["Library", "Animation"]
+    },
+    {
+      "key": "better-auth",
+      "title": "Better Auth",
+      "icon": "Better Auth_light.svg",
+      "darkIcon": "Better Auth_dark.svg",
+      "categories": ["Auth Services", "Library", "Authentication"],
+      "theme": true
+    },
+    {
+      "key": "clerk",
+      "title": "Clerk",
+      "icon": "Clerk_light.svg",
+      "darkIcon": "Clerk_dark.svg",
+      "categories": ["Auth Services", "Service", "Authentication"],
+      "theme": true
+    },
+    {
+      "key": "jwt",
+      "title": "JWT",
+      "icon": "jwt.svg",
+      "categories": ["Auth Services", "Library", "Authentication"]
+    },
+    {
+      "key": "drizzle",
+      "title": "Drizzle ORM",
+      "icon": "Drizzle ORM_dark.svg",
+      "categories": ["Library", "ORM"],
+      "theme": false
+    },
+    {
+      "key": "pandas",
+      "title": "Pandas",
+      "icon": "Pandas.svg",
+      "categories": ["Library", "Data Analysis"]
+    },
+    {
+      "key": "numpy",
+      "title": "NumPy",
+      "icon": "numpy.svg",
+      "categories": ["Library"]
+    },
+    {
+      "key": "scikit-learn",
+      "title": "scikit-learn",
+      "icon": "scikit-learn.svg",
+      "categories": ["Library", "Machine Learning"]
+    },
+    {
+      "key": "matplotlib",
+      "title": "Matplotlib",
+      "icon": "Matplotlib.svg",
+      "categories": ["Library"]
+    },
+    {
+      "key": "seaborn",
+      "title": "Seaborn",
+      "icon": "seaborn.svg",
+      "categories": ["Library"]
+    },
+    {
+      "key": "tableau",
+      "title": "Tableau",
+      "icon": "tableau.svg",
+      "categories": ["Library"]
+    },
     { "key": "git", "title": "Git", "icon": "git.svg", "categories": ["Core"] },
-    { "key": "docker", "title": "Docker", "icon": "docker.svg", "categories": ["Core"] },
-    { "key": "vercel", "title": "Vercel", "icon": "vercel.png", "darkIcon": "vercel-light.svg", "categories": ["Cloud Hosting", "Deployment"], "theme": true },
-    { "key": "aws", "title": "AWS", "icon": "aws.png", "darkIcon": "aws-light.png", "categories": ["Cloud Hosting", "Deployment"], "theme": true },
-    { "key": "render", "title": "Render", "icon": "Render_light.svg", "darkIcon": "Render_dark.svg", "categories": ["Cloud Hosting", "Deployment"], "theme": true },
-    { "key": "postman", "title": "Postman", "icon": "postman.svg", "categories": ["Development Tools"] },
-    { "key": "bun", "title": "Bun", "icon": "bun.svg", "categories": ["Development Tools", "Runtime"] },
-    { "key": "vite", "title": "Vite", "icon": "vite.svg", "categories": ["Build Tool"] },
-    { "key": "turborepo", "title": "Turborepo", "icon": "Turborepo_light.svg", "darkIcon": "Turborepo_dark.svg", "categories": ["Build Tool"], "theme": true },
-    { "key": "neovim", "title": "Neovim", "icon": "neovim.svg", "categories": ["Development Tools"] },
-    { "key": "cursor", "title": "Cursor", "icon": "cursor.svg", "categories": ["Development Tools"] },
-    { "key": "figma", "title": "Figma", "icon": "figma.svg", "categories": ["Design Tool"] },
-    { "key": "n8n", "title": "n8n", "icon": "n8n.svg", "categories": ["Automation"] },
-    { "key": "notion", "title": "Notion", "icon": "notion.svg", "categories": ["Productivity"] },
-    { "key": "obsidian", "title": "Obsidian", "icon": "obsidian.svg", "categories": ["Productivity"] },
-    { "key": "dotenv", "title": "Dotenv", "icon": "dotenv.svg", "categories": ["Library"] }
+    {
+      "key": "docker",
+      "title": "Docker",
+      "icon": "docker.svg",
+      "categories": ["Core"]
+    },
+    {
+      "key": "vercel",
+      "title": "Vercel",
+      "icon": "vercel.png",
+      "darkIcon": "vercel-light.svg",
+      "categories": ["Cloud Hosting", "Deployment"],
+      "theme": true
+    },
+    {
+      "key": "aws",
+      "title": "AWS",
+      "icon": "aws.png",
+      "darkIcon": "aws-light.png",
+      "categories": ["Cloud Hosting", "Deployment"],
+      "theme": true
+    },
+    {
+      "key": "render",
+      "title": "Render",
+      "icon": "Render_light.svg",
+      "darkIcon": "Render_dark.svg",
+      "categories": ["Cloud Hosting", "Deployment"],
+      "theme": true
+    },
+    {
+      "key": "postman",
+      "title": "Postman",
+      "icon": "postman.svg",
+      "categories": ["Development Tools"]
+    },
+    {
+      "key": "bun",
+      "title": "Bun",
+      "icon": "bun.svg",
+      "categories": ["Development Tools", "Runtime"]
+    },
+    {
+      "key": "vite",
+      "title": "Vite",
+      "icon": "vite.svg",
+      "categories": ["Build Tool"]
+    },
+    {
+      "key": "turborepo",
+      "title": "Turborepo",
+      "icon": "Turborepo_light.svg",
+      "darkIcon": "Turborepo_dark.svg",
+      "categories": ["Build Tool"],
+      "theme": true
+    },
+    {
+      "key": "neovim",
+      "title": "Neovim",
+      "icon": "neovim.svg",
+      "categories": ["Development Tools"]
+    },
+    {
+      "key": "cursor",
+      "title": "Cursor",
+      "icon": "cursor.svg",
+      "categories": ["Development Tools"]
+    },
+    {
+      "key": "figma",
+      "title": "Figma",
+      "icon": "figma.svg",
+      "categories": ["Design Tool"]
+    },
+    {
+      "key": "n8n",
+      "title": "n8n",
+      "icon": "n8n.svg",
+      "categories": ["Automation"]
+    },
+    {
+      "key": "notion",
+      "title": "Notion",
+      "icon": "notion.svg",
+      "categories": ["Productivity"]
+    },
+    {
+      "key": "obsidian",
+      "title": "Obsidian",
+      "icon": "obsidian.svg",
+      "categories": ["Productivity"]
+    },
+    {
+      "key": "dotenv",
+      "title": "Dotenv",
+      "icon": "dotenv.svg",
+      "categories": ["Library"]
+    }
   ],
+  "skillsPage": {
+    "categoryOrder": [
+      "Language",
+      "Core",
+      "Library",
+      "Framework",
+      "Database",
+      "Auth Services",
+      "Development Tools"
+    ],
+    "intro": [
+      [
+        { "type": "text", "value": "My main tech stack is " },
+        { "type": "badge", "key": "next" },
+        { "type": "text", "value": " framework with " },
+        { "type": "badge", "key": "tailwindcss" },
+        {
+          "type": "text",
+          "value": " as a styling library. For the database, I use "
+        },
+        { "type": "badge", "key": "postgresql" },
+        { "type": "text", "value": " deployed on " },
+        { "type": "badge", "key": "supabase" },
+        { "type": "text", "value": " with " },
+        { "type": "badge", "key": "drizzle" },
+        { "type": "text", "value": " as an ORM." }
+      ],
+      [
+        {
+          "type": "text",
+          "value": "For database management and rapid schema exploration, I rely on "
+        },
+        { "type": "badge", "key": "drizzle" },
+        {
+          "type": "text",
+          "value": ". I focus on building scalable, performant, and type-safe applications that bridge the gap between complex backends and intuitive user interfaces."
+        }
+      ]
+    ]
+  },
   "socialLinks": [
     {
       "icon": "github.webp",

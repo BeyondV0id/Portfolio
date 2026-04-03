@@ -1,12 +1,10 @@
-import { Feather } from "@phosphor-icons/react/dist/ssr";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 import { Container } from "@/components/container";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { TECH_STACK } from "@/features/portfolio/data";
+import { SKILLS_PAGE, TECH_STACK } from "@/features/portfolio/data";
 import { cn } from "@/lib/utils";
 
 // Helper grouping function
@@ -20,19 +18,16 @@ const groupedTechs = TECH_STACK.reduce(
   {} as Record<string, typeof TECH_STACK>,
 );
 
-const categoryOrder = [
-  "Language",
-  "Core",
-  "Library",
-  "Framework",
-  "Database",
-  "Auth Services",
-  "Development Tools",
-];
+const techByKey = TECH_STACK.reduce<
+  Record<string, (typeof TECH_STACK)[number]>
+>((acc, tech) => {
+  acc[tech.key] = tech;
+  return acc;
+}, {});
 
 const sortedCategories = Object.keys(groupedTechs).sort((a, b) => {
-  const idxA = categoryOrder.indexOf(a);
-  const idxB = categoryOrder.indexOf(b);
+  const idxA = SKILLS_PAGE.categoryOrder.indexOf(a);
+  const idxB = SKILLS_PAGE.categoryOrder.indexOf(b);
   if (idxA === -1) return 1;
   if (idxB === -1) return -1;
   return idxA - idxB;
@@ -209,31 +204,45 @@ export default function SkillsPage() {
       >
         <Container delay={0.2} className="px-6 py-10 pb-10">
           <div className="text-muted-foreground leading-loose text-[15px] max-w-2xl mt-4 mb-4">
-            <p className="mb-6">
-              My main tech stack is{" "}
-              <TechBadge title="Next.js" icon="nextjs.svg" /> framework with{" "}
-              <TechBadge title="Tailwind CSS" icon="tailwindcss.svg" /> as a
-              styling library. For the database, I use{" "}
-              <TechBadge title="PostgreSQL" icon="postgresql.svg" /> deployed on{" "}
-              <TechBadge title="Supabase" icon="supabase.svg" /> with{" "}
-              <TechBadge
-                title="Drizzle ORM"
-                icon="Drizzle ORM_dark.svg"
-                theme={false}
-              />{" "}
-              as an ORM.
-            </p>
-            <p>
-              For database management and rapid schema exploration, I rely on{" "}
-              <TechBadge
-                title="Drizzle Studio"
-                icon="Drizzle ORM_dark.svg"
-                theme={false}
-              />
-              . I focus on building scalable, performant, and type-safe
-              applications that bridge the gap between complex backends and
-              intuitive user interfaces.
-            </p>
+            {SKILLS_PAGE.intro.map((line, lineIdx) => (
+              <p
+                key={`intro-${lineIdx}`}
+                className={lineIdx === 0 ? "mb-6" : undefined}
+              >
+                {line.map((segment, segmentIdx) => {
+                  if (segment.type === "text") {
+                    return (
+                      <React.Fragment
+                        key={`intro-${lineIdx}-text-${segmentIdx}`}
+                      >
+                        {segment.value}
+                      </React.Fragment>
+                    );
+                  }
+
+                  const tech = techByKey[segment.key];
+                  if (!tech) {
+                    return (
+                      <React.Fragment
+                        key={`intro-${lineIdx}-missing-${segmentIdx}`}
+                      >
+                        {segment.key}
+                      </React.Fragment>
+                    );
+                  }
+
+                  return (
+                    <TechBadge
+                      key={`intro-${lineIdx}-badge-${segmentIdx}`}
+                      title={tech.title}
+                      icon={tech.icon}
+                      darkIcon={tech.darkIcon}
+                      theme={tech.theme}
+                    />
+                  );
+                })}
+              </p>
+            ))}
           </div>
 
           <div className="flex flex-col gap-0">

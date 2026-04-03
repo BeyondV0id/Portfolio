@@ -53,12 +53,7 @@
           "employmentType": "Internship",
           "description": "Analyzed datasets, cleaned data using Python, and created visual insights.",
           "icon": "business",
-          "skills": [
-            "Python",
-            "Pandas",
-            "Data Analytics",
-            "Visualization"
-          ]
+          "skills": ["Python", "Pandas", "Data Analytics", "Visualization"]
         }
       ]
     },
@@ -77,11 +72,7 @@
           "employmentType": "Internship",
           "description": "Built ML models, optimized pipelines, and worked on analytics tasks.",
           "icon": "code",
-          "skills": [
-            "Machine Learning",
-            "Python",
-            "Algorithms"
-          ]
+          "skills": ["Machine Learning", "Python", "Algorithms"]
         }
       ]
     },
@@ -100,11 +91,7 @@
           "employmentType": "Internship",
           "description": "Worked on industrial data analysis and reporting.",
           "icon": "factory",
-          "skills": [
-            "Data Analysis",
-            "Reporting",
-            "Operations"
-          ]
+          "skills": ["Data Analysis", "Reporting", "Operations"]
         }
       ]
     }
@@ -116,12 +103,7 @@
       "title": "Plant Disease Prediction",
       "image": "",
       "pinned": true,
-      "skills": [
-        "Python",
-        "Scikit-learn",
-        "Pandas",
-        "NumPy"
-      ],
+      "skills": ["Python", "Scikit-learn", "Pandas", "NumPy"],
       "description": "Machine learning model to predict plant diseases using sensor data.",
       "links": [],
       "isExpanded": true
@@ -131,11 +113,7 @@
       "title": "Australia Wildfire Dashboard",
       "image": "",
       "pinned": true,
-      "skills": [
-        "Python",
-        "Dash",
-        "Plotly"
-      ],
+      "skills": ["Python", "Dash", "Plotly"],
       "description": "Interactive dashboard to analyze wildfire trends.",
       "links": [],
       "isExpanded": true
@@ -143,15 +121,132 @@
   ],
 
   "techStack": [
-    { "key": "python", "title": "Python", "icon": "python.svg", "categories": ["Language"] },
-    { "key": "pandas", "title": "Pandas", "icon": "Pandas.svg", "categories": ["Library"] },
-    { "key": "numpy", "title": "NumPy", "icon": "numpy.svg", "categories": ["Library"] },
-    { "key": "scikit-learn", "title": "scikit-learn", "icon": "scikit-learn.svg", "categories": ["Library"] },
-    { "key": "matplotlib", "title": "Matplotlib", "icon": "Matplotlib.svg", "categories": ["Visualization"] },
-    { "key": "seaborn", "title": "Seaborn", "icon": "seaborn.svg", "categories": ["Visualization"] },
-    { "key": "tableau", "title": "Tableau", "icon": "tableau.svg", "categories": ["Visualization"] },
-    { "key": "streamlit", "title": "Streamlit", "icon": "Streamlit.svg", "categories": ["Framework"] }
+    {
+      "key": "python",
+      "title": "Python",
+      "icon": "python.svg",
+      "categories": ["Language"]
+    },
+    {
+      "key": "pandas",
+      "title": "Pandas",
+      "icon": "Pandas.svg",
+      "categories": ["Library"]
+    },
+    {
+      "key": "numpy",
+      "title": "NumPy",
+      "icon": "numpy.svg",
+      "categories": ["Library"]
+    },
+    {
+      "key": "scikit-learn",
+      "title": "scikit-learn",
+      "icon": "scikit-learn.svg",
+      "categories": ["Library"]
+    },
+    {
+      "key": "matplotlib",
+      "title": "Matplotlib",
+      "icon": "Matplotlib.svg",
+      "categories": ["Visualization"]
+    },
+    {
+      "key": "seaborn",
+      "title": "Seaborn",
+      "icon": "seaborn.svg",
+      "categories": ["Visualization"]
+    },
+    {
+      "key": "tableau",
+      "title": "Tableau",
+      "icon": "tableau.svg",
+      "categories": ["Visualization"]
+    },
+    {
+      "key": "streamlit",
+      "title": "Streamlit",
+      "icon": "Streamlit.svg",
+      "categories": ["Framework"]
+    },
+    {
+      "key": "flask",
+      "title": "Flask",
+      "icon": "Flask.svg",
+      "categories": ["Framework"]
+    },
+    {
+      "key": "mysql",
+      "title": "MySQL",
+      "icon": "mysql.svg",
+      "categories": ["Database"]
+    },
+    {
+      "key": "mongodb",
+      "title": "MongoDB",
+      "icon": "MongoDB_light.svg",
+      "darkIcon": "MongoDB_dark.svg",
+      "categories": ["Database"],
+      "theme": true
+    }
   ],
+
+  "skillsPage": {
+    "categoryOrder": [
+      "Language",
+      "Library",
+      "Framework",
+      "Database",
+      "Visualization"
+    ],
+    "intro": [
+      [
+        {
+          "type": "text",
+          "value": "My core data and analytics stack focuses on "
+        },
+        { "type": "badge", "key": "python" },
+        {
+          "type": "text",
+          "value": " as the primary language for logic and scripting, manipulating datasets efficiently with "
+        },
+        { "type": "badge", "key": "pandas" },
+        { "type": "text", "value": " and " },
+        { "type": "badge", "key": "numpy" },
+        {
+          "type": "text",
+          "value": ". For predictive modeling, I rely heavily on "
+        },
+        { "type": "badge", "key": "scikit-learn" },
+        {
+          "type": "text",
+          "value": " to build and refine machine learning estimators."
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "value": "When telling stories with data, I integrate "
+        },
+        { "type": "badge", "key": "matplotlib" },
+        { "type": "text", "value": " and " },
+        { "type": "badge", "key": "seaborn" },
+        { "type": "text", "value": " for raw plotting, while using " },
+        { "type": "badge", "key": "tableau" },
+        {
+          "type": "text",
+          "value": " to author interactive enterprise dashboards. For full end-to-end data apps, I use "
+        },
+        { "type": "badge", "key": "streamlit" },
+        {
+          "type": "text",
+          "value": " to rapidly deploy ML inference tools to the web, backed by "
+        },
+        { "type": "badge", "key": "flask" },
+        { "type": "text", "value": "." }
+      ]
+    ]
+  },
 
   "socialLinks": [
     {
