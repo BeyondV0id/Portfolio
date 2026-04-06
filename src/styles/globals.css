@@ -43,7 +43,9 @@
   --color-selection: var(--selection);
   --color-selection-foreground: var(--selection-foreground);
 
-  --font-sans: var(--font-sans);
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: var(--font-mono);
 
   --shadow-popover: var(--shadow-popover);
@@ -252,7 +254,7 @@
 
 .dark {
   /* custom */
-  --background: #0e0d09;
+  --background: #0a0a0a;
 
   /* zinc-50 */
   --foreground: oklch(0.985 0 0);
@@ -272,8 +274,8 @@
   /* zinc-800 */
   --muted: oklch(0.274 0.006 286.033);
 
-  /* zinc-400 */
-  --muted-foreground: oklch(0.705 0.015 286.067);
+  /* zinc-500 */
+  --muted-foreground: oklch(0.552 0.016 285.938);
 
   /* zinc-900 */
   --card: oklch(0.21 0.006 285.885);
@@ -370,7 +372,8 @@
 
   html,
   body {
-    @apply overflow-x-hidden;
+    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -378,6 +381,11 @@
 
   body {
     @apply bg-background font-sans text-foreground antialiased;
+    font-family:
+      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-style: normal;
+    font-weight: 400;
     text-rendering: optimizeLegibility;
   }
 

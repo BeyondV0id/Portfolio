@@ -2,7 +2,7 @@
   "profile": {
     "firstName": "Harsha",
     "lastName": "Vardhan",
-    "displayName": "Harsha Vardhan",
+    "displayName": "Harsha Vardhan Gandepalli",
     "username": "BeyondV0id",
     "gender": "male",
     "pronouns": "he/him",
@@ -18,7 +18,7 @@
     "website": "",
     "jobTitle": "Full Stack Developer",
     "jobs": [],
-    "about": "Hi, I’m Harsha Vardhan — a **Full Stack Developer** from **Vizag, India**. I build **clean, modern web applications** using **TypeScript, React.js, and Node.js**, with a strong focus on performance, scalability, and intuitive user experience.\n\nI also work at the intersection of **software and machine learning**, using **Python and data-driven approaches** to create **intelligent features** that solve real problems. My goal is to combine **solid engineering** with **practical AI** to build products that are both impactful and thoughtfully designed.",
+    "about": "Hi, I’m Harsha Vardhan. I build <strong>clean, modern web applications</strong> with a focus on <strong>performance</strong> and <strong>intuitive user experience</strong>.\n\nMy main tech stack is <span class='group inline-flex items-center gap-1.5 leading-5 rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm font-normal text-muted-foreground align-middle transition-all duration-300 hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 relative -top-[1.5px] select-none'><img src='/icons/nextjs.svg' alt='Next.js icon' width='16' height='16' class='shrink-0 w-[16px] h-[16px] object-contain'/> Next.js</span>, <span class='group inline-flex items-center gap-1.5 leading-5 rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm font-normal text-muted-foreground align-middle transition-all duration-300 hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 relative -top-[1.5px] select-none'><img src='/icons/react.svg' alt='React icon' width='16' height='16' class='shrink-0 w-[16px] h-[16px] object-contain'/> React</span>, and <span class='group inline-flex items-center gap-1.5 leading-5 rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm font-normal text-muted-foreground align-middle transition-all duration-300 hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 relative -top-[1.5px] select-none'><img src='/icons/express.png' alt='Express icon' width='16' height='16' class='shrink-0 w-[16px] h-[16px] object-contain'/> Express</span>. I enjoy crafting <strong>robust, maintainable code</strong> and delivering <strong>thoughtful digital products</strong>.",
     "avatar": "/images/image.png",
     "ogImage": "/images/preview-card-dark.png",
     "timeZone": "Asia/Kolkata",
@@ -26,7 +26,7 @@
       "harsha vardhan",
       "BeyondV0id",
       "full stack developer",
-      "pune developer",
+      "vizag developer",
       "ml developer"
     ],
     "dateCreated": "2025-01-01",
