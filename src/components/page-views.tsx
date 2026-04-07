@@ -1,70 +1,70 @@
 "use client";
 
 import { Eye } from "lucide-react";
-import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+
+import { getOrCreateVisitorId } from "@/lib/fingerprint";
 
 function formatViews(count: number) {
   return new Intl.NumberFormat("en-US").format(count);
 }
 
-function getNamespace() {
-  if (typeof window === "undefined") return "local-dev";
-  return window.location.hostname.replace(/[^a-z0-9-]/gi, "-").toLowerCase();
-}
-
 export function PageViews() {
-  const pathname = usePathname();
   const [views, setViews] = useState<number | null>(null);
   const [isError, setIsError] = useState(false);
 
-  const key = useMemo(() => {
-    if (!pathname) return "home";
-    const normalized = pathname === "/" ? "home" : pathname.replace(/\//g, "-");
-    return `page-${normalized}`;
-  }, [pathname]);
-
   useEffect(() => {
-    let isMounted = true;
+    let cancelled = false;
 
-    async function hitViewCounter() {
+    async function fetchVisitors() {
       try {
         setIsError(false);
-        const namespace = getNamespace();
-        const response = await fetch(
-          `https://api.countapi.xyz/hit/${namespace}/${key}`,
-          {
-            cache: "no-store",
+        const fingerprint = getOrCreateVisitorId();
+
+        const response = await fetch("/api/visitors", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
           },
-        );
+          body: JSON.stringify({ fingerprint }),
+          cache: "no-store",
+        });
 
-        if (!response.ok) throw new Error("Failed to fetch views");
-        const data = (await response.json()) as { value?: number };
+        if (!response.ok) {
+          throw new Error("Failed to fetch visitor count");
+        }
 
-        if (isMounted) {
-          setViews(typeof data.value === "number" ? data.value : null);
+        const data = (await response.json()) as { uniqueVisitors?: number };
+        const nextViews = Number(data.uniqueVisitors);
+
+        if (!Number.isFinite(nextViews) || nextViews < 0) {
+          throw new Error("Invalid visitor count");
+        }
+
+        if (!cancelled) {
+          setViews(nextViews);
         }
       } catch {
-        if (isMounted) {
+        if (!cancelled) {
           setIsError(true);
           setViews(null);
         }
       }
     }
 
-    hitViewCounter();
+    fetchVisitors();
 
     return () => {
-      isMounted = false;
+      cancelled = true;
     };
-  }, [key]);
+  }, []);
 
   return (
     <div className="inline-flex items-center gap-1.5 text-[11px] leading-none text-muted-foreground">
       <Eye className="size-3.5 opacity-80" aria-hidden="true" />
       <span
         className="font-medium tracking-wide text-muted-foreground"
-        aria-label="Page views"
+        aria-label="Unique visitors"
       >
         {isError ? "--" : views === null ? "..." : formatViews(views)}
       </span>
