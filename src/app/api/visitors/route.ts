@@ -32,6 +32,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       uniqueVisitors: data.uniqueVisitors,
+      totalVisits: data.totalVisits,
     });
   } catch (error) {
     console.error("Error tracking visitor:", error);
@@ -48,6 +49,7 @@ export async function POST(request: NextRequest) {
         {
           success: false,
           uniqueVisitors: 0,
+          totalVisits: 0,
           error: "Failed to track visitor",
         },
         { status: 500 },
@@ -69,6 +71,7 @@ export async function GET() {
       {
         success: false,
         uniqueVisitors: 0,
+        totalVisits: 0,
         error: "Failed to get visitor stats",
       },
       { status: 500 },

@@ -34,8 +34,8 @@ export function PageViews() {
           throw new Error("Failed to fetch visitor count");
         }
 
-        const data = (await response.json()) as { uniqueVisitors?: number };
-        const nextViews = Number(data.uniqueVisitors);
+        const data = (await response.json()) as { totalVisits?: number };
+        const nextViews = Number(data.totalVisits);
 
         if (!Number.isFinite(nextViews) || nextViews < 0) {
           throw new Error("Invalid visitor count");
@@ -64,7 +64,7 @@ export function PageViews() {
       <Eye className="size-3.5 opacity-80" aria-hidden="true" />
       <span
         className="font-medium tracking-wide text-muted-foreground"
-        aria-label="Unique visitors"
+        aria-label="Page views"
       >
         {isError ? "--" : views === null ? "..." : formatViews(views)}
       </span>
