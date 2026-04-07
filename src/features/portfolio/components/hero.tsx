@@ -5,7 +5,6 @@ import { Suspense } from "react";
 
 import { Container } from "@/components/container";
 import { Markdown } from "@/components/markdown";
-import { PageViews } from "@/components/page-views";
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { PROFILE_IMAGES } from "@/config/site";
 import { SOCIAL_LINKS, USER } from "@/features/portfolio/data";
@@ -111,9 +110,6 @@ export function Hero() {
         </div>
 
         <div className="flex flex-1 flex-col justify-end pl-0 sm:pl-2">
-          <div className="mb-2 flex w-full justify-end sm:mb-1">
-            <PageViews />
-          </div>
           {/* Bottom row: name and title */}
           <Container delay={0.1}>
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">

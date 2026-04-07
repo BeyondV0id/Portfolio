@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 interface Position {
   x: number;
@@ -14,21 +14,64 @@ interface SpriteSet {
 const SPRITE_SETS: SpriteSet = {
   idle: [[-3, -3]],
   alert: [[-7, -3]],
-  scratchSelf: [[-5, 0], [-6, 0], [-7, 0]],
-  scratchWallN: [[0, 0], [0, -1]],
-  scratchWallS: [[-7, -1], [-6, -2]],
-  scratchWallE: [[-2, -2], [-2, -3]],
-  scratchWallW: [[-4, 0], [-4, -1]],
+  scratchSelf: [
+    [-5, 0],
+    [-6, 0],
+    [-7, 0],
+  ],
+  scratchWallN: [
+    [0, 0],
+    [0, -1],
+  ],
+  scratchWallS: [
+    [-7, -1],
+    [-6, -2],
+  ],
+  scratchWallE: [
+    [-2, -2],
+    [-2, -3],
+  ],
+  scratchWallW: [
+    [-4, 0],
+    [-4, -1],
+  ],
   tired: [[-3, -2]],
-  sleeping: [[-2, 0], [-2, -1]],
-  N: [[-1, -2], [-1, -3]],
-  NE: [[0, -2], [0, -3]],
-  E: [[-3, 0], [-3, -1]],
-  SE: [[-5, -1], [-5, -2]],
-  S: [[-6, -3], [-7, -2]],
-  SW: [[-5, -3], [-6, -1]],
-  W: [[-4, -2], [-4, -3]],
-  NW: [[-1, 0], [-1, -1]],
+  sleeping: [
+    [-2, 0],
+    [-2, -1],
+  ],
+  N: [
+    [-1, -2],
+    [-1, -3],
+  ],
+  NE: [
+    [0, -2],
+    [0, -3],
+  ],
+  E: [
+    [-3, 0],
+    [-3, -1],
+  ],
+  SE: [
+    [-5, -1],
+    [-5, -2],
+  ],
+  S: [
+    [-6, -3],
+    [-7, -2],
+  ],
+  SW: [
+    [-5, -3],
+    [-6, -1],
+  ],
+  W: [
+    [-4, -2],
+    [-4, -3],
+  ],
+  NW: [
+    [-1, 0],
+    [-1, -1],
+  ],
 };
 
 const NEKO_SPEED = 10;
@@ -56,16 +99,26 @@ export default function OnekoCat() {
   };
 
   const handleIdle = () => {
-    setIdleTime(prev => prev + 1);
+    setIdleTime((prev) => prev + 1);
 
-    if (idleTime > 10 && Math.floor(Math.random() * 200) === 0 && !idleAnimation) {
+    if (
+      idleTime > 10 &&
+      Math.floor(Math.random() * 200) === 0 &&
+      !idleAnimation
+    ) {
       const availableIdleAnimations = ["sleeping", "scratchSelf"];
       if (nekoPos.x < 32) availableIdleAnimations.push("scratchWallW");
       if (nekoPos.y < 32) availableIdleAnimations.push("scratchWallN");
-      if (nekoPos.x > window.innerWidth - 32) availableIdleAnimations.push("scratchWallE");
-      if (nekoPos.y > window.innerHeight - 32) availableIdleAnimations.push("scratchWallS");
+      if (nekoPos.x > window.innerWidth - 32)
+        availableIdleAnimations.push("scratchWallE");
+      if (nekoPos.y > window.innerHeight - 32)
+        availableIdleAnimations.push("scratchWallS");
 
-      setIdleAnimation(availableIdleAnimations[Math.floor(Math.random() * availableIdleAnimations.length)]);
+      setIdleAnimation(
+        availableIdleAnimations[
+          Math.floor(Math.random() * availableIdleAnimations.length)
+        ],
+      );
     }
 
     switch (idleAnimation) {
@@ -89,13 +142,13 @@ export default function OnekoCat() {
         setSprite("idle", 0);
         return;
     }
-    setIdleAnimationFrame(prev => prev + 1);
+    setIdleAnimationFrame((prev) => prev + 1);
   };
 
   const handleFrame = () => {
     if (!nekoRef.current) return;
 
-    setFrameCount(prev => prev + 1);
+    setFrameCount((prev) => prev + 1);
     const diffX = nekoPos.x - mousePos.x;
     const diffY = nekoPos.y - mousePos.y;
     const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
@@ -110,7 +163,7 @@ export default function OnekoCat() {
 
     if (idleTime > 1) {
       setSprite("alert", 0);
-      setIdleTime(prev => Math.max(prev - 1, 0));
+      setIdleTime((prev) => Math.max(prev - 1, 0));
       return;
     }
 
@@ -126,7 +179,7 @@ export default function OnekoCat() {
 
     setNekoPos({
       x: Math.min(Math.max(16, newX), window.innerWidth - 16),
-      y: Math.min(Math.max(16, newY), window.innerHeight - 16)
+      y: Math.min(Math.max(16, newY), window.innerHeight - 16),
     });
   };
 
@@ -149,35 +202,46 @@ export default function OnekoCat() {
     };
 
     // Check for reduced motion preference
-    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (!isReducedMotion) {
-      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener("mousemove", handleMouseMove);
       animationFrameId.current = requestAnimationFrame(animate);
     }
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener("mousemove", handleMouseMove);
       if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);
       }
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [nekoPos, mousePos, frameCount, idleTime, idleAnimation, idleAnimationFrame]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    nekoPos,
+    mousePos,
+    frameCount,
+    idleTime,
+    idleAnimation,
+    idleAnimationFrame,
+  ]);
 
   return (
     <div
       ref={nekoRef}
       aria-hidden="true"
       style={{
-        width: '32px',
-        height: '32px',
-        position: 'fixed',
-        pointerEvents: 'none',
-        imageRendering: 'pixelated',
+        width: "32px",
+        height: "32px",
+        position: "fixed",
+        pointerEvents: "none",
+        imageRendering: "pixelated",
         left: `${nekoPos.x - 16}px`,
         top: `${nekoPos.y - 16}px`,
         zIndex: 2147483647,
-        backgroundImage: 'url(/images/oneko.gif)',
+        backgroundImage: "url(/images/oneko.gif)",
+        backgroundPosition: "-96px -96px",
+        backgroundRepeat: "no-repeat",
       }}
     />
   );
