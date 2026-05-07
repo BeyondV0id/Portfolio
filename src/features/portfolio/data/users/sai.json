@@ -34,31 +34,6 @@
   },
   "experiences": [
     {
-      "id": "vrinchisala-labs",
-      "companyName": "IIT Ropar - Winter Internship",
-      "companyLogo": "/images/iitrpr-logo.png",
-      "positions": [
-        {
-          "id": "mern-stack-intern",
-          "title": "Full Stack Web Developer Intern",
-          "employmentPeriod": {
-            "start": "Jan 2026",
-            "end": "Present"
-          },
-          "employmentType": "Internship",
-          "description": "Architected and deployed scalable web applications using the MERN stack (MongoDB, Express.js, Angular, and Node.js). Developed and optimized secure REST APIs using Node.js and Express to handle asynchronous data requests and improve application response times.",
-          "icon": "code",
-          "skills": [
-            "MongoDB",
-            "Express.js",
-            "Angular",
-            "Node.js",
-            "REST APIs"
-          ]
-        }
-      ]
-    },
-    {
       "id": "eduskills-intern",
       "companyName": "Eduskills",
       "companyLogo": "/images/eduskills.png",
