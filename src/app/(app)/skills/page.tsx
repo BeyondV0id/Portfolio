@@ -59,7 +59,7 @@ function TechBadge({
       : null;
 
   return (
-    <span className="group inline-flex items-center gap-1.5 leading-none rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm font-medium text-muted-foreground align-middle transition-all duration-300 hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 relative -top-[1.5px] select-none">
+    <span className="group inline-flex items-center gap-1.5 leading-none rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm font-medium text-muted-foreground align-middle transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:shadow-md hover:shadow-zinc-200/40 dark:hover:shadow-zinc-950/40 hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 relative -top-[1.5px] select-none cursor-pointer">
       {theme && darkIconSrc ? (
         <>
           <Image
@@ -203,7 +203,7 @@ export default function SkillsPage() {
         }}
       >
         <Container delay={0.2} className="px-6 py-10 pb-10">
-          <div className="text-muted-foreground leading-loose text-[15px] max-w-2xl mt-4 mb-4">
+          <div className="text-muted-foreground leading-loose text-[15px] max-w-4xl mx-auto -mt-4 mb-4">
             {SKILLS_PAGE.intro.map((line, lineIdx) => (
               <p
                 key={`intro-${lineIdx}`}
@@ -288,7 +288,7 @@ export default function SkillsPage() {
                             className={cn(
                               "group relative flex min-w-fit cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[8px] border border-border bg-transparent px-2 py-1",
                               "text-sm transition-all duration-300 select-none",
-                              "hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50",
+                              "hover:-translate-y-[2px] hover:scale-[1.03] hover:shadow-md hover:shadow-zinc-200/40 dark:hover:shadow-zinc-950/40 hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50",
                             )}
                             aria-label={tech.title}
                           >

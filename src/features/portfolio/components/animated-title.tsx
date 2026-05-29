@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
 import { TextAnimate } from "@/components/ui/text-animate";
 
@@ -17,10 +17,10 @@ export function AnimatedTitle() {
 
   return (
     <div className="h-5 mt-1">
-      <TextAnimate 
-        key={titles[titleIndex]} 
-        animation="slideUp" 
-        by="character" 
+      <TextAnimate
+        key={titles[titleIndex]}
+        animation="slideUp"
+        by="character"
         className="text-sm tracking-tight text-muted-foreground"
       >
         {titles[titleIndex]}

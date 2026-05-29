@@ -146,7 +146,7 @@ export function Hero() {
       {/* About Section */}
       <Container delay={0.2}>
         <div
-          className="px-6 pt-6 pb-2 text-sm leading-5 font-normal text-muted-foreground [&>p]:mb-4 [&_strong]:font-semibold [&_strong]:text-foreground"
+          className="px-4 pt-4 pb-2 text-sm leading-5 font-normal text-muted-foreground [&>p]:mb-4 [&_strong]:font-semibold [&_strong]:text-foreground"
           style={{
             fontFamily:
               'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',

@@ -1,4 +1,4 @@
-import { ArrowLeft, ExternalLink,FileText, Github, Globe } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Github, Globe } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -191,7 +191,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       <span>Github</span>
                       <span className="absolute left-0 bottom-0 w-full h-px bg-title origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
                     </div>
-                    <ExternalLink className="opacity-0 hidden lg:block group-hover:opacity-100 transition-opacity duration-300" height={18} width={18} />
+                    <ArrowUpRight className="opacity-0 hidden lg:block group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 ml-1 stroke-[2.25]" height={15} width={15} />
                   </a>
                 ) : (
                   <div className="py-[11px] flex text-[1.05rem] text-foreground opacity-40 w-full items-center justify-center cursor-not-allowed select-none">
@@ -218,39 +218,12 @@ export default async function ProjectDetailPage({ params }: Props) {
                       <span>Website</span>
                       <span className="absolute left-0 bottom-0 w-full h-px bg-title origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
                     </div>
-                    <ExternalLink className="opacity-0 hidden lg:block group-hover:opacity-100 transition-opacity duration-300" height={18} width={18} />
+                    <ArrowUpRight className="opacity-0 hidden lg:block group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 ml-1 stroke-[2.25]" height={15} width={15} />
                   </a>
                 ) : (
                   <div className="py-[11px] flex text-[1.05rem] text-foreground opacity-40 w-full items-center justify-center cursor-not-allowed select-none">
                     <Globe className="w-[15px] h-[15px] shrink-0" />
                     <div className="relative ml-1.5"><span>Website</span></div>
-                  </div>
-                )}
-
-                {/* Vertical separator */}
-                <div className="self-stretch">
-                  <div className="h-full w-px" style={DASH_V} />
-                </div>
-
-                {/* Post */}
-                {postLink ? (
-                  <a
-                    href={postLink.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group py-[11px] flex text-[1.05rem] text-foreground hover:text-title hover:bg-mutedBackground transition-all duration-300 w-full items-center justify-center cursor-pointer"
-                  >
-                    <FileText className="w-[15px] h-[15px] shrink-0" />
-                    <div className="relative ml-1.5">
-                      <span>Post</span>
-                      <span className="absolute left-0 bottom-0 w-full h-px bg-title origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
-                    </div>
-                    <ExternalLink className="opacity-0 hidden lg:block group-hover:opacity-100 transition-opacity duration-300" height={18} width={18} />
-                  </a>
-                ) : (
-                  <div className="py-[11px] flex text-[1.05rem] text-foreground opacity-40 w-full items-center justify-center cursor-not-allowed select-none">
-                    <FileText className="w-[15px] h-[15px] shrink-0" />
-                    <div className="relative ml-1.5"><span>Post</span></div>
                   </div>
                 )}
               </div>
@@ -315,7 +288,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                     href={`https://www.google.com/search?q=${encodeURIComponent(skill)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative flex min-w-fit cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm transition-all duration-300 hover:border-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 select-none"
+                    className="group relative flex min-w-fit cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:shadow-md hover:shadow-zinc-200/40 dark:hover:shadow-zinc-950/40 hover:border-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 select-none"
                   >
                     <span className="font-medium text-muted-foreground transition-colors group-hover:text-foreground whitespace-nowrap">
                       {skill}

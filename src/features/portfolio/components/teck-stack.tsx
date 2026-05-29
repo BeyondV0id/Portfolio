@@ -52,7 +52,7 @@ export function TeckStack() {
                   className={cn(
                     "group relative flex min-w-fit flex-1 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[8px] border border-border bg-transparent px-2 py-1",
                     "text-sm transition-all duration-300 select-none",
-                    "hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50",
+                    "hover:-translate-y-[2px] hover:scale-[1.03] hover:shadow-md hover:shadow-zinc-200/40 dark:hover:shadow-zinc-950/40 hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50",
                   )}
                   aria-label={tech.title}
                 >
