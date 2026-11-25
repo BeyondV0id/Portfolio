@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "../lib/fluid-functionalism/reveal.css";
 
 @plugin "@tailwindcss/typography";
 
@@ -27,6 +28,7 @@
   --color-popover-border: var(--popover-border);
   --color-accent: var(--accent);
   --color-accent2: var(--accent2);
+  --color-hover: var(--muted);
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-edge: var(--edge);
@@ -44,22 +46,16 @@
   --color-selection-foreground: var(--selection-foreground);
 
   --font-sans:
-    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: var(--font-mono);
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
 
   --shadow-popover: var(--shadow-popover);
 
   --animate-fade-in: fade-in var(--tw-duration, 200ms) ease-out;
   --animate-fade-out: fade-out var(--tw-duration, 200ms) ease-out;
-
-  --animate-collapsible-fade-down:
-    collapsible-down var(--tw-duration, 200ms) ease-out,
-    fade-in var(--tw-duration, 200ms) ease-out;
-
-  --animate-collapsible-fade-up:
-    collapsible-up var(--tw-duration, 200ms) ease-out,
-    fade-out var(--tw-duration, 200ms) ease-out;
 
   @keyframes fade-in {
     from {
@@ -78,28 +74,12 @@
       opacity: 0;
     }
   }
-
-  @keyframes fade-in-blur {
-    from {
-      opacity: 0;
-      filter: blur(10px);
-    }
-    to {
-      opacity: 1;
-      filter: blur(0);
-    }
-  }
-}
-
-@utility animate-fade-in-blur {
-  animation: fade-in-blur 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @utility no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
     display: none;
   }
@@ -110,235 +90,82 @@
 }
 
 @utility text-xxs {
-  font-size: 0.5625rem; /* 9px */
+  font-size: 0.5625rem;
   line-height: 0.75rem;
-}
-
-@utility bg-dot-grid {
-  background-image: radial-gradient(var(--border) 1px, transparent 0);
-  background-size: 10px 10px;
-}
-
-@utility screen-line-before {
-  @apply relative before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:-z-1 before:h-px before:w-screen before:bg-[image:repeating-linear-gradient(to_right,var(--dash-border)_0,var(--dash-border)_6px,transparent_6px,transparent_14px)];
-}
-
-@utility screen-line-after {
-  @apply relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:-z-1 after:h-px after:w-screen after:bg-[image:repeating-linear-gradient(to_right,var(--dash-border)_0,var(--dash-border)_6px,transparent_6px,transparent_14px)];
-}
-
-@utility screen-border-x {
-  background-image:
-    repeating-linear-gradient(
-      to bottom,
-      var(--dash-border) 0px,
-      var(--dash-border) 6px,
-      transparent 6px,
-      transparent 14px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      var(--dash-border) 0px,
-      var(--dash-border) 6px,
-      transparent 6px,
-      transparent 14px
-    );
-  background-size:
-    1px 100%,
-    1px 100%;
-  background-position:
-    left top,
-    right top;
-  background-repeat: no-repeat;
 }
 
 @utility step {
   counter-increment: step;
   &::before {
-    @apply mr-2 inline-flex size-7 items-center justify-center rounded-full border border-muted-foreground/15 bg-muted text-center -indent-px text-sm font-medium text-muted-foreground ring-1 ring-edge ring-offset-1 ring-offset-background md:absolute md:-mt-0.5 md:-ml-11.5 md:size-8;
+    @apply mr-2 inline-flex size-7 items-center justify-center rounded-full bg-muted text-center -indent-px text-sm font-medium text-muted-foreground md:absolute md:-mt-0.5 md:-ml-11.5 md:size-8;
     content: counter(step);
   }
 }
 
 :root {
-  /* white */
-  --background: oklch(100% 0.00011 271.152);
-
-  /* zinc-950 */
-  --foreground: oklch(0.141 0.005 285.823);
-
-  /* zinc-950 */
-  --primary: oklch(0.141 0.005 285.823);
-
-  /* zinc-50 */
-  --primary-foreground: oklch(0.985 0 0);
-
-  /* zinc-100 */
-  --secondary: oklch(0.967 0.001 286.375);
-
-  /* zinc-950 */
-  --secondary-foreground: oklch(0.141 0.005 285.823);
-
-  /* zinc-100 */
-  --muted: oklch(0.967 0.001 286.375);
-
-  /* zinc-500 */
-  --muted-foreground: oklch(0.552 0.016 285.938);
-
-  /* white */
-  --card: oklch(1 0 0);
-
-  /* zinc-950 */
-  --card-foreground: oklch(0.141 0.005 285.823);
-
-  /* white */
-  --popover: oklch(1 0 0);
-
-  /* zinc-950 */
-  --popover-foreground: oklch(0.141 0.005 285.823);
-
-  --popover-border: color-mix(in oklab, var(--color-black) 15%, transparent);
-
-  /* zinc-100 */
-  --accent: oklch(0.967 0.001 286.375);
-
+  --background: #faf5f5;
+  --foreground: #17160f;
+  --primary: #262524;
+  --primary-foreground: #faf5f5;
+  --secondary: #f2eded;
+  --secondary-foreground: #17160f;
+  --muted: #f2eded;
+  --muted-foreground: #64625a;
+  --card: #f5f0f0;
+  --card-foreground: #17160f;
+  --popover: #faf5f5;
+  --popover-foreground: #17160f;
+  --popover-border: rgba(23, 22, 15, 0.12);
+  --accent: #efe9e9;
   --accent2: color-mix(in oklab, var(--accent) 50%, transparent);
-
-  /* zinc-900 */
-  --accent-foreground: oklch(0.21 0.006 285.885);
-
-  /* zinc-200 */
-  --border: oklch(0.92 0.004 286.32);
-  --dash-border: #d1d1d1;
-
-  /* color-mix */
+  --accent-foreground: #17160f;
+  --border: #e8e3e3;
   --edge: color-mix(in oklab, var(--border) 64%, var(--background));
-
-  /* zinc-200 */
-  --input: oklch(0.92 0.004 286.32);
-
-  /* zinc-400 */
-  --ring: oklch(0.705 0.015 286.067);
-
+  --input: #e8e3e3;
+  --ring: #8f8c82;
   --info: oklch(0.67 0.17 244.98);
-
-  /* green-500 */
   --success: oklch(0.723 0.219 149.579);
-
-  /* red-600 */
   --destructive: oklch(0.577 0.245 27.325);
-
-  /* blue-700 */
   --link: oklch(0.488 0.243 264.376);
-
-  /* zinc-50 */
-  --code: oklch(0.985 0 0);
-
-  /* zinc-950 */
-  --code-foreground: oklch(0.141 0.005 285.823);
-
-  /* zinc-400 */
-  --code-number: oklch(0.705 0.015 286.067);
-
-  /* zinc-100 */
-  --code-highlight: oklch(0.967 0.001 286.375);
-
-  /* zinc-950 */
-  --selection: oklch(0.141 0.005 285.823);
-
-  /* zinc-50 */
-  --selection-foreground: oklch(0.985 0 0);
-
-  --shadow-popover: 0 6px 24px rgba(0, 0, 0, 0.25);
+  --code: #f4efef;
+  --code-foreground: #17160f;
+  --code-number: #8f8c82;
+  --code-highlight: #eae4e4;
+  --selection: #17160f;
+  --selection-foreground: #faf5f5;
+  --shadow-popover: 0 6px 24px rgba(23, 22, 15, 0.12);
 }
 
 .dark {
-  /* custom */
-  --background: #0a0a0a;
-
-  /* zinc-50 */
-  --foreground: oklch(0.985 0 0);
-
-  /* zinc-50 */
-  --primary: oklch(0.985 0 0);
-
-  /* zinc-950 */
-  --primary-foreground: oklch(0.141 0.005 285.823);
-
-  /* zinc-800 */
-  --secondary: oklch(0.274 0.006 286.033);
-
-  /* zinc-50 */
-  --secondary-foreground: oklch(0.985 0 0);
-
-  /* zinc-800 */
-  --muted: oklch(0.274 0.006 286.033);
-
-  /* zinc-500 */
-  --muted-foreground: oklch(0.552 0.016 285.938);
-
-  /* zinc-900 */
-  --card: oklch(0.21 0.006 285.885);
-
-  /* zinc-50 */
-  --card-foreground: oklch(0.985 0 0);
-
-  /* zinc-900 */
-  --popover: oklch(0.21 0.006 285.885);
-
-  /* zinc-50 */
-  --popover-foreground: oklch(0.985 0 0);
-
-  /* zinc-700 */
-  --popover-border: oklch(0.37 0.013 285.805);
-
-  /* zinc-800 */
-  --accent: oklch(0.274 0.006 286.033);
-
-  --accent2: color-mix(in oklab, var(--accent) 20%, transparent);
-
-  /* zinc-50 */
-  --accent-foreground: oklch(0.985 0 0);
-
-  /* zinc-800 */
-  --border: oklch(0.274 0.006 286.033);
-  --dash-border: #313131;
-
-  /* --edge: color-mix(in oklab, var(--border) 64%, var(--background)); */
-
-  /* zinc-800 */
-  --input: oklch(0.274 0.006 286.033);
-
-  /* zinc-500 */
-  --ring: oklch(0.552 0.016 285.938);
-
-  /* green-500 */
+  --background: #0d0c0a;
+  --foreground: #f5f0f0;
+  --primary: #f5f0f0;
+  --primary-foreground: #0d0c0a;
+  --secondary: #1c1a17;
+  --secondary-foreground: #f5f0f0;
+  --muted: #1c1a17;
+  --muted-foreground: #a39f96;
+  --card: #141310;
+  --card-foreground: #f5f0f0;
+  --popover: #141310;
+  --popover-foreground: #f5f0f0;
+  --popover-border: #2b2924;
+  --accent: #1f1d19;
+  --accent2: color-mix(in oklab, var(--accent) 30%, transparent);
+  --accent-foreground: #f5f0f0;
+  --border: #262420;
+  --edge: color-mix(in oklab, var(--border) 64%, var(--background));
+  --input: #262420;
+  --ring: #706d65;
   --success: oklch(0.723 0.219 149.579);
-
-  /* red-700 */
   --destructive: oklch(0.505 0.213 27.518);
-
-  /* blue-500 */
   --link: oklch(0.623 0.214 259.815);
-
-  /* zinc-900 */
-  --code: oklch(0.21 0.006 285.885);
-
-  /* zinc-50 */
-  --code-foreground: oklch(0.985 0 0);
-
-  /* zinc-500 */
-  --code-number: oklch(0.552 0.016 285.938);
-
-  /* zinc-800 */
-  --code-highlight: oklch(0.274 0.006 286.033);
-
-  /* zinc-50 */
-  --selection: oklch(0.985 0 0);
-
-  /* zinc-950 */
-  --selection-foreground: oklch(0.141 0.005 285.823);
-
+  --code: #141310;
+  --code-foreground: #f5f0f0;
+  --code-number: #706d65;
+  --code-highlight: #1f1d19;
+  --selection: #f5f0f0;
+  --selection-foreground: #0d0c0a;
   --shadow-popover: 0 0 24px rgba(0, 0, 0, 0.5);
 }
 
@@ -351,20 +178,9 @@
     @apply border-border outline-ring/50;
   }
 
-  /* Project-wide vertical side margins should look dashed. */
-  .border-x {
-    border-left-style: dashed;
-    border-right-style: dashed;
-  }
-
   ::selection {
     @apply bg-selection text-selection-foreground;
   }
-
-  /* Temporarily disabled scroll-smooth (added/changed in Next.js 16) because it prevents the page from scrolling fully to the top during client-side navigation. Re-enable once the upstream behavior is fixed or when navigation/transition handling is adjusted. */
-  /* html {
-    @apply motion-safe:scroll-smooth;
-  } */
 
   html {
     scrollbar-gutter: stable;
@@ -381,19 +197,15 @@
 
   body {
     @apply bg-background font-sans text-foreground antialiased;
-    font-family:
-      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-style: normal;
     font-weight: 400;
     text-rendering: optimizeLegibility;
   }
 
   .prose strong {
-    @apply font-bold text-foreground;
+    @apply font-semibold text-foreground;
   }
 
-  /* Custom scrollbar styling. Thanks @shadcn-ui */
   ::-webkit-scrollbar {
     width: 5px;
   }
@@ -412,57 +224,6 @@
   [id] {
     @apply scroll-mt-18;
   }
-
-  /* Thanks https://theme-toggle.rdsx.dev */
-  /* polygon */
-  /* ::view-transition-group(root) {
-    animation-duration: 0.8s;
-    animation-timing-function: linear(
-      0 0%,
-      0.1684 2.66%,
-      0.3165 5.49%,
-      0.446 8.52%,
-      0.5581 11.78%,
-      0.6535 15.29%,
-      0.7341 19.11%,
-      0.8011 23.3%,
-      0.8557 27.93%,
-      0.8962 32.68%,
-      0.9283 38.01%,
-      0.9529 44.08%,
-      0.9711 51.14%,
-      0.9833 59.06%,
-      0.9915 68.74%,
-      1 100%
-    );
-  }
-  ::view-transition-new(root) {
-    animation-name: reveal-light;
-  }
-  ::view-transition-old(root),
-  .dark::view-transition-old(root) {
-    animation: none;
-    z-index: -1;
-  }
-  .dark::view-transition-new(root) {
-    animation-name: reveal-dark;
-  }
-  @keyframes reveal-dark {
-    from {
-      clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%);
-    }
-    to {
-      clip-path: polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%);
-    }
-  }
-  @keyframes reveal-light {
-    from {
-      clip-path: polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%);
-    }
-    to {
-      clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
-    }
-  } */
 
   @keyframes show-top-mask {
     to {
@@ -495,7 +256,6 @@
 
     pre {
       @apply overflow-x-auto overscroll-x-none px-4 py-4 has-data-line-numbers:px-0;
-      /* @apply supports-timeline-scroll:scroll-fade-x supports-timeline-scroll:[--mask-offset-right:-1px] supports-timeline-scroll:[--mask-width:24px] supports-timeline-scroll:has-data-line-numbers:[--mask-offset-left:calc(var(--spacing)*16-4px)]; */
     }
 
     code {
@@ -562,7 +322,6 @@
   --mask-height: 64px;
   --scroll-buffer: 2rem;
 
-  /* Set up the mask layers */
   mask-image:
     linear-gradient(to top, transparent, var(--foreground) 90%),
     linear-gradient(to bottom, transparent 0%, var(--foreground) 100%),
@@ -577,7 +336,6 @@
     0 0,
     0 100%,
     0 0;
-  /* Exclude the gradient areas from the solid mask */
   mask-composite: exclude;
 
   animation-name: show-top-mask, hide-bottom-mask;

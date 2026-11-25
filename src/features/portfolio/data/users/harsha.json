@@ -18,7 +18,7 @@
     "website": "",
     "jobTitle": "Full-Stack Developer",
     "jobs": [],
-    "about": "Hi, I’m Harsha Vardhan, a <strong>Full-Stack Developer</strong> passionate about building <strong>scalable</strong> and modern web applications. I focus on creating <strong>clean, high-performance products</strong> with <strong>intuitive and user-friendly experiences</strong>.\n\nMy main tech stack is <span class='group inline-flex items-center gap-1.5 leading-5 rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm font-normal text-muted-foreground align-middle transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:shadow-md hover:shadow-zinc-200/40 dark:hover:shadow-zinc-950/40 hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 relative -top-[1.5px] select-none'><img src='/icons/nextjs.svg' alt='Next.js icon' width='16' height='16' class='shrink-0 w-[16px] h-[16px] object-contain'/> Next.js</span>, <span class='group inline-flex items-center gap-1.5 leading-5 rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm font-normal text-muted-foreground align-middle transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:shadow-md hover:shadow-zinc-200/40 dark:hover:shadow-zinc-950/40 hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 relative -top-[1.5px] select-none'><img src='/icons/react.svg' alt='React icon' width='16' height='16' class='shrink-0 w-[16px] h-[16px] object-contain'/> React</span>, and <span class='group inline-flex items-center gap-1.5 leading-5 rounded-[8px] border border-border bg-transparent px-2 py-1 text-sm font-normal text-muted-foreground align-middle transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:shadow-md hover:shadow-zinc-200/40 dark:hover:shadow-zinc-950/40 hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 relative -top-[1.5px] select-none'><img src='/icons/express.png' alt='Express icon' width='16' height='16' class='shrink-0 w-[16px] h-[16px] object-contain'/> Express</span>. I enjoy crafting <strong>robust, maintainable code</strong> and delivering <strong>thoughtful digital products</strong>.",
+    "about": "Hi, I’m Harsha Vardhan, a <strong>Full-Stack Developer</strong> passionate about building <strong>scalable</strong> and modern web applications. I focus on creating <strong>clean, high-performance products</strong> with <strong>intuitive and user-friendly experiences</strong>.",
     "avatar": "/images/image.jpg",
     "ogImage": "/images/og.png",
     "timeZone": "Asia/Kolkata",
@@ -33,6 +33,28 @@
     "githubUsername": "BeyondV0id"
   },
   "experiences": [
+    {
+      "id": "vishwakarma-ventures",
+      "companyName": "Vishwakarma Ventures and Innovations LLP",
+      "positions": [
+        {
+          "id": "frontend-developer-intern",
+          "title": "Frontend Developer Intern",
+          "employmentPeriod": {
+            "start": "05.2026",
+            "end": "07.2026"
+          },
+          "employmentType": "Internship",
+          "description": "- Redesigned and built **15+ reusable UI components** using React.js, TypeScript, and Tailwind CSS, improving consistency and maintainability.\n- Implemented new requirements, refined existing interfaces, and resolved frontend issues with the development team.",
+          "icon": "code",
+          "skills": [
+            "React.js",
+            "TypeScript",
+            "Tailwind CSS"
+          ]
+        }
+      ]
+    },
     {
       "id": "gvp-college",
       "companyName": "Gayatri Vidya Parishad College of Engineering (A)",
@@ -83,6 +105,7 @@
         "PostgreSQL",
         "BullMQ"
       ],
+      "summary": "Discover active open-source repositories, compare GitHub activity and GSoC history, and track pull requests and issues from one dashboard.",
       "description": "SourceSurf is a central hub that helps developers discover and explore high-quality open-source projects. It acts as a search and curation dashboard, showing active repositories with real-time stats like GitHub star counts, forks, and Google Summer of Code (GSoC) history. It also features a personalized user dashboard, contributor rankings, and tools to track active pull requests (PRs) and issues. \n\nTo power this platform, it uses a high-performance microservices backend built on Node.js, Express, and TypeScript. The system uses BullMQ and Redis to manage and schedule complex scraping jobs across multiple services, while a secure webhook architecture handles large amounts of incoming metadata. All of this enriched data is stored in a highly optimized PostgreSQL database, providing a fast, reliable, and real-time dashboard for developers.",
       "links": [
         {
@@ -110,6 +133,7 @@
         "PostgreSQL",
         "Tailwind CSS"
       ],
+      "summary": "A developer Q&A platform with threaded discussions and a shared TypeScript stack across the frontend and API.",
       "description": "Quorum is a comprehensive full-stack Q&A platform tailored specifically for the developer community, facilitating technical knowledge sharing and collaborative problem-solving. Built with a unified TypeScript stack, the application features a React-based frontend and a robust Express backend. The platform implements complex threaded discussions, real-time interaction, and a developer-centric UI optimized for code snippet sharing and technical discourse.\n\nTechnically, Quorum solves the challenge of maintaining end-to-end type safety between the client and server through shared TypeScript interfaces, significantly reducing integration bugs and runtime errors. The system manages a relational database of questions, answers, and user profiles, utilizing optimized PostgreSQL queries to handle nested discussion trees and high-traffic user interactions, providing a seamless and responsive experience for technical developers.",
       "links": [
         {
@@ -136,6 +160,7 @@
         "PostgreSQL",
         "httpx"
       ],
+      "summary": "A Python service that discovers trending GitHub repositories, enriches them with GitHub API data, and syncs the results to SourceSurf.",
       "description": "The OSS Trends Scraper is a high-performance Python microservice engineered to automate the discovery and enrichment of trending GitHub repositories. Built with FastAPI and an entirely asynchronous pipeline, it utilizes BeautifulSoup4 and httpx for high-concurrency web scraping of the GitHub Trending pages. Once a repository is discovered, the service enriches the record by interfacing with the official GitHub REST API to fetch deep metadata, including owner profiles and precise activity metrics.\n\nTo solve the challenge of GitHub's aggressive rate limiting, the service implements an intelligent scheduling and batching system using APScheduler. Enriched data is 'upserted' into a PostgreSQL database (hosted via Supabase) using asyncpg to ensure non-blocking I/O. The microservice then automatically synchronizes this data with the SourceSurf backend via secure webhooks, providing a continuous stream of fresh, high-quality open-source leads while maintaining extreme operational efficiency.",
       "links": [
         {
@@ -151,7 +176,7 @@
       "id": "drizzle-auth-api",
       "title": "Drizzle Auth API",
       "image": "",
-      "pinned": false,
+      "pinned": true,
       "skills": [
         "Express 5",
         "TypeScript",
@@ -159,6 +184,7 @@
         "PostgreSQL",
         "Session Security"
       ],
+      "summary": "An Express and Drizzle authentication API with PostgreSQL-backed sessions, secure cookies, and immediate session revocation.",
       "description": "Drizzle Auth API is a production-ready authentication backend designed with a primary focus on security and immediate session control. Built with Express 5 and Drizzle ORM, it implements a database-backed session strategy that avoids the common pitfalls of stateless JWTs. By storing sessions in a PostgreSQL table and utilizing HTTP-only, secure cookies, the API provides a robust defense against XSS and CSRF attacks while allowing for immediate, server-side session revocation.\n\nThe project demonstrates the power of Drizzle ORM for type-safe database interactions, ensuring that the SQL schema and TypeScript interfaces remain perfectly synchronized. The authentication flow includes secure registration with password hashing, login, logout with instant session destruction, and protected profile management. This backend serves as a high-security foundation for applications requiring strict session management and end-to-end type safety across the database and API layers.",
       "links": [
         {

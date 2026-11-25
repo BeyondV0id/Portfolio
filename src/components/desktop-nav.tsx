@@ -1,37 +1,40 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { cn } from '@/lib/utils';
-import type { NavItem } from '@/types/nav';
+import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+import { cn } from "@/lib/utils";
+import type { NavItem } from "@/types/nav";
 
 export function DesktopNav({ items }: { items: NavItem[] }) {
   const pathname = usePathname();
 
-  const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
-    return pathname === href || pathname.startsWith(`${href}/`);
-  };
-
-  const linkClassName = (href: string) =>
-    cn(
-      'font-mono text-sm font-medium transition-[color] duration-300',
-      'hover:text-foreground',
-      isActive(href) ? 'text-foreground' : 'text-muted-foreground'
-    );
-
   return (
-    <nav className='flex items-center gap-4 sm:gap-6'>
-      {items.map((item) => (
-        <Link
-          key={item.href}
-          className={linkClassName(item.href)}
-          href={item.href}
-        >
-          {item.title}
-        </Link>
-      ))}
-    </nav>
+    <FluidHoverGroup
+      as="nav"
+      axis="xy"
+      nearest
+      className="-ml-2 flex w-fit flex-wrap items-center gap-x-2 gap-y-1"
+    >
+      {items.map((item) => {
+        const current = pathname === item.href;
+        const active = current || pathname.startsWith(`${item.href}/`);
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            aria-current={current ? "page" : undefined}
+            data-fluid-item
+            className={cn(
+              "rounded-lg px-2 py-1 text-[18px] font-normal focus-visible:outline-2 focus-visible:outline-ring",
+              active ? "text-foreground" : "text-muted-foreground",
+            )}
+          >
+            {item.title.toLowerCase()}
+          </Link>
+        );
+      })}
+    </FluidHoverGroup>
   );
 }

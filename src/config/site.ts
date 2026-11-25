@@ -34,22 +34,26 @@ export const PROFILE_IMAGES = {
 };
 
 export const META_THEME_COLORS = {
-  light: "#ffffff",
-  dark: "#09090b",
+  light: "#faf5f5",
+  dark: "#0d0c0a",
 };
 
 export const MAIN_NAV: NavItem[] = [
   {
-    title: "Home",
+    title: "home",
     href: "/",
   },
   {
-    title: "Projects",
+    title: "projects",
     href: "/projects",
   },
   {
-    title: "Skills",
-    href: "/skills",
+    title: "blogs",
+    href: "/blog",
+  },
+  {
+    title: "gallery",
+    href: "/gallery",
   },
 ];
 

@@ -26,16 +26,19 @@ export function FooterCat() {
 
   // Handle global idle state
   useEffect(() => {
-    if (isIdle) {
-      setIdleAnimation('sleeping');
-      setIdleAnimationFrame(0);
-    } else if (idleAnimation === 'sleeping') {
-      // Wake up when user becomes active
-      setIdleAnimation('alert');
-      setIdleAnimationFrame(0);
-      setIdleTime(0);
-    }
-  }, [isIdle]);
+    const id = setTimeout(() => {
+      if (isIdle) {
+        setIdleAnimation('sleeping');
+        setIdleAnimationFrame(0);
+      } else if (idleAnimation === 'sleeping') {
+        // Wake up when user becomes active
+        setIdleAnimation('alert');
+        setIdleAnimationFrame(0);
+        setIdleTime(0);
+      }
+    }, 0);
+    return () => clearTimeout(id);
+  }, [isIdle, idleAnimation]);
 
   useEffect(() => {
     const timer = setInterval(() => {

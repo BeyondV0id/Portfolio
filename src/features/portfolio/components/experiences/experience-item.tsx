@@ -5,7 +5,7 @@ import { ExperiencePositionItem } from "./experience-position-item";
 
 export function ExperienceItem({ experience }: { experience: Experience }) {
   return (
-    <div className="screen-line-after space-y-4 py-4">
+    <article className="space-y-3 rounded-xl border border-border bg-card p-4">
       <div className="flex items-center gap-3">
         <div className="flex size-6 shrink-0 items-center justify-center select-none">
           {experience.companyLogo ? (
@@ -20,28 +20,27 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
               aria-hidden
             />
           ) : (
-            <span className="flex size-2 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+            <span className="flex size-2 rounded-full bg-muted-foreground/40" />
           )}
         </div>
 
-        <h3 className="text-lg leading-snug font-medium">
+        <h3 className="text-base leading-snug font-medium text-foreground">
           {experience.companyName}
         </h3>
 
         {experience.isCurrentEmployer && (
           <span className="relative flex items-center justify-center">
-            <span className="absolute inline-flex size-3 animate-ping rounded-full bg-info opacity-50" />
             <span className="relative inline-flex size-2 rounded-full bg-info" />
-            <span className="sr-only">Current School</span>
+            <span className="sr-only">Current</span>
           </span>
         )}
       </div>
 
-      <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-[image:repeating-linear-gradient(to_bottom,var(--border)_0,var(--border)_2px,transparent_2px,transparent_6px)]">
+      <div className="space-y-4">
         {experience.positions?.map((position) => (
           <ExperiencePositionItem key={position.id} position={position} />
         ))}
       </div>
-    </div>
+    </article>
   );
 }

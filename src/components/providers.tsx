@@ -4,12 +4,13 @@ import { AppProgressProvider } from "@bprogress/next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Provider as JotaiProvider } from "jotai";
+import { MotionConfig } from "motion/react";
 import dynamic from "next/dynamic";
 import { ThemeProvider } from "next-themes";
 
 const Toaster = dynamic(
   () => import("@/components/ui/sonner").then((mod) => mod.Toaster),
-  { ssr: false }
+  { ssr: false },
 );
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -29,7 +30,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           delay={500}
           options={{ showSpinner: false }}
         >
-          {children}
+          <MotionConfig reducedMotion="user">{children}</MotionConfig>
         </AppProgressProvider>
 
         <Toaster />

@@ -21,6 +21,7 @@ export type Project = {
   /** Public URL (site, repository, demo, or video). */
   liveLink?: string;
   githubLink?: string;
+  icon?: string;
   image?: string;
   video?: string;
   pinned?: boolean;
@@ -28,6 +29,7 @@ export type Project = {
   skills: string[];
   /** Optional rich description; Markdown and line breaks supported. */
   description?: string;
+  summary?: string;
   /** Whether the project card is expanded by default in the UI. */
   isExpanded?: boolean;
   /** Optional project status for UI (e.g., 'live', 'building'). */
@@ -37,4 +39,3 @@ export type Project = {
   /** Typed links: github, website, post etc. */
   links?: ProjectLink[];
 };
-

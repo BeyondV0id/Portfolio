@@ -1,7 +1,5 @@
 import React from "react";
 
-import { cn } from "@/lib/utils";
-
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   delay?: number;
   reverse?: boolean;
@@ -10,20 +8,14 @@ interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Container({
   children,
   className,
-  delay = 0,
-  reverse = false,
   ...props
 }: ContainerProps) {
+  const { delay: omittedDelay, reverse: omittedReverse, ...divProps } = props;
+  void omittedDelay;
+  void omittedReverse;
+
   return (
-    <div
-      className={cn("animate-fade-in-blur", className)}
-      style={{
-        animationDelay: `${delay}s`,
-        animationFillMode: "both",
-        ...(reverse ? { animationDirection: "reverse" } : {}),
-      }}
-      {...props}
-    >
+    <div className={className} {...divProps}>
       {children}
     </div>
   );

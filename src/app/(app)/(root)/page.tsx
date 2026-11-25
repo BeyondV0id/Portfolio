@@ -1,42 +1,31 @@
-import dayjs from 'dayjs';
-import type { ProfilePage as PageSchema, WithContext } from 'schema-dts';
+import dayjs from "dayjs";
+import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
-import { Container } from '@/components/container';
-import { Experiences } from '@/features/portfolio/components/experiences';
-import { Hero } from '@/features/portfolio/components/hero';
-import { Projects } from '@/features/portfolio/components/projects';
-import { TeckStack } from '@/features/portfolio/components/teck-stack';
-import { USER } from '@/features/portfolio/data';
-import { cn } from '@/lib/utils';
+import { RecentBlogs } from "@/features/blog/components/recent-blogs";
+import { Experiences } from "@/features/portfolio/components/experiences";
+import { Hero } from "@/features/portfolio/components/hero";
+import { Projects } from "@/features/portfolio/components/projects";
+import { TeckStack } from "@/features/portfolio/components/teck-stack";
+import { USER } from "@/features/portfolio/data";
 
 export default function Page() {
   return (
     <>
       <script
-        type='application/ld+json'
+        type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getPageJsonLd()).replace(/</g, '\\u003c'),
+          __html: JSON.stringify(getPageJsonLd()).replace(/</g, "\\u003c"),
         }}
       />
 
-      <div className='mx-auto md:max-w-3xl *:[[id]]:scroll-mt-22'>
-        <Hero />
-        <Separator />
+      <h1 className="sr-only">{USER.displayName}</h1>
+      <Hero />
 
-        <Container delay={0.5}>
-          <Projects />
-        </Container>
-        <Separator />
-
-        <Container delay={0.6}>
-          <TeckStack />
-        </Container>
-        <Separator />
-
-        <Container delay={0.7}>
-          <Experiences />
-        </Container>
-        <Separator />
+      <div className="reveal-product-subtle flex flex-col gap-12 pb-12">
+        <Projects />
+        <RecentBlogs />
+        <TeckStack />
+        <Experiences />
       </div>
     </>
   );
@@ -44,28 +33,15 @@ export default function Page() {
 
 function getPageJsonLd(): WithContext<PageSchema> {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'ProfilePage',
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
     dateCreated: dayjs(USER.dateCreated).toISOString(),
     dateModified: dayjs().toISOString(),
     mainEntity: {
-      '@type': 'Person',
+      "@type": "Person",
       name: USER.displayName,
       identifier: USER.username,
       image: USER.avatar,
     },
   };
-}
-
-function Separator({ className }: { className?: string }) {
-  return (
-    <div
-      className={cn(
-        'relative h-8 w-full screen-border-x hidden sm:flex',
-        'before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw]',
-        'before:bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:[--pattern-foreground:var(--color-edge)]/56',
-        className
-      )}
-    />
-  );
 }

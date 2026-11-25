@@ -1,17 +1,19 @@
 "use client";
 
+import { Moon, SunMedium } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 import { useTheme } from "next-themes";
 import { useCallback } from "react";
 
 import { META_THEME_COLORS } from "@/config/site";
 import { useMetaColor } from "@/hooks/use-meta-color";
 import { useSound } from "@/hooks/use-sound";
+import { spring } from "@/lib/fluid-functionalism/springs";
 
-import { MoonIcon } from "./animated-icons/moon";
-import { SunMediumIcon } from "./animated-icons/sun-medium";
 import { Button } from "./ui/button";
 
 export function ThemeToggle() {
+  const reduceMotion = useReducedMotion();
   const { resolvedTheme, setTheme } = useTheme();
 
   const { setMetaColor } = useMetaColor();
@@ -23,24 +25,34 @@ export function ThemeToggle() {
     setMetaColor(
       resolvedTheme === "dark"
         ? META_THEME_COLORS.light
-        : META_THEME_COLORS.dark
+        : META_THEME_COLORS.dark,
     );
     playSound();
   }, [resolvedTheme, setTheme, setMetaColor, playSound]);
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={switchTheme}
-      // onClick={() => {
-      //   if (!document.startViewTransition) switchTheme();
-      //   document.startViewTransition(switchTheme);
-      // }}
-    >
-      <MoonIcon className="relative hidden after:absolute after:-inset-2 dark:block" />
-      <SunMediumIcon className="relative block after:absolute after:-inset-2 dark:hidden" />
-      <span className="sr-only">Theme Toggle</span>
+    <Button variant="ghost" size="icon" asChild>
+      <motion.button
+        type="button"
+        onClick={switchTheme}
+        initial={false}
+        animate="rest"
+        whileHover={reduceMotion ? undefined : "hover"}
+      >
+        <motion.span
+          aria-hidden
+          className="inline-flex"
+          variants={{
+            rest: { transform: "rotate(0deg)" },
+            hover: { transform: "rotate(-12deg)" },
+          }}
+          transition={spring.fast}
+        >
+          <Moon className="hidden dark:block" />
+          <SunMedium className="block dark:hidden" />
+        </motion.span>
+        <span className="sr-only">Theme Toggle</span>
+      </motion.button>
     </Button>
   );
 }

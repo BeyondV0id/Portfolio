@@ -1,6 +1,7 @@
-import { PROFILE_IMAGES } from "@/config/site";
-import { USER, SOCIAL_LINKS } from "@/features/portfolio/data";
 import Image from "next/image";
+
+import { PROFILE_IMAGES } from "@/config/site";
+import { SOCIAL_LINKS, USER } from "@/features/portfolio/data";
 
 export function ProfileHeader() {
   const socialOrder = ["GitHub", "LinkedIn", "LeetCode", "Email"];
