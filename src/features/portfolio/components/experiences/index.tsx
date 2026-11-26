@@ -41,7 +41,6 @@ export function Experiences() {
     return (
       <TimelineMotion key={id} id={id}>
         <h2
-          data-timeline-reveal
           id={`${id}-title`}
           className="relative flex min-h-10 items-center pl-13 text-[18px] font-medium tracking-tight"
         >
@@ -64,7 +63,7 @@ export function Experiences() {
 
 function TimelineEntry({ experience }: { experience: Experience }) {
   return (
-    <li data-timeline-reveal className="relative min-w-0 pl-13">
+    <li className="relative min-w-0 pl-13">
       <span
         aria-hidden
         className="absolute top-1 left-5 grid size-4 -translate-x-1/2 place-items-center rounded-full border border-link bg-background ring-2 ring-background before:size-2 before:rounded-full before:bg-link"

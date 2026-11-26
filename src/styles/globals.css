@@ -120,6 +120,7 @@
 }
 
 :root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --background: #fafafa;
   --foreground: #0a0a0a;
   --primary: #141414;

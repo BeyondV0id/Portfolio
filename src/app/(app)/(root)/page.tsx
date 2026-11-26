@@ -22,7 +22,7 @@ export default function Page() {
       <h1 className="sr-only">{USER.displayName}</h1>
       <Hero />
 
-      <div className="reveal-product-subtle flex flex-col gap-8 pb-12">
+      <div className="reveal-product-subtle reveal-page-main-rest flex flex-col gap-8 pb-12">
         <Projects />
         <TeckStack />
         <Experiences />

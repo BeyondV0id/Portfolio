@@ -10,7 +10,10 @@ import { ProfileLocalTime } from "./profile-local-time";
 
 export function PortfolioHeader() {
   return (
-    <div id="portfolio-header" className="flex flex-col gap-6 pt-6 pb-8">
+    <div
+      id="portfolio-header"
+      className="reveal-stagger flex flex-col gap-6 pt-6 pb-8"
+    >
       <HomeHeroScene />
 
       <div className="flex items-center gap-4">

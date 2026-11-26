@@ -25,7 +25,7 @@ const SOCIAL_ACTIONS = [
 ];
 const ICON_CLASS_NAME = "size-3.5 shrink-0";
 const PILL_CLASS_NAME =
-  "inline-flex items-center gap-1.5 rounded-md bg-[var(--pill)] px-2.5 py-1 text-xs text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground";
+  "inline-flex items-center gap-1.5 rounded-md bg-[var(--pill)] px-2.5 py-1 text-xs text-muted-foreground transition-[color,transform] duration-150 ease-[var(--ease-out)] motion-safe:active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground";
 
 export function Hero() {
   const contributions = getGitHubContributions();
@@ -35,7 +35,7 @@ export function Hero() {
   });
 
   return (
-    <section className="flex flex-col gap-8 pb-8">
+    <section className="reveal-stagger reveal-page-main flex flex-col gap-8 pb-8">
       <div className="flex flex-col gap-3">
         <h2 className="section-title">about me.</h2>
 

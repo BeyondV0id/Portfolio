@@ -1,36 +1,170 @@
-.reveal-product-subtle {
-  --reveal-motion: 200ms linear(0, 0.5729, 0.8966, 0.9789, 0.996, 1, 1);
+.reveal-product-subtle,
+.reveal-stagger {
+  --reveal-duration: 300ms;
   --reveal-step: 40ms;
+  --reveal-distance: 8px;
+  --reveal-offset: 0ms;
+}
+
+.reveal-page-main {
+  --reveal-offset: 160ms;
+  --gh-delay-base: 220ms;
+}
+
+.reveal-page-main-rest {
+  --reveal-offset: 240ms;
+}
+
+.reveal-page-sub {
+  --reveal-offset: 120ms;
+}
+
+.reveal-page-sub-body {
+  --reveal-offset: 200ms;
+}
+
+.reveal-footer {
+  --reveal-offset: 320ms;
+}
+
+:root[data-reveal-settled="true"] .reveal-page-main,
+:root[data-reveal-settled="true"] .reveal-page-sub,
+:root[data-reveal-settled="true"] .reveal-footer {
+  --reveal-offset: 0ms;
+  --gh-delay-base: 40ms;
+}
+
+:root[data-reveal-settled="true"] .reveal-page-main-rest,
+:root[data-reveal-settled="true"] .reveal-page-sub-body {
+  --reveal-offset: 80ms;
 }
 
 @keyframes fluid-product-reveal {
   from {
     opacity: 0;
+    transform: translateY(var(--reveal-distance, 8px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.reveal-product-subtle > * {
-  animation: fluid-product-reveal var(--reveal-motion) both;
+.reveal-product-subtle > *,
+.reveal-stagger > *,
+.reveal-item {
+  --reveal-index: 0;
+  animation: fluid-product-reveal var(--reveal-duration, 300ms)
+    var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)) both;
+  animation-delay: calc(
+    var(--reveal-offset, 0ms) + var(--reveal-index, 0) * var(--reveal-step, 40ms)
+  );
 }
 
-.reveal-product-subtle > :nth-child(2) {
-  animation-delay: var(--reveal-step);
+.reveal-product-subtle > :nth-child(1),
+.reveal-stagger > :nth-child(1) {
+  --reveal-index: 0;
 }
 
-.reveal-product-subtle > :nth-child(3) {
-  animation-delay: calc(var(--reveal-step) * 2);
+.reveal-product-subtle > :nth-child(2),
+.reveal-stagger > :nth-child(2) {
+  --reveal-index: 1;
 }
 
-.reveal-product-subtle > :nth-child(n + 4) {
-  animation-delay: calc(var(--reveal-step) * 3);
+.reveal-product-subtle > :nth-child(3),
+.reveal-stagger > :nth-child(3) {
+  --reveal-index: 2;
 }
 
-.reveal-product-subtle > :focus-within {
-  animation: none;
+.reveal-product-subtle > :nth-child(4),
+.reveal-stagger > :nth-child(4) {
+  --reveal-index: 3;
+}
+
+.reveal-product-subtle > :nth-child(5),
+.reveal-stagger > :nth-child(5) {
+  --reveal-index: 4;
+}
+
+.reveal-product-subtle > :nth-child(n + 6),
+.reveal-stagger > :nth-child(n + 6) {
+  --reveal-index: 5;
+}
+
+.reveal-step-1 {
+  --reveal-index: 1;
+}
+.reveal-step-2 {
+  --reveal-index: 2;
+}
+.reveal-step-3 {
+  --reveal-index: 3;
+}
+.reveal-step-4 {
+  --reveal-index: 4;
+}
+.reveal-step-5 {
+  --reveal-index: 5;
+}
+
+@keyframes gh-week-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gh-months-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.gh-grid-week {
+  animation: gh-week-reveal 220ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1))
+    both;
+  animation-delay: calc(var(--gh-delay-base, 0ms) + var(--gh-col, 0) * 6ms);
+}
+
+.gh-grid-months {
+  animation: gh-months-reveal 240ms
+    var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)) both;
+  animation-delay: calc(var(--gh-delay-base, 0ms) + 140ms);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal-product-subtle {
+  .reveal-product-subtle,
+  .reveal-stagger,
+  .reveal-page-main,
+  .reveal-page-main-rest,
+  .reveal-page-sub,
+  .reveal-page-sub-body,
+  .reveal-footer {
+    --reveal-duration: 200ms;
     --reveal-step: 0ms;
+    --reveal-distance: 0px;
+    --reveal-offset: 0ms;
+    --gh-delay-base: 0ms;
+  }
+
+  .reveal-product-subtle > *,
+  .reveal-stagger > *,
+  .reveal-item {
+    animation-timing-function: ease;
+  }
+
+  .gh-grid-week,
+  .gh-grid-months {
+    animation-name: gh-months-reveal;
+    animation-duration: 180ms;
+    animation-delay: 0ms;
+    animation-timing-function: ease;
   }
 }

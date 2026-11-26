@@ -27,7 +27,7 @@ export function DesktopNav({ items }: { items: NavItem[] }) {
             aria-current={current ? "page" : undefined}
             data-fluid-item
             className={cn(
-              "rounded-lg px-2 py-1 text-[18px] font-normal focus-visible:outline-2 focus-visible:outline-ring",
+              "rounded-lg px-2 py-1 text-[18px] font-normal transition-[color,transform] duration-150 ease-[var(--ease-out)] motion-safe:active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-ring",
               active ? "text-foreground" : "text-muted-foreground",
             )}
           >

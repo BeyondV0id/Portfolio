@@ -63,7 +63,7 @@ export default async function ProjectDetailPage({ params }: Props) {
     .filter(Boolean);
 
   return (
-    <div className="pb-16">
+    <div className="reveal-stagger reveal-page-sub pb-16">
       <Link href="/projects" className="quiet-link mb-8">
         <ArrowLeft aria-hidden className="size-4" />
         All projects

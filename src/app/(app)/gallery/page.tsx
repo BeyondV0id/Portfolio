@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <div className="flex flex-col pb-16">
-      <h1 className="section-title">gallery.</h1>
-      <p className="mt-2 text-sm leading-[1.6] text-muted-foreground">
+      <h1 className="section-title reveal-item reveal-page-sub">gallery.</h1>
+      <p className="reveal-item reveal-page-sub reveal-step-1 mt-2 text-sm leading-[1.6] text-muted-foreground">
         moments where the tech community comes together — meetups, hackathons,
         and the setups behind them.
       </p>
 
-      <div className="reveal-product-subtle mt-8 grid gap-3 sm:grid-cols-2">
+      <div className="reveal-stagger reveal-page-sub-body mt-8 grid gap-3 sm:grid-cols-2">
         {GALLERY_ITEMS.map((item) => (
           <figure
             key={item.id}

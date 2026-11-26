@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }: Props) {
   const headings = extractHeadings(post.content);
 
   return (
-    <div className="pb-16">
+    <div className="reveal-stagger reveal-page-sub pb-16">
       <Link href="/blog" className="quiet-link mb-8">
         <ArrowLeft aria-hidden className="size-3.5" />
         All posts

@@ -49,7 +49,7 @@ export function TeckStack() {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-fluid-item
-                  className="inline-flex items-center gap-1.5 rounded-md bg-[var(--pill)] px-2.5 py-1 text-xs text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground"
+                  className="inline-flex items-center gap-1.5 rounded-md bg-[var(--pill)] px-2.5 py-1 text-xs text-muted-foreground transition-[color,transform] duration-150 ease-[var(--ease-out)] motion-safe:active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground"
                   aria-label={tech.title}
                 >
                   {tech.theme && darkIconSrc ? (
