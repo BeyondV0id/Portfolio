@@ -18,10 +18,25 @@ const calendarSchema = z.object({
   ),
 });
 
-const publicEventsSchema = z.array(
+const CONTRIBUTION_REPOS = [
+  "BeyondV0id/ossurf",
+  "BeyondV0id/ossurf-scraper",
+  "BeyondV0id/Portfolio",
+  "BeyondV0id/portfolio_V2",
+  "BeyondV0id/Quorum",
+  "BeyondV0id/drizzle-auth-api",
+  "BeyondV0id/deseng",
+  "BeyondV0id/Endless_flow",
+  "BeyondV0id/redis-pubsub-notifcation-serivce",
+  "OSSURF/oss-trends-scraper",
+  "OSSURF/OSSurf_Frontend",
+  "OSSURF/OSSurf_Backend",
+];
+
+const contributorSchema = z.array(
   z.object({
-    type: z.string(),
-    repo: z.object({ name: z.string().regex(/^[\w.-]+\/[\w.-]+$/) }),
+    total: z.number().int().nonnegative(),
+    author: z.object({ login: z.string() }).nullable(),
   }),
 );
 
@@ -43,49 +58,77 @@ async function getCalendar() {
   }
 }
 
-async function getRecentRepositories() {
-  try {
-    const response = await fetch(
-      `https://api.github.com/users/${encodeURIComponent(GITHUB_USERNAME)}/events/public?per_page=100`,
-      {
-        headers: { Accept: "application/vnd.github+json" },
-        next: { revalidate: 3600 },
-        signal: AbortSignal.timeout(5000),
-      },
-    );
+async function getContributionCount(fullName: string) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const response = await fetch(
+        `https://api.github.com/repos/${fullName}/stats/contributors`,
+        {
+          headers: {
+            Accept: "application/vnd.github+json",
+            ...(process.env.GITHUB_API_TOKEN
+              ? { Authorization: `Bearer ${process.env.GITHUB_API_TOKEN}` }
+              : {}),
+          },
+          next: { revalidate: 86400 },
+          signal: AbortSignal.timeout(5000),
+        },
+      );
 
-    if (!response.ok) return [];
+      // GitHub computes contributor stats asynchronously and returns 202 while it works.
+      if (response.status === 202 && attempt === 0) {
+        await new Promise((resolve) => setTimeout(resolve, 300));
+        continue;
+      }
+      if (!response.ok) return null;
 
-    const result = publicEventsSchema.safeParse(await response.json());
-    if (!result.success) return [];
+      const result = contributorSchema.safeParse(await response.json());
+      if (!result.success) return null;
 
-    const pushes = new Map<string, number>();
-    for (const event of result.data) {
-      if (event.type !== "PushEvent") continue;
-      const name = event.repo.name;
-      pushes.set(name, (pushes.get(name) ?? 0) + 1);
+      return (
+        result.data.find(
+          (contributor) =>
+            contributor.author?.login.toLowerCase() ===
+            GITHUB_USERNAME.toLowerCase(),
+        )?.total ?? 0
+      );
+    } catch {
+      return null;
     }
-
-    return [...pushes]
-      .sort(
-        ([firstName, firstCount], [secondName, secondCount]) =>
-          secondCount - firstCount || firstName.localeCompare(secondName),
-      )
-      .slice(0, 3)
-      .map(([name, count]) => ({
-        name,
-        count,
-        href: `https://github.com/${name}`,
-      }));
-  } catch {
-    return [];
   }
+
+  return null;
+}
+
+async function getTopContributions() {
+  const counts = await Promise.all(
+    CONTRIBUTION_REPOS.map(async (fullName) => ({
+      fullName,
+      count: await getContributionCount(fullName),
+    })),
+  );
+
+  return counts
+    .filter(
+      (entry): entry is { fullName: string; count: number } =>
+        entry.count !== null && entry.count > 0,
+    )
+    .sort(
+      (a, b) =>
+        b.count - a.count || a.fullName.localeCompare(b.fullName),
+    )
+    .slice(0, 3)
+    .map(({ fullName, count }) => ({
+      name: fullName.split("/")[1] ?? fullName,
+      count,
+      href: `https://github.com/${fullName}`,
+    }));
 }
 
 export async function getGitHubContributions() {
   const [calendar, repos] = await Promise.all([
     getCalendar(),
-    getRecentRepositories(),
+    getTopContributions(),
   ]);
   return { calendar, repos };
 }

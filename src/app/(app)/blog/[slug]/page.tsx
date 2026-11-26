@@ -1,9 +1,10 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeftIcon as ArrowLeft } from "@solar-icons/react/linear/arrow-left";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Markdown } from "@/components/markdown";
+import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
 import { BLOG_POSTS, getBlogPostBySlug } from "@/features/blog/data/posts";
 
 interface Props {
@@ -51,15 +52,10 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="pb-16">
-      <div className="mb-8 flex flex-col gap-5">
-        <Link
-          href="/blog"
-          className="inline-flex w-fit items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-        >
-          <ArrowLeft className="size-3.5" />
-          <span>all posts</span>
-        </Link>
-      </div>
+      <Link href="/blog" className="quiet-link mb-8">
+        <ArrowLeft aria-hidden className="size-3.5" />
+        All posts
+      </Link>
 
       <article className="text-foreground">
         <div className="max-w-xl">
@@ -93,35 +89,28 @@ export default async function BlogPostPage({ params }: Props) {
               <h2 className="mb-3 font-mono text-[11px] tracking-[0.14em] text-muted-foreground xl:absolute xl:top-[0.3rem] xl:right-full xl:mr-8 xl:mb-0 xl:w-32 xl:text-right">
                 contents
               </h2>
-              <ol className="flex flex-col gap-1.5">
-                {headings.map((heading, idx) => (
-                  <li
-                    key={heading.id}
-                    className="flex gap-3 text-sm tracking-tight"
-                  >
-                    <span className="font-mono text-xs text-muted-foreground tabular-nums">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    <a
-                      href={`#${heading.id}`}
-                      className="text-foreground/75 transition-colors hover:text-foreground"
-                    >
-                      {heading.title}
-                    </a>
-                  </li>
-                ))}
-              </ol>
+              <FluidHoverGroup className="w-fit">
+                <ol className="flex flex-col">
+                  {headings.map((heading, idx) => (
+                    <li key={heading.id}>
+                      <a
+                        href={`#${heading.id}`}
+                        data-fluid-item
+                        className="flex items-baseline gap-3 rounded-lg px-2 py-1 text-sm tracking-tight text-foreground/75 focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground"
+                      >
+                        <span className="font-mono text-xs text-muted-foreground tabular-nums">
+                          {String(idx + 1).padStart(2, "0")}
+                        </span>
+                        {heading.title}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </FluidHoverGroup>
             </section>
           )}
 
-          <div
-            aria-hidden="true"
-            className="my-8 text-center font-mono tracking-[0.6em] text-muted-foreground/50"
-          >
-            · · ·
-          </div>
-
-          <div className="flex min-w-0 flex-col gap-5 text-[15px] leading-relaxed tracking-tight text-foreground/85 [&_code]:rounded [&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-[13px] [&_h2]:mt-8 [&_h2]:scroll-mt-24 [&_h2]:text-lg [&_h2]:font-medium [&_h2]:tracking-tight [&_h2]:text-foreground [&_p]:leading-relaxed [&_strong]:font-medium [&_strong]:text-foreground">
+          <div className="mt-8 flex min-w-0 flex-col gap-5 text-[15px] leading-relaxed tracking-tight text-foreground/85 [&_code]:rounded [&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-[13px] [&_h2]:mt-8 [&_h2]:scroll-mt-24 [&_h2]:text-lg [&_h2]:font-medium [&_h2]:tracking-tight [&_h2]:text-foreground [&_p]:leading-relaxed [&_strong]:font-medium [&_strong]:text-foreground">
             <Markdown
               components={{
                 h2: ({ children, ...props }) => {

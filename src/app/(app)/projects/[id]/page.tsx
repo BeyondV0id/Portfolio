@@ -1,11 +1,12 @@
-import { ArrowLeft, ArrowUpRight, Github, Globe } from "lucide-react";
+import { ArrowLeftIcon as ArrowLeft } from "@solar-icons/react/linear/arrow-left";
+import { GlobalIcon as Globe } from "@solar-icons/react/linear/global";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 
-import { buttonVariants } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
 import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
 import { PROJECTS } from "@/features/portfolio/data";
 import type { ProjectLink } from "@/features/portfolio/types/projects";
@@ -49,7 +50,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   const project = PROJECTS.find((p) => p.id === id);
   if (!project) notFound();
 
-  const status = project.status ?? "building";
+  const status = project.status;
   const isLive = status === "live";
   const links = getAllLinks(project);
 
@@ -63,16 +64,10 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   return (
     <div className="pb-16">
-      <div className="mb-8 flex items-center gap-3">
-        <Link
-          href="/projects"
-          className={buttonVariants({ size: "icon-sm", variant: "outline" })}
-          aria-label="Go back"
-        >
-          <ArrowLeft className="size-4" />
-        </Link>
-        <span className="text-sm text-muted-foreground">projects</span>
-      </div>
+      <Link href="/projects" className="quiet-link mb-8">
+        <ArrowLeft aria-hidden className="size-4" />
+        All projects
+      </Link>
 
       <div className="flex flex-col gap-8">
         {project.image && (
@@ -90,41 +85,36 @@ export default async function ProjectDetailPage({ params }: Props) {
         {/* Title + Status + Links */}
         <div className="flex flex-col gap-4">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <h1 className="text-2xl font-medium tracking-tight text-foreground">
+            <h1 className="text-[22px] leading-[34px] font-medium tracking-[-0.01em] text-foreground">
               {project.title}
             </h1>
 
             <div className="flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                <span
-                  className={cn(
-                    "size-2 rounded-full",
-                    isLive ? "bg-emerald-500" : "bg-amber-500",
-                  )}
-                />
-                <span className="lowercase">{status}</span>
-              </div>
+              {status && (
+                <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                  <span
+                    className={cn(
+                      "size-2 rounded-full",
+                      isLive
+                        ? "bg-foreground"
+                        : "border border-muted-foreground",
+                    )}
+                    aria-hidden
+                  />
+                  <span className="lowercase">{status}</span>
+                </div>
+              )}
 
-              <FluidHoverGroup
-                axis="xy"
-                className="flex flex-wrap items-center gap-2"
-              >
+              <div className="flex flex-wrap items-center gap-3">
                 {githubLink && (
                   <a
                     href={githubLink.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    data-fluid-item
-                    className={buttonVariants({
-                      size: "sm",
-                      variant: "outline",
-                      className:
-                        "hover:bg-transparent dark:hover:bg-transparent",
-                    })}
+                    className="quiet-link"
                   >
-                    <Github className="size-4" />
-                    <span>github</span>
-                    <ArrowUpRight className="size-3.5" />
+                    <Icons.github aria-hidden className="size-4" />
+                    <span>GitHub</span>
                   </a>
                 )}
 
@@ -133,20 +123,13 @@ export default async function ProjectDetailPage({ params }: Props) {
                     href={websiteLink.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    data-fluid-item
-                    className={buttonVariants({
-                      size: "sm",
-                      variant: "outline",
-                      className:
-                        "hover:bg-transparent dark:hover:bg-transparent",
-                    })}
+                    className="quiet-link"
                   >
-                    <Globe className="size-4" />
-                    <span>live</span>
-                    <ArrowUpRight className="size-3.5" />
+                    <Globe aria-hidden className="size-4" />
+                    <span>Live</span>
                   </a>
                 )}
-              </FluidHoverGroup>
+              </div>
             </div>
           </div>
 
@@ -164,9 +147,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         {/* Stack Used */}
         {project.skills && project.skills.length > 0 && (
           <div className="flex flex-col gap-3">
-            <h2 className="text-[18px] font-medium tracking-tight text-foreground">
-              stack used.
-            </h2>
+            <h2 className="section-title">stack used.</h2>
             <FluidHoverGroup
               axis="xy"
               highlightClassName="rounded-md bg-accent"

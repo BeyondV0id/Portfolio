@@ -1,0 +1,31 @@
+.scene {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 3 / 2;
+  border-radius: 40px;
+}
+
+.scene:has(canvas:focus-visible) {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.surface {
+  --fade: clamp(1.25rem, 5vw, 2rem);
+  --fade-stops:
+    transparent, rgb(0 0 0 / 8%) calc(var(--fade) * 0.2),
+    rgb(0 0 0 / 50%) calc(var(--fade) * 0.5),
+    rgb(0 0 0 / 92%) calc(var(--fade) * 0.8), black var(--fade);
+
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  background: #0f2a1c;
+  mask-image:
+    linear-gradient(to right, var(--fade-stops)),
+    linear-gradient(to left, var(--fade-stops)),
+    linear-gradient(to bottom, var(--fade-stops)),
+    linear-gradient(to top, var(--fade-stops));
+  mask-composite: intersect;
+}

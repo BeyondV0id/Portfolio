@@ -1,6 +1,9 @@
 "use client";
 
-import { BookOpen, Code, House, Image as ImageIcon } from "lucide-react";
+import { Book2Icon as BookOpen } from "@solar-icons/react/linear/book-2";
+import { CodeIcon as Code } from "@solar-icons/react/linear/code";
+import { GalleryIcon as ImageIcon } from "@solar-icons/react/linear/gallery";
+import { Home2Icon as House } from "@solar-icons/react/linear/home-2";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -38,7 +41,7 @@ export function FloatingNav() {
   return (
     <div
       id="navigation-menu"
-      className="fixed bottom-4 left-1/2 z-[999] h-fit -translate-x-1/2 rounded-full bg-background/90 px-6 py-2.5 shadow-md backdrop-blur-md sm:hidden"
+      className="fixed bottom-4 left-1/2 z-[999] h-fit -translate-x-1/2 rounded-full border border-border bg-surface px-6 py-2.5 sm:hidden"
     >
       <div className="flex flex-row gap-7">
         {navItems.map((item) => {

@@ -1,4 +1,4 @@
-import { LinkIcon } from "lucide-react";
+import { LinkIcon } from "@solar-icons/react/linear/link";
 import { Slot as SlotPrimitive } from "radix-ui";
 import React from "react";
 
@@ -25,7 +25,7 @@ function Prose({
         "prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none",
         "prose-hr:border-edge",
         "prose-blockquote:border-s-border prose-blockquote:[&_p:first-of-type]:before:content-none prose-blockquote:[&_p:last-of-type]:after:content-none",
-        className
+        className,
       )}
       {...props}
     />
@@ -53,7 +53,7 @@ function Code({ className, ...props }: React.ComponentProps<"code">) {
       className={cn(
         !isCodeBlock &&
           "not-prose rounded-md border bg-muted/50 px-1.5 py-0.5 font-mono text-sm",
-        className
+        className,
       )}
       {...props}
     />

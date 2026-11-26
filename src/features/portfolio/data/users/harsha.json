@@ -45,7 +45,8 @@
             "end": "07.2026"
           },
           "employmentType": "Internship",
-          "description": "- Redesigned and built **15+ reusable UI components** using React.js, TypeScript, and Tailwind CSS, improving consistency and maintainability.\n- Implemented new requirements, refined existing interfaces, and resolved frontend issues with the development team.",
+          "description": "- Redesigned and built **15+ reusable UI components** using React.js, TypeScript, and Tailwind CSS.\n- Improved consistency and maintainability.\n- Implemented new requirements, refined existing interfaces, and resolved frontend issues with the development team.",
+          "isExpanded": true,
           "icon": "code",
           "skills": [
             "React.js",
@@ -68,7 +69,9 @@
             "end": "2027"
           },
           "employmentType": "3rd Year",
-          "description": "I am currently pursuing my Bachelor of Technology in Computer Science and Engineering at Gayatri Vidya Parishad College of Engineering (A). I am in my third year of study and will graduate in 2027. • CGPA: 8.51/10",
+          "summary": "CGPA **8.51/10**",
+          "description": "Pursuing a Bachelor of Technology in Computer Science and Engineering, with graduation expected in 2027.",
+          "isExpanded": true,
           "icon": "education"
         }
       ]
@@ -85,7 +88,9 @@
             "start": "2021",
             "end": "2023"
           },
-          "description": "I completed my Junior College education at Narayana Junior College (CBSE). I was a student of the Junior College and I graduated in 2023 with 85%.",
+          "summary": "Graduated with **85%**.",
+          "description": "Completed junior college under the CBSE curriculum in 2023.",
+          "isExpanded": false,
           "icon": "education"
         }
       ]
@@ -94,6 +99,7 @@
   "projects": [
     {
       "id": "sourcesuf-backend",
+      "symbol": "discovery",
       "title": "SourceSurf",
       "image": "",
       "pinned": true,
@@ -103,10 +109,12 @@
         "Express",
         "Redis",
         "PostgreSQL",
-        "BullMQ"
+        "BullMQ",
+        "Drizzle ORM",
+        "FastAPI"
       ],
       "summary": "Discover active open-source repositories, compare GitHub activity and GSoC history, and track pull requests and issues from one dashboard.",
-      "description": "SourceSurf is a central hub that helps developers discover and explore high-quality open-source projects. It acts as a search and curation dashboard, showing active repositories with real-time stats like GitHub star counts, forks, and Google Summer of Code (GSoC) history. It also features a personalized user dashboard, contributor rankings, and tools to track active pull requests (PRs) and issues. \n\nTo power this platform, it uses a high-performance microservices backend built on Node.js, Express, and TypeScript. The system uses BullMQ and Redis to manage and schedule complex scraping jobs across multiple services, while a secure webhook architecture handles large amounts of incoming metadata. All of this enriched data is stored in a highly optimized PostgreSQL database, providing a fast, reliable, and real-time dashboard for developers.",
+      "description": "SourceSurf helps developers find open-source projects using repository discovery, contributor analytics, and language breakdowns. The dashboard shows 12 months of contribution history and tracks GitHub issues and pull requests. Users sign in through GitHub or Google OAuth.\n\nThe Express API uses PostgreSQL and Drizzle ORM. Redis-backed BullMQ workers run background jobs with up to three retries and exponential backoff. A FastAPI service runs three scheduled jobs to collect GitHub data and sync repository metadata.",
       "links": [
         {
           "type": "github",
@@ -122,19 +130,22 @@
     },
     {
       "id": "quorum",
+      "symbol": "discussion",
       "title": "Quorum",
       "image": "",
       "pinned": true,
       "skills": [
-        "Next.js",
+        "React",
         "TypeScript",
         "Node.js",
         "Express",
         "PostgreSQL",
-        "Tailwind CSS"
+        "Drizzle ORM",
+        "Better Auth",
+        "Docker"
       ],
-      "summary": "A developer Q&A platform with threaded discussions and a shared TypeScript stack across the frontend and API.",
-      "description": "Quorum is a comprehensive full-stack Q&A platform tailored specifically for the developer community, facilitating technical knowledge sharing and collaborative problem-solving. Built with a unified TypeScript stack, the application features a React-based frontend and a robust Express backend. The platform implements complex threaded discussions, real-time interaction, and a developer-centric UI optimized for code snippet sharing and technical discourse.\n\nTechnically, Quorum solves the challenge of maintaining end-to-end type safety between the client and server through shared TypeScript interfaces, significantly reducing integration bugs and runtime errors. The system manages a relational database of questions, answers, and user profiles, utilizing optimized PostgreSQL queries to handle nested discussion trees and high-traffic user interactions, providing a seamless and responsive experience for technical developers.",
+      "summary": "A developer Q&A platform with topic spaces, threaded replies, voting, accepted answers, and notifications.",
+      "description": "Quorum is a Q&A platform where users create topic spaces, post questions, reply, upvote, and accept answers. Mentions generate notifications, and Better Auth supports sign-in with GitHub or Google.\n\nPosting, replying, and voting use PostgreSQL transactions so counter updates and notification writes commit together. A composite unique index prevents duplicate notifications. Zod validates incoming data, and authorization checks limit edits, deletions, and pinning to users who own the content.",
       "links": [
         {
           "type": "github",
@@ -148,32 +159,47 @@
       "isExpanded": true
     },
     {
+      "id": "chronos",
+      "symbol": "data",
+      "title": "Chronos",
+      "skills": [
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "Redis",
+        "Lua",
+        "Docker",
+        "k6"
+      ],
+      "summary": "A distributed job scheduler with delayed and recurring jobs, priority queues, and recovery after worker crashes.",
+      "description": "Chronos schedules delayed, cron, and priority jobs in Redis. Failed jobs retry with exponential backoff and move to a dead-letter queue after retries are exhausted.\n\nAtomic Lua scripts and a visibility-timeout reaper recover jobs claimed by crashed workers for at-least-once delivery. Per-tenant token buckets prevent one tenant's traffic from starving others, and idempotency keys prevent client retries from creating duplicate jobs.\n\nLoad tests measured throughput above 5,000 jobs per second. Chaos tests recorded zero job loss."
+    },
+    {
       "id": "oss-trends-scraper",
+      "symbol": "data",
       "title": "OSS Trends Scraper",
       "image": "",
       "pinned": true,
       "skills": [
         "Python",
         "FastAPI",
-        "BeautifulSoup",
-        "Docker",
-        "PostgreSQL",
-        "httpx"
+        "Beautiful Soup",
+        "Requests",
+        "Docker"
       ],
-      "summary": "A Python service that discovers trending GitHub repositories, enriches them with GitHub API data, and syncs the results to SourceSurf.",
-      "description": "The OSS Trends Scraper is a high-performance Python microservice engineered to automate the discovery and enrichment of trending GitHub repositories. Built with FastAPI and an entirely asynchronous pipeline, it utilizes BeautifulSoup4 and httpx for high-concurrency web scraping of the GitHub Trending pages. Once a repository is discovered, the service enriches the record by interfacing with the official GitHub REST API to fetch deep metadata, including owner profiles and precise activity metrics.\n\nTo solve the challenge of GitHub's aggressive rate limiting, the service implements an intelligent scheduling and batching system using APScheduler. Enriched data is 'upserted' into a PostgreSQL database (hosted via Supabase) using asyncpg to ensure non-blocking I/O. The microservice then automatically synchronizes this data with the SourceSurf backend via secure webhooks, providing a continuous stream of fresh, high-quality open-source leads while maintaining extreme operational efficiency.",
+      "summary": "A Dockerized FastAPI service that collects GitHub Trending data for SourceSurf.",
+      "description": "The scraper reads daily, weekly, or monthly GitHub Trending results and extracts repository owners, names, and stars earned during the selected period. It can scope the collection to a programming language.\n\nThree scheduled collection jobs keep SourceSurf's repository metadata current. The public scraper also provides a FastAPI endpoint for on-demand collection and forwards the resulting records to the SourceSurf backend.",
       "links": [
         {
           "type": "github",
-          "href": "https://github.com/BeyondV0id/oss-trends-scraper"
+          "href": "https://github.com/OSSURF/oss-trends-scraper"
         }
       ],
       "isExpanded": true
     },
-
-
     {
       "id": "drizzle-auth-api",
+      "symbol": "security",
       "title": "Drizzle Auth API",
       "image": "",
       "pinned": true,
@@ -184,8 +210,8 @@
         "PostgreSQL",
         "Session Security"
       ],
-      "summary": "An Express and Drizzle authentication API with PostgreSQL-backed sessions, secure cookies, and immediate session revocation.",
-      "description": "Drizzle Auth API is a production-ready authentication backend designed with a primary focus on security and immediate session control. Built with Express 5 and Drizzle ORM, it implements a database-backed session strategy that avoids the common pitfalls of stateless JWTs. By storing sessions in a PostgreSQL table and utilizing HTTP-only, secure cookies, the API provides a robust defense against XSS and CSRF attacks while allowing for immediate, server-side session revocation.\n\nThe project demonstrates the power of Drizzle ORM for type-safe database interactions, ensuring that the SQL schema and TypeScript interfaces remain perfectly synchronized. The authentication flow includes secure registration with password hashing, login, logout with instant session destruction, and protected profile management. This backend serves as a high-security foundation for applications requiring strict session management and end-to-end type safety across the database and API layers.",
+      "summary": "An Express and Drizzle authentication API with PostgreSQL-backed sessions and server-side logout.",
+      "description": "The API supports registration, login, logout, and viewing, updating, or deleting an account. Request validation checks the inputs before account changes, and bcrypt hashes passwords.\n\nOn login the API creates a UUID session token in PostgreSQL and sends it in an HTTP-only cookie. The auth middleware checks that session for protected requests. Logging out deletes the database session and clears the cookie.",
       "links": [
         {
           "type": "github",
@@ -193,6 +219,68 @@
         }
       ],
       "isExpanded": true
+    },
+    {
+      "id": "reference",
+      "symbol": "discovery",
+      "title": "Reference",
+      "skills": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Express",
+        "Better Auth",
+        "Drizzle ORM",
+        "PostgreSQL"
+      ],
+      "summary": "A searchable catalogue of design references with personal collections and moodboards.",
+      "description": "Reference organizes UI examples, interactions, assets, and design tools into a searchable catalogue. Users can submit links with a category and save favorites, filed resources, and moodboards to their accounts.\n\nA React app talks to an Express API. Drizzle stores catalogue and account records in PostgreSQL, and Better Auth handles email, Google, and GitHub sign-in.",
+      "links": [
+        {
+          "type": "github",
+          "href": "https://github.com/BeyondV0id/deseng"
+        }
+      ]
+    },
+    {
+      "id": "endless-flow",
+      "title": "Endless Flow",
+      "skills": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Motion"
+      ],
+      "summary": "An infinite canvas for exploring a grid of art tiles by dragging, scrolling, or touch.",
+      "description": "Endless Flow renders a grid of art tiles on a pannable canvas. The tile coordinates determine the title and metadata, so revisiting the same area produces the same content.\n\nThe canvas supports mouse drag, wheel scrolling, and touch. A position indicator tracks the current offset, and the current build uses static images for the tiles.",
+      "links": [
+        {
+          "type": "github",
+          "href": "https://github.com/BeyondV0id/Endless_flow"
+        }
+      ]
+    },
+    {
+      "id": "redis-pubsub-notification-service",
+      "symbol": "discussion",
+      "title": "Redis Pub/Sub Notification Service",
+      "skills": [
+        "Node.js",
+        "TypeScript",
+        "Express",
+        "Redis",
+        "WebSockets",
+        "Docker"
+      ],
+      "summary": "A real-time notification service that relays messages from an HTTP API to WebSocket clients.",
+      "description": "An Express endpoint receives notifications, Redis Pub/Sub distributes messages between service instances, and WebSockets deliver updates to connected clients.\n\nThe project includes a Docker Compose setup for running Redis locally alongside the TypeScript service.",
+      "links": [
+        {
+          "type": "github",
+          "href": "https://github.com/BeyondV0id/redis-pubsub-notifcation-serivce"
+        }
+      ]
     }
   ],
   "techStack": [

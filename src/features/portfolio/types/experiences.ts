@@ -17,6 +17,7 @@ export type ExperiencePosition = {
   };
   /** Full-time | Part-time | Contract | Internship, etc. */
   employmentType?: string;
+  summary?: string;
   description?: string;
   /** UI icon to represent the role type. */
   icon?: ExperiencePositionIcon;

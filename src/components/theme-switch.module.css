@@ -1,0 +1,32 @@
+.themeSwitch {
+  position: relative;
+}
+
+.iconWrap {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+
+.icon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+.iconOnly {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+}
+
+.settled {
+}

@@ -20,6 +20,8 @@ const buttonVariants = cva(
           "border border-border bg-transparent text-muted-foreground hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50",
         ghost:
           "text-muted-foreground hover:border-foreground/65 hover:text-foreground/65 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 border border-transparent hover:border-border",
+        fluid:
+          "text-muted-foreground motion-safe:active:scale-none data-[fluid-hover-active]:text-foreground",
         link: "text-foreground underline-offset-4 hover:underline active:scale-none",
       },
       size: {

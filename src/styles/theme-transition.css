@@ -1,0 +1,22 @@
+.theme-eclipse::view-transition-old(root),
+.theme-eclipse::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+
+.theme-eclipse::view-transition-old(root) {
+  animation: none;
+}
+
+.theme-eclipse::view-transition-new(root) {
+  animation: theme-eclipse 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes theme-eclipse {
+  from {
+    clip-path: ellipse(0% 0% at left center);
+  }
+
+  to {
+    clip-path: ellipse(120% 150% at left center);
+  }
+}

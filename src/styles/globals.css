@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./theme-transition.css";
 @import "../lib/fluid-functionalism/reveal.css";
 
 @plugin "@tailwindcss/typography";
@@ -30,7 +31,11 @@
   --color-accent2: var(--accent2);
   --color-hover: var(--muted);
   --color-accent-foreground: var(--accent-foreground);
+  --color-surface: var(--surface);
+  --color-portfolio-panel: var(--portfolio-panel);
+  --color-surface-foreground: var(--surface-foreground);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-edge: var(--edge);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -49,7 +54,7 @@
     var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono:
-    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    var(--font-paper-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, monospace;
 
   --shadow-popover: var(--shadow-popover);
@@ -86,12 +91,24 @@
 }
 
 @utility link {
-  @apply font-medium underline underline-offset-4;
+  @apply font-medium underline decoration-border-strong underline-offset-4 transition-colors hover:decoration-foreground;
 }
 
 @utility text-xxs {
   font-size: 0.5625rem;
   line-height: 0.75rem;
+}
+
+@utility section-title {
+  @apply text-[18px] leading-[23px] font-medium tracking-tight text-foreground;
+}
+
+@utility section-kicker {
+  @apply font-mono text-[11px] leading-4 tracking-tight text-muted-foreground;
+}
+
+@utility quiet-link {
+  @apply inline-flex shrink-0 items-center gap-2 rounded-sm text-sm text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring;
 }
 
 @utility step {
@@ -103,70 +120,89 @@
 }
 
 :root {
-  --background: #faf5f5;
-  --foreground: #17160f;
-  --primary: #262524;
-  --primary-foreground: #faf5f5;
-  --secondary: #f2eded;
-  --secondary-foreground: #17160f;
-  --muted: #f2eded;
-  --muted-foreground: #64625a;
-  --card: #f5f0f0;
-  --card-foreground: #17160f;
-  --popover: #faf5f5;
-  --popover-foreground: #17160f;
-  --popover-border: rgba(23, 22, 15, 0.12);
-  --accent: #efe9e9;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --primary: #141414;
+  --primary-foreground: #fafafa;
+  --secondary: #f0f0f0;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f0f0f0;
+  --pill: #f4f4f4;
+  --muted-foreground: #606060;
+  --surface: #ffffff;
+  --portfolio-panel: var(--muted);
+  --surface-foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --popover-border: #e5e5e5;
+  --accent: #f0f0f0;
   --accent2: color-mix(in oklab, var(--accent) 50%, transparent);
-  --accent-foreground: #17160f;
-  --border: #e8e3e3;
+  --accent-foreground: #0a0a0a;
+  --border: #e5e5e5;
+  --border-strong: #d4d4d4;
   --edge: color-mix(in oklab, var(--border) 64%, var(--background));
-  --input: #e8e3e3;
-  --ring: #8f8c82;
-  --info: oklch(0.67 0.17 244.98);
-  --success: oklch(0.723 0.219 149.579);
-  --destructive: oklch(0.577 0.245 27.325);
-  --link: oklch(0.488 0.243 264.376);
-  --code: #f4efef;
-  --code-foreground: #17160f;
-  --code-number: #8f8c82;
-  --code-highlight: #eae4e4;
-  --selection: #17160f;
-  --selection-foreground: #faf5f5;
-  --shadow-popover: 0 6px 24px rgba(23, 22, 15, 0.12);
+  --input: #e5e5e5;
+  --ring: #8a8a8a;
+  --info: #525252;
+  --success: #525252;
+  --destructive: #dc2626;
+  --link: #0a0a0a;
+  --code: #f5f5f5;
+  --code-foreground: #0a0a0a;
+  --code-number: #8a8a8a;
+  --code-highlight: #ececec;
+  --selection: #0a0a0a;
+  --selection-foreground: #fafafa;
+  --contribution-1: #d4d4d4;
+  --contribution-2: #a3a3a3;
+  --contribution-3: #6b6b6b;
+  --contribution-4: #0a0a0a;
+  --shadow-popover: 0 0 0 1px var(--popover-border);
 }
 
 .dark {
-  --background: #0d0c0a;
-  --foreground: #f5f0f0;
-  --primary: #f5f0f0;
-  --primary-foreground: #0d0c0a;
-  --secondary: #1c1a17;
-  --secondary-foreground: #f5f0f0;
-  --muted: #1c1a17;
-  --muted-foreground: #a39f96;
-  --card: #141310;
-  --card-foreground: #f5f0f0;
-  --popover: #141310;
-  --popover-foreground: #f5f0f0;
-  --popover-border: #2b2924;
-  --accent: #1f1d19;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #ededed;
+  --primary-foreground: #0a0a0a;
+  --secondary: #141414;
+  --secondary-foreground: #ededed;
+  --muted: #141414;
+  --pill: #101010;
+  --muted-foreground: #a3a3a3;
+  --surface: #141414;
+  --portfolio-panel: var(--surface);
+  --surface-foreground: #ededed;
+  --card: #0a0a0a;
+  --card-foreground: #ededed;
+  --popover: #141414;
+  --popover-foreground: #ededed;
+  --popover-border: #232323;
+  --accent: #232323;
   --accent2: color-mix(in oklab, var(--accent) 30%, transparent);
-  --accent-foreground: #f5f0f0;
-  --border: #262420;
+  --accent-foreground: #ededed;
+  --border: #232323;
+  --border-strong: #374151;
   --edge: color-mix(in oklab, var(--border) 64%, var(--background));
-  --input: #262420;
-  --ring: #706d65;
-  --success: oklch(0.723 0.219 149.579);
-  --destructive: oklch(0.505 0.213 27.518);
-  --link: oklch(0.623 0.214 259.815);
-  --code: #141310;
-  --code-foreground: #f5f0f0;
-  --code-number: #706d65;
-  --code-highlight: #1f1d19;
-  --selection: #f5f0f0;
-  --selection-foreground: #0d0c0a;
-  --shadow-popover: 0 0 24px rgba(0, 0, 0, 0.5);
+  --input: #232323;
+  --ring: #6b7280;
+  --info: #9ca3af;
+  --success: #a3a3a3;
+  --destructive: #ef4444;
+  --link: #ededed;
+  --code: #0f0f0f;
+  --code-foreground: #ededed;
+  --code-number: #5c5c5c;
+  --code-highlight: #1a1a1a;
+  --selection: #ededed;
+  --selection-foreground: #0a0a0a;
+  --contribution-1: #2e2e2e;
+  --contribution-2: #4a4a4a;
+  --contribution-3: #7a7a7a;
+  --contribution-4: #c9c9c9;
+  --shadow-popover: 0 0 0 1px var(--popover-border);
 }
 
 @layer base {

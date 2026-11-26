@@ -7,6 +7,19 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
+        allow: "/",
+      },
+      {
+        userAgent: "GPTBot",
+        allow: "/",
+      },
+      {
+        userAgent: "ClaudeBot",
+        allow: "/",
+      },
+      {
+        userAgent: "PerplexityBot",
+        allow: "/",
       },
     ],
     sitemap: `${SITE_INFO.url}/sitemap.xml`,

@@ -1,6 +1,5 @@
 "use client";
 
-import { ChevronRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { Collapsible as CollapsiblePrimitive } from "radix-ui";
 import {
@@ -13,6 +12,8 @@ import {
 
 import { spring } from "@/lib/fluid-functionalism/springs";
 import { cn } from "@/lib/utils";
+
+import { ChevronIcon } from "./icon-morph";
 
 const CollapsibleContext = createContext<{
   open: boolean;
@@ -73,9 +74,11 @@ function CollapsibleTrigger(
 function CollapsibleContent({
   className,
   children,
+  previewHeight = 0,
 }: {
   className?: string;
   children: React.ReactNode;
+  previewHeight?: number;
 }) {
   const { open, animate } = useContext(CollapsibleContext);
   const reduceMotion = useReducedMotion();
@@ -85,9 +88,17 @@ function CollapsibleContent({
       <motion.div
         aria-hidden={!open}
         inert={!open}
-        className={cn("overflow-hidden", className)}
+        className={cn(
+          "overflow-hidden",
+          previewHeight > 0 &&
+            "data-[state=closed]:mask-[linear-gradient(black,transparent)]",
+          className,
+        )}
         initial={false}
-        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+        animate={{
+          height: open ? "auto" : previewHeight,
+          opacity: open || previewHeight > 0 ? 1 : 0,
+        }}
         transition={
           animate && !reduceMotion
             ? open
@@ -103,20 +114,9 @@ function CollapsibleContent({
 }
 
 function CollapsibleChevronsIcon() {
-  const { open, animate } = useContext(CollapsibleContext);
-  const reduceMotion = useReducedMotion();
+  const { open } = useContext(CollapsibleContext);
 
-  return (
-    <motion.span
-      aria-hidden
-      className="inline-flex"
-      initial={false}
-      animate={{ transform: `rotate(${open ? 90 : 0}deg)` }}
-      transition={animate && !reduceMotion ? spring.fast : { duration: 0 }}
-    >
-      <ChevronRight className="size-4" />
-    </motion.span>
-  );
+  return <ChevronIcon state={open} size={14} />;
 }
 
 export {

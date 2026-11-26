@@ -30,6 +30,9 @@ importers:
       '@phosphor-icons/react':
         specifier: ^2.1.10
         version: 2.1.10(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@solar-icons/react':
+        specifier: ^2.7.0
+        version: 2.7.0(@types/react@19.2.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1(next@16.4.6(@babel/core@7.29.13)(@types/node@20.19.43)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
@@ -60,9 +63,6 @@ importers:
       libphonenumber-js:
         specifier: ^1.12.4
         version: 1.13.17
-      lucide-react:
-        specifier: ^0.544.0
-        version: 0.544.0(react@19.3.1)
       motion:
         specifier: ^12.38.0
         version: 12.43.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -81,6 +81,9 @@ importers:
       nuqs:
         specifier: ^2.8.0
         version: 2.10.3(next@16.4.6(@babel/core@7.29.13)(@types/node@20.19.43)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
+      pondscape:
+        specifier: 0.1.3
+        version: 0.1.3(react@19.3.1)
       radix-ui:
         specifier: ^1.4.3
         version: 1.8.1(@types/react-dom@19.2.3(@types/react@19.2.5))(@types/react@19.2.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -2059,6 +2062,17 @@ packages:
   '@smithy/types@4.20.0':
     resolution: {integrity: sha512-lCA6QG22dPk9ecHbv91jDQZsmtPUjdS1aE2Il6NNPqe7DrYc0dZQi6DhcESk2KYXH2sp5xbAcGdYMZDFnuzA2A==}
     engines: {node: '>=18.0.0'}
+
+  '@solar-icons/react@2.7.0':
+    resolution: {integrity: sha512-O7OQtQnVQpzoIieNgd4YwAW0t4ob21RXz9dbBRiJIlKACxDH73cnroUHB4Hm3VFDvje9TYgBd2Jy17VQghak2Q==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      '@types/react': 19.2.5
+      react: '>= 16.8'
+      react-dom: '>= 16.8'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
@@ -4311,11 +4325,6 @@ packages:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
 
-  lucide-react@0.544.0:
-    resolution: {integrity: sha512-t5tS44bqd825zAW45UQxpG2CvcC4urOwn2TrwSH8u+MjeE+1NnWl6QqeQ/6NdjMqdOygyiT9p3Ev0p1NJykxjw==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
   magic-string@1.4.5:
     resolution: {integrity: sha512-oLLC2+YvQUfAa+vxoufE/yc1icb87M9iXIRqAoR/2EhE/8cb3SF/+Gi0c2By1B+5Vz2e2vQtUvHiu1+63Znh+w==}
 
@@ -4912,6 +4921,14 @@ packages:
 
   player.style@0.3.5:
     resolution: {integrity: sha512-hknPiLjNtJP5zM0vCVXsl3Pef+uQnecYg8X/1vjd/Y3TdAgs/zxhck02SFTxRSckaObKemP5tUT8wTH7ByUmnw==}
+
+  pondscape@0.1.3:
+    resolution: {integrity: sha512-tekh0Px55+A37ywuM9MZbkJ8HaDPYh+Pc85EqtYWx7l1JSxN3RVZ12DxZ2MPhBBseSQx/I9tk9Uq/G3IEZkApg==}
+    peerDependencies:
+      react: '>=18'
+    peerDependenciesMeta:
+      react:
+        optional: true
 
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
@@ -7936,6 +7953,13 @@ snapshots:
     dependencies:
       tslib: 2.9.1
 
+  '@solar-icons/react@2.7.0(@types/react@19.2.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+    dependencies:
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
+    optionalDependencies:
+      '@types/react': 19.2.5
+
   '@standard-schema/spec@1.1.0': {}
 
   '@standard-schema/utils@0.3.0': {}
@@ -10331,10 +10355,6 @@ snapshots:
 
   lru-cache@7.18.3: {}
 
-  lucide-react@0.544.0(react@19.3.1):
-    dependencies:
-      react: 19.3.1
-
   magic-string@1.4.5:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.6.0
@@ -11235,6 +11255,10 @@ snapshots:
       media-chrome: 4.19.5(react@19.3.1)
     transitivePeerDependencies:
       - react
+
+  pondscape@0.1.3(react@19.3.1):
+    optionalDependencies:
+      react: 19.3.1
 
   possible-typed-array-names@1.1.0: {}
 

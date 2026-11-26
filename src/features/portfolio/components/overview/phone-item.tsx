@@ -1,6 +1,6 @@
 "use client";
 
-import { PhoneIcon } from "lucide-react";
+import { PhoneIcon } from "@solar-icons/react/linear/phone";
 
 import { useIsClient } from "@/hooks/use-is-client";
 import { decodePhoneNumber, formatPhoneNumber } from "@/utils/string";

@@ -1,6 +1,6 @@
 "use client";
 
-import { MailIcon } from "lucide-react";
+import { LetterIcon as MailIcon } from "@solar-icons/react/linear/letter";
 
 import { useIsClient } from "@/hooks/use-is-client";
 import { decodeEmail } from "@/utils/string";

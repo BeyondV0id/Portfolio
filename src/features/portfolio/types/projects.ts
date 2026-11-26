@@ -22,6 +22,7 @@ export type Project = {
   liveLink?: string;
   githubLink?: string;
   icon?: string;
+  symbol?: "discovery" | "discussion" | "data" | "security";
   image?: string;
   video?: string;
   pinned?: boolean;

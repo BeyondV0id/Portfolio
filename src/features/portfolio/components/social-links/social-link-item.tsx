@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon } from "lucide-react";
+import { ArrowRightUpIcon as ArrowUpRightIcon } from "@solar-icons/react/linear/arrow-right-up";
 import Image from "next/image";
 
 import type { SocialLink } from "@/features/portfolio/types/social-links";
@@ -10,7 +10,7 @@ export function SocialLinkItem({ icon, title, description, href }: SocialLink) {
       className={cn(
         "group/link flex cursor-pointer items-center gap-4 p-4 pr-2 transition-colors select-none hover:bg-accent2",
         "max-sm:screen-line-before max-sm:screen-line-after",
-        "sm:nth-[2n+1]:screen-lingge-before sm:nth-[2n+1]:screen-line-after"
+        "sm:nth-[2n+1]:screen-lingge-before sm:nth-[2n+1]:screen-line-after",
       )}
       href={href}
       target="_blank"

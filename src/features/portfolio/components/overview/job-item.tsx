@@ -1,8 +1,5 @@
-import {
-  BriefcaseBusinessIcon,
-  CodeXmlIcon,
-  LightbulbIcon,
-} from "lucide-react";
+import { CaseIcon as BriefcaseBusinessIcon } from "@solar-icons/react/linear/case";
+import { LightbulbIcon } from "@solar-icons/react/linear/lightbulb";
 
 import { UTM_PARAMS } from "@/config/site";
 import { addQueryParams } from "@/utils/url";
@@ -15,10 +12,6 @@ import {
 } from "./intro-item";
 
 function getJobIcon(title: string) {
-  // if (/(developer|engineer)/i.test(title)) {
-  //   return <CodeXmlIcon />;
-  // }
-
   if (/(founder|co-founder|building)/i.test(title)) {
     return <LightbulbIcon />;
   }

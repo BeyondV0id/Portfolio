@@ -34,8 +34,8 @@ export const PROFILE_IMAGES = {
 };
 
 export const META_THEME_COLORS = {
-  light: "#faf5f5",
-  dark: "#0d0c0a",
+  light: "#fafafa",
+  dark: "#0a0a0a",
 };
 
 export const MAIN_NAV: NavItem[] = [

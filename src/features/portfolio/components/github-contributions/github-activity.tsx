@@ -1,13 +1,12 @@
 "use client";
 
+import { AltArrowDownIcon } from "@solar-icons/react/linear/alt-arrow-down";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import * as React from "react";
 import { createPortal } from "react-dom";
-import {
-  AnimatePresence,
-  motion,
-  useReducedMotion,
-  type Transition,
-} from "motion/react";
+
+import { Icons } from "@/components/icons";
+import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
 import { cn } from "@/lib/utils";
 
 export type ContributionLevel = 0 | 1 | 2 | 3 | 4;
@@ -25,15 +24,15 @@ export type RepoContribution = {
   href?: string;
 };
 
-const DEFAULT_ACCENT = "#39d353";
+const DEFAULT_ACCENT = "var(--contribution-4)";
 const DEFAULT_CELL_SIZE = 11;
-const DEFAULT_LABEL = "Top contributions in:";
+const DEFAULT_LABEL = "Top contributions";
 const DEFAULT_MONTHS = 12;
 const WEEKS_PER_MONTH = 365.25 / 12 / 7;
 const STACK_LIMIT = 3;
 const MIN_CARD_WIDTH = 320;
 const MIN_LABEL_WEEKS = 3;
-// the p-4 on the card, both sides; the width math below has to add it back
+// Outer padding plus the calendar inset, on both sides.
 const CARD_PADDING = 32;
 
 const gapFor = (cellSize: number) => Math.max(2, Math.round(cellSize / 4));
@@ -45,10 +44,7 @@ const useIsoLayoutEffect =
   typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
 
 const EASE_OUT = [0.22, 1, 0.36, 1] as const;
-const SPRING = { type: "spring", bounce: 0.2, duration: 0.62 } as const;
-const HEADER_SPRING = { ...SPRING, bounce: 0.45 } as const;
-const ROW_SPRING = { ...SPRING, bounce: 0.26, delay: 0.08 } as const;
-const ROW_OFFSET = 16;
+const PANEL_TRANSITION = { duration: 0.2, ease: EASE_OUT } as const;
 const CELL_FADE = { duration: 0.2, ease: EASE_OUT } as const;
 const TOOLTIP_FADE = { duration: 0.14, ease: EASE_OUT } as const;
 const TOOLTIP_EDGE = 8;
@@ -127,8 +123,8 @@ async function fetchCalendar(login: string) {
   const res = await fetch(`${CALENDAR_API}/${login}?y=last`);
   if (!res.ok) return null;
 
-  const days: ApiDay[] = ((await res.json()) as { contributions?: ApiDay[] })
-    ?.contributions ?? [];
+  const days: ApiDay[] =
+    ((await res.json()) as { contributions?: ApiDay[] })?.contributions ?? [];
   if (!days.length) return null;
 
   // columns are weeks, so the first day has to be a sunday or every column shears
@@ -168,7 +164,6 @@ async function fetchRepos(login: string): Promise<RepoContribution[]> {
         // github has no repo logo, only an owner avatar, so own repos use the initial
         logo:
           owner.toLowerCase() === login.toLowerCase() ? undefined : (
-            // eslint-disable-next-line @next/next/no-img-element
             <img src={`https://github.com/${owner}.png?size=64`} alt="" />
           ),
       };
@@ -358,7 +353,7 @@ const ContributionGrid = ({
               style={{ width: cellSize }}
             >
               {month && (
-                <span className="absolute left-0 top-0 text-[10px] leading-none text-foreground/40">
+                <span className="absolute left-0 top-0 text-[10px] leading-none text-muted-foreground">
                   {month}
                 </span>
               )}
@@ -378,7 +373,7 @@ const ContributionGrid = ({
               <motion.div
                 key={day.date}
                 onPointerEnter={hover(day)}
-                className="shrink-0 rounded-[3px] bg-foreground/[0.08]"
+                className="shrink-0 rounded-full bg-foreground/8"
                 style={{ width: cellSize, height: cellSize }}
                 initial={reduceMotion ? false : { opacity: 0, scale: 0.4 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -388,7 +383,7 @@ const ContributionGrid = ({
                 }}
               >
                 <div
-                  className="h-full w-full rounded-[3px]"
+                  className="size-full rounded-full"
                   style={scale[day.level] ?? scale[0]}
                 />
               </motion.div>
@@ -412,85 +407,55 @@ const ContributionGrid = ({
 
 const Avatar = ({
   repo,
-  layoutId,
-  transition,
   className,
 }: {
   repo: RepoContribution;
-  layoutId: string;
-  transition: Transition;
   className?: string;
 }) => (
-  <motion.span
-    layoutId={layoutId}
-    transition={transition}
+  <span
+    aria-hidden="true"
     className={cn(
-      "grid size-7 shrink-0 place-items-center overflow-hidden rounded-full bg-neutral-200 text-[11px] font-medium uppercase text-foreground/70 ring-2 ring-background dark:bg-neutral-800",
+      "grid size-7 shrink-0 place-items-center overflow-hidden rounded-full bg-muted text-[11px] font-medium uppercase text-muted-foreground",
       "[&_img]:size-full [&_img]:object-cover [&_svg]:size-full",
       className,
     )}
   >
     {repo.logo ?? repo.name.charAt(0)}
-  </motion.span>
+  </span>
 );
 
-const RepoRow = ({
-  repo,
-  layoutId,
-  transition,
-}: {
-  repo: RepoContribution;
-  layoutId: string;
-  transition: Transition;
-}) => {
-  const className =
-    "flex items-center gap-3 rounded-xl mx-2 px-2 py-2 transition-colors hover:bg-foreground/5";
+const RepoRow = ({ repo }: { repo: RepoContribution }) => {
+  const className = "flex items-center gap-3 rounded-lg px-2 py-2";
 
   const content = (
     <>
-      <Avatar repo={repo} layoutId={layoutId} transition={transition} />
+      <Avatar repo={repo} />
       <span className="flex-1 truncate text-sm text-foreground">
         {repo.name}
       </span>
-      <span className="text-sm tabular-nums text-foreground/70">
+      <span className="text-sm text-muted-foreground tabular-nums">
         {repo.count}
       </span>
     </>
   );
 
   return repo.href ? (
-    <a href={repo.href} target="_blank" rel="noreferrer" className={className}>
+    <a
+      href={repo.href}
+      target="_blank"
+      rel="noreferrer"
+      data-fluid-item
+      className={cn(
+        className,
+        "focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring",
+      )}
+    >
       {content}
     </a>
   ) : (
     <div className={className}>{content}</div>
   );
 };
-
-const Chevron = ({
-  open,
-  transition,
-}: {
-  open: boolean;
-  transition: Transition;
-}) => (
-  <motion.svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden
-    className="size-7 text-[#C4C9CC] dark:text-[#3E4346]"
-    initial={false}
-    animate={{ rotate: open ? 180 : 0 }}
-    transition={transition}
-  >
-    <circle cx="12" cy="12" r="10" />
-    <path d="m16 10-4 4-4-4" />
-  </motion.svg>
-);
 
 export type GitHubActivityProps = React.ComponentProps<"div"> & {
   username?: string;
@@ -510,8 +475,8 @@ export type GitHubActivityProps = React.ComponentProps<"div"> & {
 const GitHubActivity = ({
   className,
   username,
-  contributions: contributionsProp = [],
-  repos: reposProp = [],
+  contributions: contributionsProp,
+  repos: reposProp,
   year,
   accent = DEFAULT_ACCENT,
   cellSize = DEFAULT_CELL_SIZE,
@@ -534,38 +499,25 @@ const GitHubActivity = ({
     onOpenChange?.(!open);
   };
 
-  const needsFetch = !contributionsProp.length || !reposProp.length;
+  const needsFetch = contributionsProp === undefined || reposProp === undefined;
   const fetched = useGitHubUser(needsFetch ? username : undefined);
   const placeholder = React.useMemo(
-    () => (username ? emptyDays(weeksFor(months)) : []),
-    [username, months],
+    () => (needsFetch && username ? emptyDays(weeksFor(months)) : []),
+    [needsFetch, username, months],
   );
 
-  const contributions = contributionsProp.length
-    ? contributionsProp
-    : (fetched?.contributions ?? placeholder);
-  const repos = reposProp.length ? reposProp : (fetched?.repos ?? []);
+  const contributions =
+    contributionsProp ?? fetched?.contributions ?? placeholder;
+  const repos = reposProp ?? fetched?.repos ?? [];
 
   const scale = React.useMemo(() => toScale(accent), [accent]);
-  const transition = reduceMotion ? { duration: 0 } : SPRING;
-  const headerTransition = reduceMotion ? { duration: 0 } : HEADER_SPRING;
-  const rowTransition = reduceMotion ? { duration: 0 } : ROW_SPRING;
-
-  const kick = reduceMotion ? {} : { x: ROW_OFFSET, y: ROW_OFFSET };
-  const listMotion = {
-    initial: { opacity: 0, ...kick },
-    animate: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, ...kick },
-  };
 
   const total = React.useMemo(
     () => contributions.reduce((sum, day) => sum + day.count, 0),
     [contributions],
   );
 
-  const parsedYear = Number(contributions.at(-1)?.date.slice(0, 4));
-  const displayYear = year ?? (Number.isFinite(parsedYear) ? parsedYear : null);
-  const heading = `${total} contributions${displayYear ? ` in ${displayYear}` : ""}`;
+  const heading = `${new Intl.NumberFormat("en-US").format(total)} ${total === 1 ? "contribution" : "contributions"} ${year ? `in ${year}` : "in the past year"}`;
 
   const gap = gapFor(cellSize);
   const columns = Math.min(
@@ -581,100 +533,119 @@ const GitHubActivity = ({
     <div
       data-slot="github-activity"
       className={cn(
-        "relative max-w-full overflow-hidden rounded-[28px] bg-white p-4 dark:bg-black",
-        repos.length > 0 && "pb-[76px]",
+        "flex max-w-full flex-col overflow-hidden rounded-2xl bg-portfolio-panel p-1",
         className,
       )}
       style={{ width, ...style }}
       {...props}
     >
-      <p className="mb-4 text-base font-medium text-foreground px-1.5">
-        {heading}
-      </p>
+      <div className="flex min-w-0 items-center gap-2 px-3 py-2 text-sm">
+        <Icons.github aria-hidden="true" className="size-4 shrink-0" />
+        <span className="font-semibold">GitHub</span>
+        {username && (
+          <FluidHoverGroup
+            className="min-w-0"
+            highlightClassName="rounded-md bg-accent"
+          >
+            <a
+              href={`https://github.com/${encodeURIComponent(username)}`}
+              data-fluid-item
+              className="block truncate rounded-md px-1 py-0.5 leading-none text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground"
+            >
+              @{username}
+            </a>
+          </FluidHoverGroup>
+        )}
+      </div>
 
-      <ContributionGrid
-        contributions={contributions}
-        scale={scale}
-        cellSize={cellSize}
-        months={months}
-        showMonths={showMonths}
-        label={heading}
-        reduceMotion={reduceMotion}
-      />
+      <div className="rounded-xl bg-card px-3 py-2 dark:bg-background">
+        <ContributionGrid
+          contributions={contributions}
+          scale={scale}
+          cellSize={cellSize}
+          months={months}
+          showMonths={showMonths}
+          label={`GitHub contributions calendar. ${heading}`}
+          reduceMotion={reduceMotion}
+        />
+
+        <div className="mt-2 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[11px] leading-4 text-muted-foreground">
+          <div className="flex items-center gap-1" aria-hidden="true">
+            Less
+            {scale.map((style, index) => (
+              <span
+                key={index}
+                className="size-2.5 rounded-full bg-foreground/8"
+              >
+                <span className="block size-full rounded-full" style={style} />
+              </span>
+            ))}
+            More
+          </div>
+          <p className="tabular-nums">{heading}</p>
+        </div>
+      </div>
 
       {repos.length > 0 && (
-        <motion.div
-          layout
-          id={`${uid}-panel`}
-          data-slot="github-activity-panel"
-          data-state={open ? "open" : "closed"}
-          className={cn(
-            "absolute inset-x-3 bottom-3 overflow-hidden bg-card/90 backdrop-blur-xl",
-            open && "top-3",
-          )}
-          style={{ borderRadius: 18 }}
-          transition={transition}
+        <FluidHoverGroup
+          className="mt-1"
+          highlightClassName="rounded-xl bg-accent"
         >
-          <motion.div
-            layout="position"
-            transition={headerTransition}
-            className="flex items-center justify-between gap-3 py-3 px-4"
+          <button
+            type="button"
+            onClick={toggle}
+            aria-expanded={open}
+            aria-controls={`${uid}-panel`}
+            data-slot="github-activity-panel"
+            data-state={open ? "open" : "closed"}
+            data-fluid-item
+            className="group flex min-h-10 w-full items-center justify-between gap-2 rounded-xl px-3 py-1 text-left text-sm focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
           >
-            <span className="truncate text-sm text-foreground">{label}</span>
-
-            <div className="flex items-center gap-3">
+            <span className="truncate">{label}</span>
+            <span className="flex items-center gap-3" aria-hidden="true">
               {!open && (
-                <div className="flex items-center">
+                <span className="flex items-center">
                   {repos.slice(0, STACK_LIMIT).map((repo, index) => (
                     <Avatar
                       key={index}
                       repo={repo}
-                      layoutId={`${uid}-${index}`}
-                      transition={transition}
-                      className="-ml-2 first:ml-0"
+                      className="-ml-2 ring-2 ring-muted first:ml-0 dark:ring-surface"
                     />
                   ))}
-                </div>
+                </span>
               )}
-
-              <button
-                type="button"
-                onClick={toggle}
-                aria-expanded={open}
-                aria-controls={`${uid}-panel`}
-                aria-label={
-                  open ? "Hide top repositories" : "Show top repositories"
-                }
-                className="grid size-7 shrink-0 place-items-center rounded-full bg-card"
-              >
-                <Chevron open={open} transition={transition} />
-              </button>
-            </div>
-          </motion.div>
-
-          <AnimatePresence initial={false} mode="popLayout">
-            {open && (
-              <motion.ul
-                key="list"
-                layout="position"
-                {...listMotion}
-                transition={rowTransition}
-                className="px-0.5 pb-1"
-              >
-                {repos.map((repo, index) => (
-                  <li key={index}>
-                    <RepoRow
-                      repo={repo}
-                      layoutId={`${uid}-${index}`}
-                      transition={transition}
-                    />
-                  </li>
-                ))}
-              </motion.ul>
-            )}
-          </AnimatePresence>
-        </motion.div>
+              <AltArrowDownIcon className="size-4 shrink-0 text-muted-foreground group-aria-expanded:rotate-180 motion-safe:transition-transform" />
+            </span>
+          </button>
+        </FluidHoverGroup>
       )}
+
+      <div id={`${uid}-panel`} inert={!open}>
+        <AnimatePresence initial={false}>
+          {open && repos.length > 0 && (
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: "auto" }}
+              exit={{ height: 0 }}
+              transition={reduceMotion ? { duration: 0 } : PANEL_TRANSITION}
+              className="overflow-hidden"
+            >
+              <FluidHoverGroup
+                className="mt-1 rounded-xl bg-card p-1 dark:bg-background"
+                highlightClassName="bg-accent"
+              >
+                <ul>
+                  {repos.map((repo, index) => (
+                    <li key={index}>
+                      <RepoRow repo={repo} />
+                    </li>
+                  ))}
+                </ul>
+              </FluidHoverGroup>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };

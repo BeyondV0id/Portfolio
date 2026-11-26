@@ -1,12 +1,10 @@
-import {
-  BriefcaseBusinessIcon,
-  FileIcon,
-  GalleryHorizontalEndIcon,
-  LineSquiggleIcon,
-  MoonStarIcon,
-  TerminalSquareIcon,
-  ZapIcon,
-} from "lucide-react";
+import { BoltIcon as ZapIcon } from "@solar-icons/react/linear/bolt";
+import { CaseIcon as BriefcaseBusinessIcon } from "@solar-icons/react/linear/case";
+import { FileIcon } from "@solar-icons/react/linear/file";
+import { FileTerminalIcon as TerminalSquareIcon } from "@solar-icons/react/linear/file-terminal";
+import { GalleryWideIcon as GalleryHorizontalEndIcon } from "@solar-icons/react/linear/gallery-wide";
+import { MoonStarsIcon as MoonStarIcon } from "@solar-icons/react/linear/moon-stars";
+import { PulseIcon as LineSquiggleIcon } from "@solar-icons/react/linear/pulse";
 
 type IconProps = React.HTMLAttributes<SVGElement>;
 

@@ -1,17 +1,11 @@
-import { GlobeIcon, MapPinIcon } from "lucide-react";
+import { MapPointIcon as MapPinIcon } from "@solar-icons/react/linear/map-point";
 
 import { USER } from "@/features/portfolio/data";
-import { urlToName } from "@/utils/url";
 
 import { Panel, PanelContent } from "../panel";
 import { CurrentLocalTimeItem } from "./current-local-time-item";
 import { EmailItem } from "./email-item";
-import {
-  IntroItem,
-  IntroItemContent,
-  IntroItemIcon,
-  IntroItemLink,
-} from "./intro-item";
+import { IntroItem, IntroItemContent, IntroItemIcon } from "./intro-item";
 import { JobItem } from "./job-item";
 import { PhoneItem } from "./phone-item";
 

@@ -1,10 +1,11 @@
 "use client";
 
-import { ArrowUpIcon } from "lucide-react";
+import { ArrowUpIcon } from "@solar-icons/react/linear/arrow-up";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
 import { spring } from "@/lib/fluid-functionalism/springs";
 import { cn } from "@/lib/utils";
 
@@ -27,26 +28,32 @@ export function ScrollToTop({
   });
 
   return (
-    <Button
-      aria-hidden={!visible}
-      data-visible={visible}
-      tabIndex={visible ? 0 : -1}
-      data-scroll-direction={scrollDirection}
+    <FluidHoverGroup
       className={cn(
-        "[--bottom:1rem] lg:[--bottom:2rem]",
-        "fixed right-4 bottom-[calc(var(--bottom,1rem)+env(safe-area-inset-bottom,0px))] z-50 lg:right-8",
-        "transition-[background-color,opacity] motion-reduce:transition-none data-[scroll-direction=down]:opacity-30 data-[scroll-direction=up]:opacity-100 data-[visible=false]:pointer-events-none data-[visible=false]:opacity-0",
-        "data-[scroll-direction=down]:hover:opacity-100",
-        className,
+        "fixed right-4 bottom-[calc(var(--bottom,1rem)+env(safe-area-inset-bottom,0px))] z-50 lg:right-8 lg:[--bottom:2rem]",
+        !visible && "pointer-events-none",
       )}
-      style={{ transitionDuration: `${spring.moderate.duration}s`, ...style }}
-      variant="secondary"
-      size="icon-lg"
-      onClick={() => window.scrollTo({ top: 0 })}
-      {...props}
+      highlightClassName="bg-accent"
     >
-      <ArrowUpIcon className="size-5" />
-      <span className="sr-only">Scroll to top</span>
-    </Button>
+      <Button
+        aria-hidden={!visible}
+        data-visible={visible}
+        tabIndex={visible ? 0 : -1}
+        data-scroll-direction={scrollDirection}
+        data-fluid-item
+        className={cn(
+          "bg-muted/60 transition-opacity motion-reduce:transition-none data-[scroll-direction=down]:not-data-[fluid-hover-active]:opacity-30 data-[visible=false]:opacity-0",
+          className,
+        )}
+        style={{ transitionDuration: `${spring.moderate.duration}s`, ...style }}
+        variant="fluid"
+        size="icon-lg"
+        onClick={() => window.scrollTo({ top: 0 })}
+        {...props}
+      >
+        <ArrowUpIcon className="size-5" />
+        <span className="sr-only">Scroll to top</span>
+      </Button>
+    </FluidHoverGroup>
   );
 }

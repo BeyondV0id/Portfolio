@@ -27,9 +27,7 @@ export function TeckStack() {
 
   return (
     <section id="stack" className="flex flex-col gap-5">
-      <h2 className="text-[18px] font-medium tracking-tight text-foreground">
-        stack.
-      </h2>
+      <h2 className="section-title">stack.</h2>
 
       <FluidHoverGroup axis="xy" highlightClassName="rounded-md bg-accent">
         <ul className="flex flex-wrap items-center gap-2 select-none">
@@ -51,7 +49,7 @@ export function TeckStack() {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-fluid-item
-                  className="inline-flex items-center gap-1.5 rounded-md bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground"
+                  className="inline-flex items-center gap-1.5 rounded-md bg-[var(--pill)] px-2.5 py-1 text-xs text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground"
                   aria-label={tech.title}
                 >
                   {tech.theme && darkIconSrc ? (
