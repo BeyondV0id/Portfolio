@@ -1,0 +1,62 @@
+- generic:
+  - generic [active]:
+    - generic [ref=f1e3]:
+      - generic [ref=f1e4]:
+        - navigation [ref=f1e6]:
+          - button [disabled] [ref=f1e7]:
+            - img "previous" [ref=f1e8]
+          - generic [ref=f1e10]:
+            - generic [ref=f1e11]: 1/
+            - generic [ref=f1e12]: "1"
+          - button [disabled] [ref=f1e13]:
+            - img "next" [ref=f1e14]
+        - generic [ref=f1e17]:
+          - generic "Latest available version is detected (16.4.6)." [ref=f1e20]: Next.js 16.4.6
+          - generic [ref=f1e21]: Turbopack
+      - dialog "Build Error" [ref=f1e23]:
+        - generic [ref=f1e26]:
+          - generic [ref=f1e28]:
+            - generic [ref=f1e29]:
+              - generic [ref=f1e30]: Build Error
+              - generic [ref=f1e32]:
+                - button "Copy Error Info" [ref=f1e33] [cursor=pointer]
+                - link "Go to related documentation" [ref=f1e36] [cursor=pointer]:
+                  - /url: https://nextjs.org/docs/messages/module-not-found
+                - button "Attach Node.js inspector" [ref=f1e39] [cursor=pointer]
+            - generic [ref=f1e48]: "Module not found: Can't resolve 'lucide-react'"
+          - generic [ref=f1e51]:
+            - generic [ref=f1e53]:
+              - generic [ref=f1e58]: ./src/features/portfolio/components/projects/index.tsx (1:1)
+              - button "Open in editor" [ref=f1e59] [cursor=pointer]
+            - generic [ref=f1e64]:
+              - generic [ref=f1e65]: "Error: Module not found: Can't resolve 'lucide-react'"
+              - text: ">"
+              - generic [ref=f1e66]: 1 |
+              - text: import
+              - generic [ref=f1e67]: "{"
+              - text: ArrowRight
+              - generic [ref=f1e68]: "}"
+              - text: from "lucide-react"
+              - generic [ref=f1e69]: ;
+              - generic [ref=f1e70]: "|"
+              - text: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              - generic [ref=f1e71]: 2 |
+              - text: import Link from "next/link"
+              - generic [ref=f1e72]: ;
+              - generic [ref=f1e73]: 3 |
+              - generic [ref=f1e74]: 4 |
+              - text: import
+              - generic [ref=f1e75]: "{"
+              - text: FluidHoverGroup
+              - generic [ref=f1e76]: "}"
+              - text: from "@/components/ui/fluid-hover-group"
+              - generic [ref=f1e77]:
+                - text: "; Import trace: Server Component: ./src/features/portfolio/components/projects/index.tsx ./src/app/(app)/(root)/page.tsx"
+                - link "https://nextjs.org/docs/messages/module-not-found" [ref=f1e78] [cursor=pointer]:
+                  - /url: https://nextjs.org/docs/messages/module-not-found
+    - button "Open issues overlay" [ref=f1e85] [cursor=pointer]:
+      - generic [ref=f1e89]:
+        - generic [aria-hidden] [ref=f1e90]: "0"
+        - generic [ref=f1e91]: "1"
+      - generic [ref=f1e92]: Issue
+  - alert [ref=f1e93]

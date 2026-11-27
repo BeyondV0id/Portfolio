@@ -1,0 +1,22 @@
+[     997ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1kht6wl9odhus._.js:761
+[    1115ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1kht6wl9odhus._.js:761
+[    1470ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1kht6wl9odhus._.js:761
+[    1880ms] [LOG] [Fast Refresh] done in 576ms @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1kht6wl9odhus._.js:761
+[    3001ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3133ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3166ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3203ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3207ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3210ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3223ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3336ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3368ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3379ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3387ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3394ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3403ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3413ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3423ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3429ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3435ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57
+[    3442ms] [WARNING] WebGL: INVALID_VALUE: getProgramParamter: attempt to use a deleted object @ http://localhost:3000/_next/static/chunks/1b1w_pondscape_dist_11rpgya72wf-m._.js:57

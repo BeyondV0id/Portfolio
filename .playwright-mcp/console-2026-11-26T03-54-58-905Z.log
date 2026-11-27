@@ -1,0 +1,1624 @@
+[    6105ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:1
+[    6307ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0its_react-dom_cjs_react-dom-client_development_20twiq09w9ur-.js:16703
+[    6417ms] Error: ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at Object.getCompilationErrors (file://D:\Portfolio\node_modules\.pnpm\next@16.4.6_@babel+core@7.2_f7dba33a456accb92434cd6048dd783b\node_modules\next\dist\server\dev\hot-reloader-turbopack.js:1566:37)
+    at DevBundlerService.getCompilationError (file://D:\Portfolio\node_modules\.pnpm\next@16.4.6_@babel+core@7.2_f7dba33a456accb92434cd6048dd783b\node_modules\next\dist\server\lib\dev-bundler-service.js:66:55)
+    at DevServer.getCompilationError (file://D:\Portfolio\node_modules\.pnpm\next@16.4.6_@babel+core@7.2_f7dba33a456accb92434cd6048dd783b\node_modules\next\dist\server\dev\next-dev-server.js:695:42)
+    at DevServer.findPageComponents (file://D:\Portfolio\node_modules\.pnpm\next@16.4.6_@babel+core@7.2_f7dba33a456accb92434cd6048dd783b\node_modules\next\dist\server\dev\next-dev-server.js:665:43)
+    at async DevServer.renderErrorToResponseImpl (file://D:\Portfolio\node_modules\.pnpm\next@16.4.6_@babel+core@7.2_f7dba33a456accb92434cd6048dd783b\node_modules\next\dist\server\base-server.js:2068:26)
+[    6404ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:745
+[    6467ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:1
+[    6551ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    6610ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    6702ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    6764ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    6775ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    6884ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    6936ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7013ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7061ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7139ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7201ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7278ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7340ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7402ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7464ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7526ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7588ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7651ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7714ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7778ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7839ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7887ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    7949ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8012ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8074ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8137ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8199ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8277ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8340ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8401ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8464ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8524ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8587ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8649ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8712ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8760ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8823ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8901ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    8964ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9027ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9075ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9138ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9198ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9260ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9322ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9384ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9432ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9494ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9558ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9620ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9682ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9744ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9808ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9870ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9931ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[    9993ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10054ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10116ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10179ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10254ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10317ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10381ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10442ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10504ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10566ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10630ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10693ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10757ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10832ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10895ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   10958ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11020ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11082ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11144ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11207ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11268ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11331ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11394ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11457ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11518ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11581ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11643ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11705ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11768ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11831ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11909ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   11971ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12034ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12096ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12159ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12220ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12284ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12346ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12425ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12506ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12579ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12642ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12704ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12767ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12830ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12891ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   12954ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13017ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13080ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13127ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13188ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13250ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13313ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13376ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13452ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13528ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13591ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13653ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802
+[   13701ms] [ERROR] ./src/features/portfolio/components/projects/index.tsx:1:1
+Error: Module not found: Can't resolve 'lucide-react'
+> 1 | import { ArrowRight } from "lucide-react";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import Link from "next/link";
+  3 |
+  4 | import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+
+Import trace:
+  Server Component:
+    ./src/features/portfolio/components/projects/index.tsx
+    ./src/app/(app)/(root)/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0_h4_next_dist_1f4te29z8s_6r._.js:1802

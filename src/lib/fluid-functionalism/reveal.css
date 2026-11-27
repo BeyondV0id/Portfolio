@@ -27,16 +27,18 @@
   --reveal-offset: 320ms;
 }
 
-:root[data-reveal-settled="true"] .reveal-page-main,
-:root[data-reveal-settled="true"] .reveal-page-sub,
-:root[data-reveal-settled="true"] .reveal-footer {
-  --reveal-offset: 0ms;
-  --gh-delay-base: 40ms;
-}
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-reveal-settled="true"] .reveal-page-main,
+  :root[data-reveal-settled="true"] .reveal-page-sub,
+  :root[data-reveal-settled="true"] .reveal-footer {
+    --reveal-offset: 0ms;
+    --gh-delay-base: 40ms;
+  }
 
-:root[data-reveal-settled="true"] .reveal-page-main-rest,
-:root[data-reveal-settled="true"] .reveal-page-sub-body {
-  --reveal-offset: 80ms;
+  :root[data-reveal-settled="true"] .reveal-page-main-rest,
+  :root[data-reveal-settled="true"] .reveal-page-sub-body {
+    --reveal-offset: 80ms;
+  }
 }
 
 @keyframes fluid-product-reveal {
@@ -57,7 +59,8 @@
   animation: fluid-product-reveal var(--reveal-duration, 300ms)
     var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)) both;
   animation-delay: calc(
-    var(--reveal-offset, 0ms) + var(--reveal-index, 0) * var(--reveal-step, 40ms)
+    var(--reveal-offset, 0ms) + var(--reveal-index, 0) *
+      var(--reveal-step, 40ms)
   );
 }
 
@@ -128,8 +131,8 @@
 }
 
 .gh-grid-week {
-  animation: gh-week-reveal 220ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1))
-    both;
+  animation: gh-week-reveal 220ms
+    var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)) both;
   animation-delay: calc(var(--gh-delay-base, 0ms) + var(--gh-col, 0) * 6ms);
 }
 

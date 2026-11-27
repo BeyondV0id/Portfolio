@@ -1,0 +1,382 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - button "Theme Toggle" [ref=e5]
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - img "Harsha Vardhan Gandepalli's avatar" [ref=e12]
+        - generic [ref=e13]:
+          - paragraph [ref=e14]: Harsha Vardhan Gandepalli
+          - paragraph [ref=e15]: Full-Stack Developer
+      - navigation [ref=e16]:
+        - link "home" [ref=e17] [cursor=pointer]:
+          - /url: /
+        - link "projects" [ref=e18] [cursor=pointer]:
+          - /url: /projects
+        - link "blogs" [ref=e19] [cursor=pointer]:
+          - /url: /blog
+        - link "gallery" [ref=e20] [cursor=pointer]:
+          - /url: /gallery
+    - main [ref=e21]:
+      - heading "Harsha Vardhan Gandepalli" [level=1] [ref=e22]
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - heading "about me." [level=2] [ref=e25]
+          - paragraph [ref=e27]:
+            - text: Hi, I’m Harsha Vardhan, a
+            - strong [ref=e28]: Full-Stack Developer
+            - text: passionate about building
+            - strong [ref=e29]: scalable
+            - text: and modern web applications. I focus on creating
+            - strong [ref=e30]: clean, high-performance products
+            - text: with
+            - strong [ref=e31]: intuitive and user-friendly experiences
+            - text: .
+          - generic [ref=e32]:
+            - paragraph [ref=e33]: find me at.
+            - generic [ref=e34]:
+              - link "GitHub" [ref=e35] [cursor=pointer]:
+                - /url: https://github.com/BeyondV0id
+                - generic [ref=e36]: github
+              - link "LinkedIn" [ref=e37] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/g-harsha-vardhan
+                - generic [ref=e38]: linkedin
+              - link "LeetCode" [ref=e39] [cursor=pointer]:
+                - /url: https://leetcode.com/BeyondVoid
+                - generic [ref=e40]: leetcode
+              - link "Email" [ref=e41] [cursor=pointer]:
+                - /url: mailto:beyondv0id@gmail.com
+                - generic [ref=e42]: email
+        - region "GitHub activity" [ref=e43]:
+          - generic [ref=e44]:
+            - generic [ref=e45]:
+              - generic [ref=e48]: GitHub
+              - link "@BeyondV0id" [ref=e50] [cursor=pointer]:
+                - /url: https://github.com/BeyondV0id
+            - generic [ref=e51]:
+              - img "GitHub contributions calendar. 1,209 contributions in the past year" [ref=e52]:
+                - generic [ref=e53]:
+                  - generic [ref=e56]: Dec
+                  - generic [ref=e61]: Jan
+                  - generic [ref=e66]: Feb
+                  - generic [ref=e71]: Mar
+                  - generic [ref=e77]: Apr
+                  - generic [ref=e82]: May
+                  - generic [ref=e88]: Jun
+                  - generic [ref=e93]: Jul
+                  - generic [ref=e98]: Aug
+                  - generic [ref=e104]: Sep
+                  - generic [ref=e109]: Oct
+                  - generic [ref=e114]: Nov
+              - generic [ref=e909]:
+                - generic [aria-hidden] [ref=e910]: LessMore
+                - paragraph [ref=e921]: 1,209 contributions in the past year
+            - button "Top contributions" [ref=e923]:
+              - generic [ref=e926]:
+                - generic [aria-hidden] [ref=e927]: B
+                - generic [aria-hidden] [ref=e928]: B
+                - generic [aria-hidden] [ref=e929]: B
+      - generic [ref=e932]:
+        - generic [ref=e933]:
+          - generic [ref=e934]:
+            - heading "Projects" [level=2] [ref=e935]
+            - link "All projects" [ref=e937] [cursor=pointer]:
+              - /url: /projects
+          - list [ref=e941]:
+            - listitem [ref=e942]:
+              - generic [ref=e943]:
+                - generic:
+                  - link "Live site for SourceSurf" [ref=e947] [cursor=pointer]:
+                    - /url: https://ossurf.vercel.app/
+                    - text: Live site
+                  - link "GitHub for SourceSurf" [ref=e950] [cursor=pointer]:
+                    - /url: https://github.com/OSSURF
+                    - text: GitHub
+              - generic [ref=e953]:
+                - heading [level=3] [ref=e954]:
+                  - link "SourceSurf" [ref=e955] [cursor=pointer]:
+                    - /url: /projects/sourcesuf-backend
+                - paragraph [ref=e956]: Discover active open-source repositories, compare GitHub activity and GSoC history, and track pull requests and issues from one dashboard.
+            - listitem [ref=e957]:
+              - generic [ref=e958]:
+                - generic:
+                  - link "Live site for Quorum" [ref=e962] [cursor=pointer]:
+                    - /url: https://quorum-io.vercel.app/
+                    - text: Live site
+                  - link "GitHub for Quorum" [ref=e965] [cursor=pointer]:
+                    - /url: https://github.com/BeyondV0id/Quorum
+                    - text: GitHub
+              - generic [ref=e968]:
+                - heading [level=3] [ref=e969]:
+                  - link "Quorum" [ref=e970] [cursor=pointer]:
+                    - /url: /projects/quorum
+                - paragraph [ref=e971]: A developer Q&A platform with threaded discussions and a shared TypeScript stack across the frontend and API.
+            - listitem [ref=e972]:
+              - link "GitHub for OSS Trends Scraper" [ref=e979] [cursor=pointer]:
+                - /url: https://github.com/BeyondV0id/oss-trends-scraper
+                - text: GitHub
+              - generic [ref=e982]:
+                - heading [level=3] [ref=e983]:
+                  - link "OSS Trends Scraper" [ref=e984] [cursor=pointer]:
+                    - /url: /projects/oss-trends-scraper
+                - paragraph [ref=e985]: A Python service that discovers trending GitHub repositories, enriches them with GitHub API data, and syncs the results to SourceSurf.
+            - listitem [ref=e986]:
+              - link "GitHub for Drizzle Auth API" [ref=e992] [cursor=pointer]:
+                - /url: https://github.com/BeyondV0id/drizzle-auth-api
+                - text: GitHub
+              - generic [ref=e995]:
+                - heading [level=3] [ref=e996]:
+                  - link "Drizzle Auth API" [ref=e997] [cursor=pointer]:
+                    - /url: /projects/drizzle-auth-api
+                - paragraph [ref=e998]: An Express and Drizzle authentication API with PostgreSQL-backed sessions, secure cookies, and immediate session revocation.
+        - generic [ref=e999]:
+          - generic [ref=e1000]:
+            - heading "Blogs" [level=2] [ref=e1001]
+            - link "view all" [ref=e1003] [cursor=pointer]:
+              - /url: /blog
+          - list [ref=e1005]:
+            - listitem [ref=e1006]:
+              - link "Designing Reliable Background Queues with BullMQ and Redis 14 Oct 2026 Lessons from building SourceSurf's scraping and webhook ingestion pipeline — retries, backoff, rate limits, and keeping PostgreSQL from choking under burst load. 6 min read · read" [ref=e1007] [cursor=pointer]:
+                - /url: /blog/queues-and-workers-with-bullmq-and-redis
+                - generic [ref=e1008]:
+                  - generic [ref=e1009]: Designing Reliable Background Queues with BullMQ and Redis
+                  - generic [ref=e1010]: 14 Oct 2026
+                - generic [ref=e1011]: Lessons from building SourceSurf's scraping and webhook ingestion pipeline — retries, backoff, rate limits, and keeping PostgreSQL from choking under burst load.
+                - generic [ref=e1012]: 6 min read · read
+            - listitem [ref=e1013]:
+              - link "End-to-End Type Safety Between Next.js and Express 22 Aug 2026 How sharing contracts, Zod schemas, and strict TypeScript boundaries eliminates entire classes of integration bugs without overengineering your stack. 5 min read · read" [ref=e1014] [cursor=pointer]:
+                - /url: /blog/end-to-end-typesafety-in-fullstack-typescript
+                - generic [ref=e1015]:
+                  - generic [ref=e1016]: End-to-End Type Safety Between Next.js and Express
+                  - generic [ref=e1017]: 22 Aug 2026
+                - generic [ref=e1018]: How sharing contracts, Zod schemas, and strict TypeScript boundaries eliminates entire classes of integration bugs without overengineering your stack.
+                - generic [ref=e1019]: 5 min read · read
+            - listitem [ref=e1020]:
+              - link "PostgreSQL Indexing and Query Patterns That Actually Matter 03 Jun 2026 A practical look at composite indexes, N+1 elimination, and keeping latency predictable as tables grow past the first hundred thousand rows. 7 min read · read" [ref=e1021] [cursor=pointer]:
+                - /url: /blog/postgresql-patterns-that-matter-in-production
+                - generic [ref=e1022]:
+                  - generic [ref=e1023]: PostgreSQL Indexing and Query Patterns That Actually Matter
+                  - generic [ref=e1024]: 03 Jun 2026
+                - generic [ref=e1025]: A practical look at composite indexes, N+1 elimination, and keeping latency predictable as tables grow past the first hundred thousand rows.
+                - generic [ref=e1026]: 7 min read · read
+        - generic [ref=e1027]:
+          - heading "stack." [level=2] [ref=e1028]
+          - list [ref=e1030]:
+            - listitem [ref=e1031]:
+              - link "TypeScript" [ref=e1032] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=TypeScript
+                - img "TypeScript icon" [ref=e1033]
+            - listitem [ref=e1035]:
+              - link "JavaScript" [ref=e1036] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=JavaScript
+                - img "JavaScript icon" [ref=e1037]
+            - listitem [ref=e1039]:
+              - link "C++" [ref=e1040] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=C%2B%2B
+                - img "C++ icon" [ref=e1041]
+            - listitem [ref=e1043]:
+              - link "Python" [ref=e1044] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Python
+                - img "Python icon" [ref=e1045]
+            - listitem [ref=e1047]:
+              - link "Next.js" [ref=e1048] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Next.js
+                - img "Next.js icon" [ref=e1049]
+            - listitem [ref=e1051]:
+              - link "React" [ref=e1052] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=React
+                - img "React icon" [ref=e1053]
+            - listitem [ref=e1055]:
+              - link "Node.js" [ref=e1056] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Node.js
+                - img "Node.js icon" [ref=e1057]
+            - listitem [ref=e1059]:
+              - link "Express.js" [ref=e1060] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Express.js
+                - img "Express.js icon" [ref=e1061]
+            - listitem [ref=e1063]:
+              - link "tRPC" [ref=e1064] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=tRPC
+                - img "tRPC icon" [ref=e1065]
+            - listitem [ref=e1067]:
+              - link "FastAPI" [ref=e1068] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=FastAPI
+                - img "FastAPI icon" [ref=e1069]
+            - listitem [ref=e1071]:
+              - link "Flask" [ref=e1072] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Flask
+                - img "Flask icon" [ref=e1073]
+            - listitem [ref=e1075]:
+              - link "Streamlit" [ref=e1076] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Streamlit
+                - img "Streamlit icon" [ref=e1077]
+            - listitem [ref=e1079]:
+              - link "MongoDB" [ref=e1080] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=MongoDB
+                - img "MongoDB icon" [ref=e1081]
+            - listitem [ref=e1083]:
+              - link "PostgreSQL" [ref=e1084] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=PostgreSQL
+                - img "PostgreSQL icon" [ref=e1085]
+            - listitem [ref=e1087]:
+              - link "Redis" [ref=e1088] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Redis
+                - img "Redis icon" [ref=e1089]
+            - listitem [ref=e1091]:
+              - link "Neon" [ref=e1092] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Neon
+                - img "Neon icon" [ref=e1093]
+            - listitem [ref=e1095]:
+              - link "Supabase" [ref=e1096] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Supabase
+                - img "Supabase icon" [ref=e1097]
+            - listitem [ref=e1099]:
+              - link "Tailwind CSS" [ref=e1100] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Tailwind%20CSS
+                - img "Tailwind CSS icon" [ref=e1101]
+            - listitem [ref=e1103]:
+              - link "shadcn/ui" [ref=e1104] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=shadcn%2Fui
+                - img "shadcn/ui icon" [ref=e1105]
+            - listitem [ref=e1107]:
+              - link "Motion" [ref=e1108] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Motion
+                - img "Motion icon" [ref=e1109]
+            - listitem [ref=e1111]:
+              - link "Better Auth" [ref=e1112] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Better%20Auth
+                - img "Better Auth icon" [ref=e1113]
+            - listitem [ref=e1115]:
+              - link "Clerk" [ref=e1116] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Clerk
+                - img "Clerk icon" [ref=e1117]
+            - listitem [ref=e1119]:
+              - link "JWT" [ref=e1120] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=JWT
+                - img "JWT icon" [ref=e1121]
+            - listitem [ref=e1123]:
+              - link "Drizzle ORM" [ref=e1124] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Drizzle%20ORM
+                - img "Drizzle ORM icon" [ref=e1125]
+            - listitem [ref=e1127]:
+              - link "Git" [ref=e1128] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Git
+                - img "Git icon" [ref=e1129]
+            - listitem [ref=e1131]:
+              - link "Docker" [ref=e1132] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Docker
+                - img "Docker icon" [ref=e1133]
+            - listitem [ref=e1135]:
+              - link "Vercel" [ref=e1136] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Vercel
+                - img "Vercel icon" [ref=e1137]
+            - listitem [ref=e1139]:
+              - link "AWS" [ref=e1140] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=AWS
+                - img "AWS icon" [ref=e1141]
+            - listitem [ref=e1143]:
+              - link "Render" [ref=e1144] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Render
+                - img "Render icon" [ref=e1145]
+            - listitem [ref=e1147]:
+              - link "Postman" [ref=e1148] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Postman
+                - img "Postman icon" [ref=e1149]
+            - listitem [ref=e1151]:
+              - link "Bun" [ref=e1152] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Bun
+                - img "Bun icon" [ref=e1153]
+            - listitem [ref=e1155]:
+              - link "Vite" [ref=e1156] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Vite
+                - img "Vite icon" [ref=e1157]
+            - listitem [ref=e1159]:
+              - link "Turborepo" [ref=e1160] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Turborepo
+                - img "Turborepo icon" [ref=e1161]
+            - listitem [ref=e1163]:
+              - link "Neovim" [ref=e1164] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Neovim
+                - img "Neovim icon" [ref=e1165]
+            - listitem [ref=e1167]:
+              - link "Cursor" [ref=e1168] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Cursor
+                - img "Cursor icon" [ref=e1169]
+            - listitem [ref=e1171]:
+              - link "Dotenv" [ref=e1172] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Dotenv
+                - img "Dotenv icon" [ref=e1173]
+            - listitem [ref=e1175]:
+              - link "Nginx" [ref=e1176] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=Nginx
+                - img "Nginx icon" [ref=e1177]
+            - listitem [ref=e1179]:
+              - link "BullMQ" [ref=e1180] [cursor=pointer]:
+                - /url: https://www.google.com/search?q=BullMQ
+                - img "BullMQ icon" [ref=e1181]
+        - region "Experience" [ref=e1183]:
+          - heading "Experience" [level=2] [ref=e1184]
+          - list [ref=e1192]:
+            - listitem [ref=e1193]:
+              - heading "Vishwakarma Ventures and Innovations LLP" [level=3] [ref=e1195]
+              - generic [ref=e1197]:
+                - generic [ref=e1198]:
+                  - heading "Frontend Developer Intern" [level=4] [ref=e1199]
+                  - paragraph [ref=e1200]: May 2026 – Jul 2026
+                - paragraph [ref=e1201]: Internship
+                - list [ref=e1203]:
+                  - listitem [ref=e1204]:
+                    - text: Redesigned and built
+                    - strong [ref=e1205]: 15+ reusable UI components
+                    - text: using React.js, TypeScript, and Tailwind CSS, improving consistency and maintainability.
+                - generic [ref=e1206]:
+                  - list [ref=e1209]:
+                    - listitem [ref=e1210]: Implemented new requirements, refined existing interfaces, and resolved frontend issues with the development team.
+                  - button "Show less for Frontend Developer Intern" [expanded] [ref=e1212]:
+                    - generic [ref=e1213]: Show less
+                    - generic [ref=e1214]: for Frontend Developer Intern
+                - list "Technologies" [ref=e1218]:
+                  - listitem [ref=e1219]:
+                    - generic [ref=e1220]: React.js
+                  - listitem [ref=e1221]:
+                    - generic [ref=e1222]: TypeScript
+                  - listitem [ref=e1223]:
+                    - generic [ref=e1224]: Tailwind CSS
+        - region "Education" [ref=e1225]:
+          - heading "Education" [level=2] [ref=e1226]
+          - list [ref=e1232]:
+            - listitem [ref=e1233]:
+              - heading "Gayatri Vidya Parishad College of Engineering (A)" [level=3] [ref=e1235]
+              - generic [ref=e1237]:
+                - generic [ref=e1238]:
+                  - heading "Bachelor of Technology in Computer Science and Engineering" [level=4] [ref=e1239]
+                  - paragraph [ref=e1240]: 2023 – 2027
+                - paragraph [ref=e1241]: 3rd Year
+                - paragraph [ref=e1243]:
+                  - text: CGPA
+                  - strong [ref=e1244]: 8.51/10
+                - generic [ref=e1245]:
+                  - paragraph [ref=e1248]: Pursuing a Bachelor of Technology in Computer Science and Engineering, with graduation expected in 2027.
+                  - button "Show less for Bachelor of Technology in Computer Science and Engineering" [expanded] [ref=e1250]:
+                    - generic [ref=e1251]: Show less
+                    - generic [ref=e1252]: for Bachelor of Technology in Computer Science and Engineering
+            - listitem [ref=e1256]:
+              - heading "Narayana Junior College (CBSE)" [level=3] [ref=e1258]
+              - generic [ref=e1260]:
+                - generic [ref=e1261]:
+                  - heading "Junior College" [level=4] [ref=e1262]
+                  - paragraph [ref=e1263]: 2021 – 2023
+                - paragraph [ref=e1265]:
+                  - text: Graduated with
+                  - strong [ref=e1266]: 85%
+                  - text: .
+                - generic [ref=e1267]:
+                  - paragraph [ref=e1269]: Completed junior college under the CBSE curriculum in 2023.
+                  - button "Read more for Junior College" [ref=e1271]:
+                    - generic [ref=e1272]: Read more
+                    - generic [ref=e1273]: for Junior College
+  - contentinfo [ref=e1277]:
+    - generic [ref=e1278]: © 2026 Harsha Vardhan Gandepalli
+  - generic:
+    - button [aria-hidden]:
+      - generic: Scroll to top
