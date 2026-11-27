@@ -51,10 +51,6 @@ export const MAIN_NAV: NavItem[] = [
     title: "blogs",
     href: "/blog",
   },
-  {
-    title: "gallery",
-    href: "/gallery",
-  },
 ];
 
 export const GITHUB_USERNAME = _GH_USER;

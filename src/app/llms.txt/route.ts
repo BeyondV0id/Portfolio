@@ -15,7 +15,6 @@ Portfolio, projects, and writing by ${USER.displayName} (${GITHUB_USERNAME}). Ba
 - [Home](${base}/): Profile, featured projects, recent writing, and experience.
 - [Projects](${base}/projects): Full list of projects with descriptions and links.
 - [Blog](${base}/blog): Articles on development, systems, and open source.
-- [Gallery](${base}/gallery): Visual work and experiments.
 
 ## About this site
 

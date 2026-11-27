@@ -2,7 +2,6 @@
 
 import { Book2Icon as BookOpen } from "@solar-icons/react/linear/book-2";
 import { CodeIcon as Code } from "@solar-icons/react/linear/code";
-import { GalleryIcon as ImageIcon } from "@solar-icons/react/linear/gallery";
 import { Home2Icon as House } from "@solar-icons/react/linear/home-2";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -29,12 +28,6 @@ export function FloatingNav() {
       href: "/blog",
       matcher: "/blog",
       icon: BookOpen,
-    },
-    {
-      name: "gallery",
-      href: "/gallery",
-      matcher: "/gallery",
-      icon: ImageIcon,
     },
   ];
 

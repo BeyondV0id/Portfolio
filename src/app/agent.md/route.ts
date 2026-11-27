@@ -13,7 +13,6 @@ This site is the portfolio of ${USER.displayName}, a ${USER.jobTitle} based in $
 - \`/\` — profile, featured projects, recent posts, experience, and an about-this-site note.
 - \`/projects\` and \`/projects/[id]\` — project descriptions, technologies, and links.
 - \`/blog\` and \`/blog/[slug]\` — long-form writing.
-- \`/gallery\` — visual work.
 
 ## How to use this content
 
