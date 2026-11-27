@@ -34,7 +34,7 @@ export const PROFILE_IMAGES = {
 };
 
 export const META_THEME_COLORS = {
-  light: "#fafafa",
+  light: "#ffffff",
   dark: "#0a0a0a",
 };
 

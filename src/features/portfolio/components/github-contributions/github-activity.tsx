@@ -45,8 +45,12 @@ const useIsoLayoutEffect =
 
 const EASE_OUT = [0.22, 1, 0.36, 1] as const;
 const PANEL_TRANSITION = { duration: 0.2, ease: EASE_OUT } as const;
+const CELL_FADE = { duration: 0.2, ease: EASE_OUT } as const;
 const TOOLTIP_FADE = { duration: 0.14, ease: EASE_OUT } as const;
 const TOOLTIP_EDGE = 8;
+const COLUMN_STAGGER = 0.012;
+const LABEL_BLUR = 6;
+const LABEL_REVEAL = { duration: 0.45, ease: EASE_OUT } as const;
 
 const LEVELS = [0, 1, 2, 3, 4] as const;
 
@@ -312,6 +316,7 @@ const ContributionGrid = ({
 
   const cap = Math.min(weeks.length, weeksFor(months));
   const visible = weeks.slice(-Math.min(cap, columns ?? cap));
+  const sweepEnd = (visible.length - 1) * COLUMN_STAGGER + CELL_FADE.duration;
 
   const hover = (day: Contribution) => (event: React.PointerEvent) => {
     const cell = event.currentTarget.getBoundingClientRect();
@@ -327,9 +332,19 @@ const ContributionGrid = ({
       className="relative"
     >
       {showMonths && (
-        <div
-          className="gh-grid-months flex justify-center"
+        <motion.div
+          className="flex justify-center"
           style={{ gap, marginBottom: gap }}
+          initial={
+            reduceMotion
+              ? false
+              : { opacity: 0, filter: `blur(${LABEL_BLUR}px)` }
+          }
+          animate={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{
+            ...LABEL_REVEAL,
+            delay: reduceMotion ? 0 : sweepEnd,
+          }}
         >
           {toMonthLabels(visible).map((month, index) => (
             <div
@@ -344,7 +359,7 @@ const ContributionGrid = ({
               )}
             </div>
           ))}
-        </div>
+        </motion.div>
       )}
 
       <div
@@ -353,23 +368,25 @@ const ContributionGrid = ({
         onPointerLeave={() => setHovered(undefined)}
       >
         {visible.map((week, weekIndex) => (
-          <div
-            key={weekIndex}
-            className="gh-grid-week flex flex-col"
-            style={{ gap, "--gh-col": weekIndex } as React.CSSProperties}
-          >
+          <div key={weekIndex} className="flex flex-col" style={{ gap }}>
             {week.map((day) => (
-              <div
+              <motion.div
                 key={day.date}
                 onPointerEnter={hover(day)}
                 className="shrink-0 rounded-full bg-foreground/8"
                 style={{ width: cellSize, height: cellSize }}
+                initial={reduceMotion ? false : { opacity: 0, scale: 0.4 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  ...CELL_FADE,
+                  delay: reduceMotion ? 0 : weekIndex * COLUMN_STAGGER,
+                }}
               >
                 <div
                   className="size-full rounded-full"
                   style={scale[day.level] ?? scale[0]}
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         ))}

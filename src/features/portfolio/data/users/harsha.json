@@ -281,6 +281,37 @@
           "href": "https://github.com/BeyondV0id/redis-pubsub-notifcation-serivce"
         }
       ]
+    },
+    {
+      "id": "skills",
+      "title": "Skills",
+      "skills": ["AI Agent Skills", "Claude Code", "OpenCode"],
+      "description": "A collection of personal skills for AI coding agents.",
+      "links": [
+        {
+          "type": "github",
+          "href": "https://github.com/BeyondV0id/skills"
+        }
+      ]
+    },
+    {
+      "id": "lld",
+      "title": "LLD",
+      "skills": ["Low-Level Design", "Design Patterns"],
+      "description": "A low-level design learning roadmap with practice projects for bus seat booking and task scheduling.",
+      "links": [
+        {
+          "type": "github",
+          "href": "https://github.com/BeyondV0id/LLD"
+        }
+      ]
+    },
+    {
+      "id": "safetysightai",
+      "title": "SafetySightAI",
+      "skills": ["Python"],
+      "description": "A Python project with a private repository.",
+      "status": "private"
     }
   ],
   "techStack": [

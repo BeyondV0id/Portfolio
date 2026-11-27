@@ -43,7 +43,7 @@ export function AboutSite() {
           </div>
           <div className="flex min-w-0 flex-col gap-2">
             <span className="text-xs text-muted-foreground">typeface</span>
-            <span className="font-mono text-sm">Geist · Geist Mono</span>
+            <span className="font-mono text-sm">Geist Sans · Paper Mono</span>
           </div>
           <div className="flex min-w-0 flex-col gap-2">
             <span className="text-xs text-muted-foreground">contact</span>

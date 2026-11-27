@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Markdown } from "@/components/markdown";
-import { FluidHoverGroup } from "@/components/ui/fluid-hover-group";
+import { RailToc } from "@/components/ui/rail-toc";
 import { BLOG_POSTS, getBlogPostBySlug } from "@/features/blog/data/posts";
 
 interface Props {
@@ -25,7 +25,7 @@ function extractHeadings(markdown: string) {
     .filter((line) => line.startsWith("## "))
     .map((line) => {
       const title = line.replace(/^##\s+/, "").trim();
-      return { id: slugifyHeading(title), title };
+      return { id: slugifyHeading(title), label: title };
     });
 }
 
@@ -57,8 +57,8 @@ export default async function BlogPostPage({ params }: Props) {
         All posts
       </Link>
 
-      <article className="text-foreground">
-        <div className="max-w-xl">
+      <article className="relative w-full min-w-0 max-w-xl wrap-anywhere text-foreground">
+        <div>
           <p className="font-mono text-[11px] tracking-[0.14em] text-muted-foreground">
             {post.date} · {post.readingTime}
           </p>
@@ -74,7 +74,7 @@ export default async function BlogPostPage({ params }: Props) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-[#212121] px-2.5 py-0.5 text-xs font-medium tracking-tight text-white"
+                  className="rounded-full bg-portfolio-tag px-2 py-0.5 text-xs text-muted-foreground"
                 >
                   {tag}
                 </span>
@@ -83,40 +83,23 @@ export default async function BlogPostPage({ params }: Props) {
           )}
         </div>
 
-        <div className="max-w-xl">
+        <div>
           {headings.length > 0 && (
-            <section className="relative mt-12">
-              <h2 className="mb-3 font-mono text-[11px] tracking-[0.14em] text-muted-foreground xl:absolute xl:top-[0.3rem] xl:right-full xl:mr-8 xl:mb-0 xl:w-32 xl:text-right">
-                contents
-              </h2>
-              <FluidHoverGroup className="w-fit">
-                <ol className="flex flex-col">
-                  {headings.map((heading, idx) => (
-                    <li key={heading.id}>
-                      <a
-                        href={`#${heading.id}`}
-                        data-fluid-item
-                        className="flex items-baseline gap-3 rounded-lg px-2 py-1 text-sm tracking-tight text-foreground/75 focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground"
-                      >
-                        <span className="font-mono text-xs text-muted-foreground tabular-nums">
-                          {String(idx + 1).padStart(2, "0")}
-                        </span>
-                        {heading.title}
-                      </a>
-                    </li>
-                  ))}
-                </ol>
-              </FluidHoverGroup>
-            </section>
+            <aside className="mt-10 xl:absolute xl:inset-y-0 xl:right-full xl:mt-0 xl:mr-8 xl:w-56">
+              <RailToc
+                items={headings}
+                className="max-w-full xl:sticky xl:top-24 xl:max-h-[calc(100dvh-7rem)] xl:w-full xl:overflow-y-auto xl:px-1"
+              />
+            </aside>
           )}
 
-          <div className="mt-8 flex min-w-0 flex-col gap-5 text-[15px] leading-relaxed tracking-tight text-foreground/85 [&_code]:rounded [&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-[13px] [&_h2]:mt-8 [&_h2]:scroll-mt-24 [&_h2]:text-lg [&_h2]:font-medium [&_h2]:tracking-tight [&_h2]:text-foreground [&_p]:leading-relaxed [&_strong]:font-medium [&_strong]:text-foreground">
+          <div className="mt-8 flex min-w-0 flex-col gap-5 text-[15px] leading-relaxed tracking-tight text-foreground/85 [&_code]:rounded [&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-[13px] [&_h2]:mt-8 [&_h2]:scroll-mt-24 [&_h2]:text-lg [&_h2]:font-medium [&_h2]:tracking-tight [&_h2]:text-foreground [&_p]:leading-relaxed [&_pre]:max-w-full [&_pre]:overflow-x-auto [&_strong]:font-medium [&_strong]:text-foreground">
             <Markdown
               components={{
                 h2: ({ children, ...props }) => {
                   const text = String(children);
                   return (
-                    <h2 id={slugifyHeading(text)} {...props}>
+                    <h2 id={slugifyHeading(text)} tabIndex={-1} {...props}>
                       {children}
                     </h2>
                   );

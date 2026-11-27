@@ -21,7 +21,7 @@ export function ProjectMark({ project }: { project: Project }) {
   return (
     <span
       aria-hidden
-      className="grid size-9 shrink-0 place-items-center rounded-lg bg-foreground/6 text-foreground"
+      className="grid size-9 shrink-0 place-items-center rounded-lg bg-surface text-foreground dark:bg-background"
     >
       {project.icon ? (
         <Image

@@ -1,5 +1,7 @@
 import { SITE_INFO } from "@/config/site";
 
+import { FooterSky } from "./footer-sky";
+
 const domain = SITE_INFO.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
 export function SiteFooter() {
@@ -38,6 +40,7 @@ export function SiteFooter() {
           </a>
         </span>
       </div>
+      <FooterSky />
     </footer>
   );
 }

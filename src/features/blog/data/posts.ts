@@ -21,6 +21,8 @@ Most applications begin with a relatively simple architecture:
 - One database
 - A small number of users
 
+![Basic System Architecture](https://cdn-images-1.medium.com/max/658/1*S8NqJnn7U9gJ6AMpDigXKw.png)
+
 Everything works fine until the application starts gaining traction. As traffic increases, response times get longer, database queries become slower, requests start failing, and infrastructure struggles to keep up.
 
 Scaling is the process of increasing a system's ability to handle growing workloads while maintaining acceptable performance and reliability.
@@ -57,6 +59,8 @@ This could mean:
 - Faster storage
 - Greater network bandwidth
 
+![Vertical Scaling](https://cdn-images-1.medium.com/max/638/1*AQBMxHkd_JUqT91cowwKbg.png)
+
 Vertical scaling is attractive because it requires relatively few architectural changes. Your application can continue running with the same underlying design while benefiting from more powerful hardware.
 
 However, it has limitations. Hardware has an upper limit. Larger machines can become disproportionately expensive. Upgrades may require downtime, and a single machine can remain a single point of failure.
@@ -66,6 +70,8 @@ Eventually, upgrading one machine becomes less practical than distributing the w
 ## 04. Horizontal Scaling: Distributing the Workload
 
 Horizontal scaling, or **scaling out**, means adding more machines rather than making an existing machine more powerful. Instead of running your application on one server, you run multiple instances of it.
+
+![Horizontal Scaling](https://cdn-images-1.medium.com/max/658/1*S7iq3ioao1dlfl53o5L6MQ.png)
 
 This increases capacity and can improve availability, but it also introduces new challenges.
 
@@ -80,6 +86,8 @@ One of the easiest ways to make application servers horizontally scalable is to 
 Consider an application that stores login sessions directly in a server's memory. If a user logs in through Server A and their next request reaches Server B, Server B may not recognize their session.
 
 Instead, session information can be stored externally in a shared database, distributed cache, or an appropriate token-based authentication system.
+
+![Stateless Services](https://cdn-images-1.medium.com/max/762/1*ubSl4hcnQ5qsO4srOo8lHw.png)
 
 Now, any server can process the user's request. Servers become easier to replace, restart, deploy, and scale independently.
 
@@ -96,6 +104,8 @@ Autoscaling solves this by dynamically adjusting the number of running instances
 - Queue length
 - Resource utilization
 
+![AutoScaling](https://cdn-images-1.medium.com/max/717/1*xTkQtskgeVqnHomOwtZdcQ.png)
+
 When demand increases, additional instances are created. When demand decreases, unnecessary instances are removed. The goal is to balance performance with infrastructure costs.
 
 However, autoscaling isn't instantaneous. Instance startup times, application initialization, and downstream database capacity must also be considered.
@@ -105,6 +115,8 @@ However, autoscaling isn't instantaneous. Instance startup times, application in
 Once an application runs across multiple servers, something needs to decide where incoming requests should go. That's the responsibility of a load balancer.
 
 A load balancer sits between clients and backend servers, distributing incoming traffic across available instances.
+
+![Load Balancing](https://cdn-images-1.medium.com/max/761/1*ZNqZuNIAYSvRhI6NlPLLtQ.png)
 
 Load balancers do more than distribute requests. They can also perform health checks, remove unhealthy instances from rotation, route requests based on paths or regions, and distribute traffic between application versions during deployments.
 
@@ -140,6 +152,8 @@ Common approaches to reducing read pressure include:
 
 Read replicas allow read operations to be distributed across additional database instances.
 
+![Read Replicas](https://cdn-images-1.medium.com/max/771/1*zrne4fuZIJNMrm1lclvVpg.png)
+
 However, replicas may lag behind the primary database. Applications must account for situations where recently updated data isn't immediately visible on a replica.
 
 ### Make Writes Efficient
@@ -158,6 +172,8 @@ Write queues are particularly useful when requests arrive faster than a database
 
 Instead of forcing the database to handle every operation immediately, a queue allows background workers to process suitable operations at a controlled rate.
 
+![Write Queues](https://cdn-images-1.medium.com/max/763/1*_q4bkbfao6UcMrcejtsuXQ.png)
+
 Not every write can be asynchronous, however. Operations requiring immediate confirmation or strong consistency need different handling.
 
 ### Partitioning and Sharding
@@ -165,6 +181,10 @@ Not every write can be asynchronous, however. Operations requiring immediate con
 When a database becomes too large for a single instance to handle efficiently, distributing its data may become necessary.
 
 **Partitioning** divides a dataset into smaller sections. **Sharding** distributes those sections across multiple database instances.
+
+For example:
+
+![Sharding](https://cdn-images-1.medium.com/max/568/1*DccKAdPOU7BeXSJ0cWpmIg.png)
 
 Each shard manages a subset of the overall dataset. This allows storage and workloads to be distributed across multiple machines.
 
@@ -183,6 +203,8 @@ Sharding is powerful, but it should solve a demonstrated problem rather than an 
 One of the most effective ways to improve system performance is to avoid unnecessary computation and database access. That's the idea behind caching.
 
 Imagine thousands of users requesting the same product information. Instead of querying the database every time, the application can temporarily store the result in a fast cache.
+
+![Caching](https://cdn-images-1.medium.com/max/416/1*Ke_E09AwSoncD_RV807FiQ.png)
 
 When requested data exists in the cache, the application can return it without accessing the database. This reduces latency and database load.
 
@@ -215,6 +237,8 @@ Several patterns help achieve this:
 - **Fallback Responses:** Return cached or simplified data when live information is temporarily unavailable.
 - **Redundancy:** Maintain multiple instances of critical components so that individual failures don't make the entire system unavailable.
 
+![Failure Handling](https://cdn-images-1.medium.com/max/780/1*541qhUb5wPLlJ0vsiHcOpw.png)
+
 For example, if a recommendation service becomes unavailable, an e-commerce platform should still allow users to browse products and complete purchases.
 
 Recommendations are useful. Checkout is essential. Understanding that distinction is an important part of designing resilient systems.
@@ -230,6 +254,8 @@ It is commonly built around three pillars:
 - **Logs:** Record application events, errors, and important activities.
 - **Metrics:** Provide numerical measurements such as CPU utilization, request throughput, memory usage, latency, and error rates.
 - **Traces:** Show how individual requests travel across different services and dependencies.
+
+![Observability](https://cdn-images-1.medium.com/max/517/1*34qHV3ukQFlcnakGmu0Zgw.png)
 
 Together, they help engineers answer questions such as:
 
@@ -251,6 +277,10 @@ Application servers may need horizontal scaling. Databases may need better index
 
 There is no single architecture that solves every scaling problem.
 
+A useful engineering approach is:
+
+![Mental Model](https://cdn-images-1.medium.com/max/287/1*yNH4RyJzYFQ0D4oZLLy6GQ.png)
+
 Avoid introducing infrastructure simply because large technology companies use it. A startup serving thousands of users has different requirements from a platform serving hundreds of millions.
 
 Architecture should evolve alongside the workload, business requirements, and engineering team's capacity.
@@ -266,102 +296,6 @@ Good system design isn't about knowing the largest number of architectural patte
 Start simple. Measure continuously. Optimize where necessary. Introduce complexity only when its benefits justify its cost.
 
 **The best architecture isn't the most sophisticated one. It's the simplest architecture that reliably satisfies your system's requirements.**`,
-  },
-  {
-    slug: "queues-and-workers-with-bullmq-and-redis",
-    title: "Designing Reliable Background Queues with BullMQ and Redis",
-    description:
-      "Lessons from building SourceSurf's scraping and webhook ingestion pipeline — retries, backoff, rate limits, and keeping PostgreSQL from choking under burst load.",
-    date: "14 Oct 2026",
-    readingTime: "6 min read",
-    tags: ["Backend", "Redis", "BullMQ", "Architecture"],
-    content: `When you first build an API endpoint that scrapes or enriches external data, running it synchronously inside the request handler feels fine for ten users. At a hundred concurrent requests, timeouts and rate limits show up fast.
-
-Moving that work into a queue changes how you think about failure. Nothing is instant anymore, and everything has to survive restarts.
-
-## Separating Ingestion from Processing
-
-Your HTTP layer should do the absolute minimum work required to validate a payload and enqueue a job. Returning \`202 Accepted\` with a job identifier lets the client move on while workers handle slow external I/O.
-
-In SourceSurf, GitHub metadata syncs and webhook events go straight into dedicated Redis-backed queues. Each queue isolates one class of work so a spike in repository scraping never delays user-facing notifications.
-
-## Retries, Backoff, and Idempotency
-
-External APIs fail in predictable ways: transient 502s, rate-limit headers, and socket resets. Configuring exponential backoff in BullMQ prevents workers from hammering a struggling upstream service.
-
-Just as important is making every job idempotent. If a worker crashes halfway through writing a batch of records and BullMQ retries the job, using deterministic keys and \`ON CONFLICT\` upserts in PostgreSQL ensures you never create duplicate rows.
-
-## Guarding the Database Pool
-
-A fleet of eager workers can easily exhaust database connections long before CPU becomes a bottleneck. Keep worker concurrency bounded relative to your PostgreSQL connection pool size, and batch metadata writes instead of firing one query per item.`,
-  },
-  {
-    slug: "end-to-end-typesafety-in-fullstack-typescript",
-    title: "End-to-End Type Safety Between Next.js and Express",
-    description:
-      "How sharing contracts, Zod schemas, and strict TypeScript boundaries eliminates entire classes of integration bugs without overengineering your stack.",
-    date: "22 Aug 2026",
-    readingTime: "5 min read",
-    tags: ["TypeScript", "Next.js", "Express", "Full-Stack"],
-    content: `Most full-stack bugs do not happen inside complex algorithms. They happen at the boundary where the backend renames a field and the frontend keeps reading the old property name until runtime.
-
-You do not need a heavy code-generation pipeline to prevent that. Shared runtime schemas and strict TypeScript types get you most of the value with almost zero ceremony.
-
-## Validate at the Edge with Zod
-
-Types disappear at runtime. Every request body, query parameter, and environment variable entering an Express service should pass through a Zod schema first.
-
-From that single schema, you derive the TypeScript type via \`z.infer<typeof Schema>\` and export it to your frontend client. Both sides agree on exact field shapes and optionality by construction.
-
-## Modeling Nested Domain Data
-
-While building Quorum, threaded discussions meant responses carried recursive comment trees, vote counts, and author metadata. Defining explicit response DTO types prevented UI components from relying on accidental database columns.
-
-Keeping transport types separate from raw database row types also gives you room to evolve SQL tables without breaking every page component at once.`,
-  },
-  {
-    slug: "postgresql-patterns-that-matter-in-production",
-    title: "PostgreSQL Indexing and Query Patterns That Actually Matter",
-    description:
-      "A practical look at composite indexes, N+1 elimination, and keeping latency predictable as tables grow past the first hundred thousand rows.",
-    date: "03 Jun 2026",
-    readingTime: "7 min read",
-    tags: ["PostgreSQL", "Databases", "Performance"],
-    content: `During local development with fifty seed rows, almost every query completes in under two milliseconds. Production datasets are less forgiving.
-
-Learning how to read \`EXPLAIN (ANALYZE, BUFFERS)\` output early saves hours of guessing once real traffic arrives.
-
-## Index for Your Real Filter + Sort Order
-
-Single-column indexes look neat in migrations, but queries almost always filter on one column and sort by another. A composite index matching \`WHERE status = ? ORDER BY created_at DESC\` lets PostgreSQL walk the index directly without an extra sort step.
-
-Pay attention to column order in composite indexes: put equality predicates first and range or sort columns afterward.
-
-## Avoiding Accidental N+1 Queries
-
-ORM abstractions make it easy to fetch a list of items and then lazily look up related counts in a loop. Replacing those loops with a single \`LEFT JOIN\` or \`GROUP BY\` aggregation cuts round-trip overhead dramatically.
-
-Measure query counts per request in development so regressions show up before they hit staging.`,
-  },
-  {
-    slug: "minimal-interfaces-and-sweating-the-details",
-    title: "Why Quiet Interfaces Outlast Flashy Redesigns",
-    description:
-      "Notes on typography, spacing, removing decorative chrome, and letting hierarchy do the work.",
-    date: "19 Apr 2026",
-    readingTime: "4 min read",
-    tags: ["Design", "Frontend", "UI"],
-    content: `It is tempting to fill every empty pixel with borders, dashed dividers, glowing badges, and entrance animations. Usually, those additions compensate for weak spacing and unclear hierarchy.
-
-When you strip away the extra lines and cards, every decision about font size, contrast, and vertical rhythm becomes visible.
-
-## Typography Carries Structure
-
-Consistent type scale and restrained contrast do more for scannability than boxes around every section. Pairing clear headings with generous whitespace tells the reader where sections start and end without drawing a rule between them.
-
-## Motion Should Earn Its Keep
-
-Subtle hover transitions feel responsive; slow blur entrances on every paragraph just delay reading. Keep the page fast, readable, and calm so the actual work takes center stage.`,
   },
   {
     slug: "what-happens-when-you-visit-a-website",
@@ -383,7 +317,13 @@ Then, a series of carefully orchestrated steps begins. We set up a TCP connectio
 
 ## 2. Establishing a TCP Connection
 
+In detail:
+
+![overview](https://cdn-images-1.medium.com/max/1024/1*RZL4WkezLmGRsmDhG-9T-g.png)
+
 Before sending an HTTP request over TCP, the client establishes a connection with the server using a three-way handshake.
+
+![TCP HANDSHAKE](https://cdn-images-1.medium.com/max/425/1*8KCgsC9wEIlEoQFktbngHQ.png)
 
 **TCP Handshake:** The client initiates a TCP connection with the server using a three-way handshake:
 
@@ -426,6 +366,8 @@ This example contains a status line, response headers, a blank line, and an HTML
 ## 6. TCP Teardown
 
 When the connection is no longer needed, either endpoint can initiate its closure. A typical TCP connection shutdown involves exchanging FIN and ACK segments.
+
+![TCP SHUTDOWN](https://cdn-images-1.medium.com/max/410/1*KCX9wcTi2FrcOKGwIsH3ZQ.png)
 
 - **FIN:** The client sends a FIN (finish) packet to the server to terminate the connection.
 - **ACK:** The server acknowledges the FIN packet with an ACK.

@@ -33,6 +33,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-surface: var(--surface);
   --color-portfolio-panel: var(--portfolio-panel);
+  --color-portfolio-tag: var(--portfolio-tag);
   --color-surface-foreground: var(--surface-foreground);
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
@@ -121,7 +122,7 @@
 
 :root {
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --background: #fafafa;
+  --background: #ffffff;
   --foreground: #0a0a0a;
   --primary: #141414;
   --primary-foreground: #fafafa;
@@ -131,7 +132,8 @@
   --pill: #f4f4f4;
   --muted-foreground: #606060;
   --surface: #ffffff;
-  --portfolio-panel: var(--muted);
+  --portfolio-panel: #f5f5f5;
+  --portfolio-tag: color-mix(in oklab, var(--foreground) 5%, transparent);
   --surface-foreground: #0a0a0a;
   --card: #ffffff;
   --card-foreground: #0a0a0a;
@@ -156,10 +158,10 @@
   --code-highlight: #ececec;
   --selection: #0a0a0a;
   --selection-foreground: #fafafa;
-  --contribution-1: #bfdbfe;
-  --contribution-2: #60a5fa;
-  --contribution-3: #2563eb;
-  --contribution-4: #1e3a8a;
+  --contribution-1: #c6d5e5;
+  --contribution-2: #8faaca;
+  --contribution-3: #577ca8;
+  --contribution-4: #2e527d;
   --shadow-popover: 0 0 0 1px var(--popover-border);
 }
 
@@ -172,9 +174,10 @@
   --secondary-foreground: #ededed;
   --muted: #141414;
   --pill: #101010;
-  --muted-foreground: #a3a3a3;
+  --muted-foreground: #a0a0a0;
   --surface: #141414;
   --portfolio-panel: var(--surface);
+  --portfolio-tag: rgb(255 255 255 / 5.5%);
   --surface-foreground: #ededed;
   --card: #0a0a0a;
   --card-foreground: #ededed;
@@ -199,10 +202,10 @@
   --code-highlight: #1a1a1a;
   --selection: #ededed;
   --selection-foreground: #0a0a0a;
-  --contribution-1: #173b68;
-  --contribution-2: #235c9f;
-  --contribution-3: #3985d7;
-  --contribution-4: #80bcff;
+  --contribution-1: #263746;
+  --contribution-2: #3b536d;
+  --contribution-3: #607f9e;
+  --contribution-4: #9dbbda;
   --shadow-popover: 0 0 0 1px var(--popover-border);
 }
 
@@ -288,6 +291,15 @@
 }
 
 @layer components {
+  [data-slot="github-activity"] {
+    --portfolio-panel: var(--muted);
+  }
+
+  .dark [data-slot="github-activity"] {
+    --muted-foreground: #a3a3a3;
+    --portfolio-panel: var(--surface);
+  }
+
   [data-rehype-pretty-code-figure] {
     @apply relative my-[1.25em] rounded-xl bg-code text-code-foreground;
 

@@ -1,0 +1,54 @@
+.sky {
+  position: relative;
+  height: clamp(15rem, 32vw, 25rem);
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(
+    to top,
+    black 24%,
+    rgb(0 0 0 / 50%) 55%,
+    rgb(0 0 0 / 13%) 78%,
+    transparent 100%
+  );
+}
+
+.still,
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 700ms ease-out;
+}
+
+.still {
+  background: url("/ascii-sky/sky-light.webp") center top / 2400px 692.25px
+    repeat-x;
+  image-rendering: pixelated;
+  opacity: 0.4;
+}
+
+:global(.dark) .still {
+  background-image: url("/ascii-sky/sky-dark.webp");
+  opacity: 0.33;
+}
+
+.canvas {
+  display: block;
+  opacity: 0;
+}
+
+.sky[data-ready="true"] .still {
+  opacity: 0;
+}
+
+.sky[data-ready="true"] .canvas {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .still,
+  .canvas {
+    transition: none;
+  }
+}

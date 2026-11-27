@@ -20,17 +20,8 @@ const calendarSchema = z.object({
 
 const CONTRIBUTION_REPOS = [
   "BeyondV0id/ossurf",
-  "BeyondV0id/ossurf-scraper",
-  "BeyondV0id/Portfolio",
-  "BeyondV0id/portfolio_V2",
   "BeyondV0id/Quorum",
-  "BeyondV0id/drizzle-auth-api",
   "BeyondV0id/deseng",
-  "BeyondV0id/Endless_flow",
-  "BeyondV0id/redis-pubsub-notifcation-serivce",
-  "OSSURF/oss-trends-scraper",
-  "OSSURF/OSSurf_Frontend",
-  "OSSURF/OSSurf_Backend",
 ];
 
 const contributorSchema = z.array(
@@ -113,11 +104,7 @@ async function getTopContributions() {
       (entry): entry is { fullName: string; count: number } =>
         entry.count !== null && entry.count > 0,
     )
-    .sort(
-      (a, b) =>
-        b.count - a.count || a.fullName.localeCompare(b.fullName),
-    )
-    .slice(0, 3)
+    .sort((a, b) => b.count - a.count || a.fullName.localeCompare(b.fullName))
     .map(({ fullName, count }) => ({
       name: fullName.split("/")[1] ?? fullName,
       count,

@@ -44,7 +44,7 @@ export function ProjectList({
                   {project.skills.map((skill) => (
                     <li
                       key={skill}
-                      className="inline-flex items-center rounded-md bg-[#212121] px-2.5 py-1 text-xs text-white"
+                      className="inline-flex items-center rounded-full bg-portfolio-tag px-2 py-0.5 text-xs text-muted-foreground"
                     >
                       {skill}
                     </li>

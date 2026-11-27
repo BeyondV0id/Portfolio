@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { MoonIcon as Moon } from "@solar-icons/react/linear/moon";
 import { SunIcon as Sun } from "@solar-icons/react/linear/sun";
-import { motionTokens } from "@/lib/motion-tokens";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useEffect, useState } from "react";
+
 import { Button } from "@/components/ui/button";
+import { motionTokens } from "@/lib/motion-tokens";
+
 import styles from "./theme-switch.module.css";
 
 export type ThemeSwitchVariant = "reveal" | "eclipse" | "split" | "rise";
