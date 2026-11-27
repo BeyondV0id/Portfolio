@@ -156,10 +156,10 @@
   --code-highlight: #ececec;
   --selection: #0a0a0a;
   --selection-foreground: #fafafa;
-  --contribution-1: #d4d4d4;
-  --contribution-2: #a3a3a3;
-  --contribution-3: #6b6b6b;
-  --contribution-4: #0a0a0a;
+  --contribution-1: #bfdbfe;
+  --contribution-2: #60a5fa;
+  --contribution-3: #2563eb;
+  --contribution-4: #1e3a8a;
   --shadow-popover: 0 0 0 1px var(--popover-border);
 }
 
@@ -199,10 +199,10 @@
   --code-highlight: #1a1a1a;
   --selection: #ededed;
   --selection-foreground: #0a0a0a;
-  --contribution-1: #2e2e2e;
-  --contribution-2: #4a4a4a;
-  --contribution-3: #7a7a7a;
-  --contribution-4: #c9c9c9;
+  --contribution-1: #173b68;
+  --contribution-2: #235c9f;
+  --contribution-3: #3985d7;
+  --contribution-4: #80bcff;
   --shadow-popover: 0 0 0 1px var(--popover-border);
 }
 
