@@ -160,7 +160,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-fluid-item
-                  className="inline-flex items-center rounded-md bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground"
+                  className="inline-flex items-center rounded-md bg-[#212121] px-2.5 py-1 text-xs text-white focus-visible:outline-2 focus-visible:outline-ring data-[fluid-hover-active]:text-foreground"
                 >
                   {skill}
                 </a>

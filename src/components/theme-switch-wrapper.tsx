@@ -24,7 +24,7 @@ export function ThemeSwitchWrapper() {
   const isDark = resolvedTheme === "dark";
   const theme = isDark ? "dark" : "light";
 
-  function handleThemeChange(next: "light" | "dark") {
+  function handleThemeChange(next: "light" | "dark", _variant: string, trigger?: HTMLElement) {
     if (transitionInProgress.current) return;
 
     const applyTheme = () => {
@@ -45,6 +45,13 @@ export function ThemeSwitchWrapper() {
     transitionInProgress.current = true;
     const root = document.documentElement;
     root.classList.add("theme-eclipse");
+    if (trigger) {
+      const rect = trigger.getBoundingClientRect();
+      const x = ((rect.left + rect.width / 2) / window.innerWidth) * 100;
+      const y = ((rect.top + rect.height / 2) / window.innerHeight) * 100;
+      root.style.setProperty("--vt-x", `${x}%`);
+      root.style.setProperty("--vt-y", `${y}%`);
+    }
     const transition = document.startViewTransition(() => flushSync(applyTheme));
     const finishTransition = () => {
       root.classList.remove("theme-eclipse");
@@ -56,9 +63,9 @@ export function ThemeSwitchWrapper() {
   return (
     <ThemeSwitch
       theme={hydrated ? theme : "light"}
-      variant="reveal"
+      variant="eclipse"
       iconOnly
-      onThemeChange={(next) => handleThemeChange(next)}
+      onThemeChange={handleThemeChange}
     />
   );
 }

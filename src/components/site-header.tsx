@@ -1,4 +1,3 @@
-import { SceneSoundToggle } from "./scene-sound-toggle";
 import { ThemeSwitchWrapper as ThemeToggle } from "./theme-switch-wrapper";
 
 export function SiteHeader() {
@@ -8,7 +7,6 @@ export function SiteHeader() {
         className="mx-auto flex h-12 max-w-2xl items-center justify-end gap-1 px-4"
         data-header-container
       >
-        <SceneSoundToggle />
         <ThemeToggle />
       </div>
     </header>

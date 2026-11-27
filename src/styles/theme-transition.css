@@ -13,10 +13,10 @@
 
 @keyframes theme-eclipse {
   from {
-    clip-path: ellipse(0% 0% at left center);
+    clip-path: circle(0% at var(--vt-x, 50%) var(--vt-y, 50%));
   }
 
   to {
-    clip-path: ellipse(120% 150% at left center);
+    clip-path: circle(150% at var(--vt-x, 50%) var(--vt-y, 50%));
   }
 }

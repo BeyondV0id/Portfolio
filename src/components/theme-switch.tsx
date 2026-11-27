@@ -1,11 +1,11 @@
 "use client";
 
-import { useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
-
-import { IconMorph } from "@/components/arc/icon-morph/icon-morph";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { MoonIcon as Moon } from "@solar-icons/react/linear/moon";
+import { SunIcon as Sun } from "@solar-icons/react/linear/sun";
+import { motionTokens } from "@/lib/motion-tokens";
 import { Button } from "@/components/ui/button";
-
 import styles from "./theme-switch.module.css";
 
 export type ThemeSwitchVariant = "reveal" | "eclipse" | "split" | "rise";
@@ -19,7 +19,9 @@ export interface ThemeSwitchProps {
   iconOnly?: boolean;
 }
 
-
+const iconSpring = { ...motionTokens.spring.snappy, opacity: { duration: motionTokens.duration.fast, ease: [...motionTokens.ease.enter] }, filter: { duration: motionTokens.duration.fast, ease: [...motionTokens.ease.enter] } } as const;
+const iconExit = { duration: motionTokens.duration.fast, ease: [...motionTokens.ease.standard] } as const;
+const blur = `blur(${motionTokens.blur.subtle}px)`;
 
 function useSettled() {
   const [settled, setSettled] = useState(false);
@@ -31,13 +33,27 @@ function useSettled() {
   return settled;
 }
 
-function ThemeIcon({ theme }: { theme: Theme; reduced: boolean; settled: boolean }) {
+function ThemeIcon({ theme, reduced, settled }: { theme: Theme; reduced: boolean; settled: boolean }) {
+  const Icon = theme === "light" ? Sun : Moon;
+  const angle = theme === "light" ? 30 : -30;
   return (
-    <IconMorph name="theme" state={theme === "dark"} size={16} strokeWidth={1.75} />
+    <AnimatePresence initial={false} mode="popLayout">
+      <motion.span
+        key={theme}
+        className={styles.icon}
+        initial={!settled ? false : reduced ? { opacity: 0 } : { opacity: 0, scale: .7, rotate: angle, filter: blur }}
+        animate={{ opacity: 1, scale: 1, rotate: 0, filter: "blur(0px)" }}
+        exit={!settled ? { opacity: 0, transition: { duration: 0 } } : reduced ? { opacity: 0, transition: { duration: motionTokens.duration.instant } } : { opacity: 0, scale: .7, rotate: angle, filter: blur, transition: iconExit }}
+        transition={reduced ? { duration: motionTokens.duration.instant } : iconSpring}
+        aria-hidden="true"
+      >
+        <Icon size={16} strokeWidth={1.75} />
+      </motion.span>
+    </AnimatePresence>
   );
 }
 
-export function ThemeSwitch({ theme, variant = "reveal", onThemeChange, label, iconOnly = false }: ThemeSwitchProps) {
+export function ThemeSwitch({ theme, variant = "eclipse", onThemeChange, label, iconOnly = false }: ThemeSwitchProps) {
   const reduced = useReducedMotion() ?? false;
   const settled = useSettled();
   const next = theme === "light" ? "dark" : "light";

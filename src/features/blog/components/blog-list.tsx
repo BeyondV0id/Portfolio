@@ -29,7 +29,7 @@ export function BlogList({ posts }: { posts: readonly BlogPost[] }) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center rounded-md bg-[var(--pill)] px-2.5 py-1 text-xs text-muted-foreground"
+                  className="inline-flex items-center rounded-md bg-[#212121] px-2.5 py-1 text-xs text-white"
                 >
                   {tag}
                 </span>
