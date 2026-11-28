@@ -1,7 +1,7 @@
 import { GITHUB_USERNAME as _GH_USER, USER } from "@/features/portfolio/data";
 import type { NavItem } from "@/types/nav";
 
-const FALLBACK_SITE_URL = "https://portfolio.dev";
+const FALLBACK_SITE_URL = "https://harshalogs.vercel.app";
 const SITE_URL = (USER.website?.trim() || FALLBACK_SITE_URL).replace(/\/$/, "");
 const OG_IMAGE_PATH = USER.ogImage?.trim() || "/images/og.png";
 

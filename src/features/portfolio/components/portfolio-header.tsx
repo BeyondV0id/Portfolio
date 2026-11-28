@@ -1,21 +1,19 @@
 import Image from "next/image";
 
 import { DesktopNav } from "@/components/desktop-nav";
+import { ThemeToggle } from "@/components/theme-switch-wrapper";
 import { MAIN_NAV, PROFILE_IMAGES } from "@/config/site";
 import { USER } from "@/features/portfolio/data";
 
 import { AnimatedTitle } from "./animated-title";
-import { HomeHeroScene } from "./hero-scene";
 import { ProfileLocalTime } from "./profile-local-time";
 
 export function PortfolioHeader() {
   return (
-    <div
+    <header
       id="portfolio-header"
       className="reveal-stagger flex flex-col gap-6 pt-6 pb-8"
     >
-      <HomeHeroScene />
-
       <div className="flex items-center gap-4">
         <div className="relative size-14 shrink-0 sm:size-16">
           <Image
@@ -40,11 +38,15 @@ export function PortfolioHeader() {
           </p>
           <AnimatedTitle />
         </div>
+
+        <div className="ml-auto shrink-0">
+          <ThemeToggle />
+        </div>
       </div>
 
       <ProfileLocalTime location={USER.address} timeZone={USER.timeZone} />
 
       <DesktopNav items={MAIN_NAV} />
-    </div>
+    </header>
   );
 }

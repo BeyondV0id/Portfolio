@@ -1,13 +1,18 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 
 import type { MountedSky } from "@/lib/ascii-sky";
 
-import styles from "./footer-sky.module.css";
+import styles from "./ascii-sky.module.css";
 
-export function FooterSky() {
+export function HomeSky() {
+  return usePathname() === "/" ? <AsciiSky placement="hero" /> : null;
+}
+
+export function AsciiSky({ placement }: { placement: "hero" | "footer" }) {
   const { resolvedTheme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const skyRef = useRef<MountedSky>(null);
@@ -63,9 +68,11 @@ export function FooterSky() {
   }, [resolvedTheme]);
 
   return (
-    <div aria-hidden="true" className={styles.sky} data-ready={ready}>
-      <div className={styles.still} />
-      <canvas ref={canvasRef} className={styles.canvas} />
+    <div aria-hidden="true" className={styles[placement]}>
+      <div className={styles.sky} data-ready={ready}>
+        <div className={styles.still} />
+        <canvas ref={canvasRef} className={styles.canvas} />
+      </div>
     </div>
   );
 }

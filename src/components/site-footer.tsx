@@ -1,8 +1,6 @@
 import { SITE_INFO } from "@/config/site";
 
-import { FooterSky } from "./footer-sky";
-
-const domain = SITE_INFO.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+import { AsciiSky } from "./ascii-sky";
 
 export function SiteFooter() {
   return (
@@ -36,11 +34,11 @@ export function SiteFooter() {
             rel="noreferrer"
             className="transition-colors duration-150 hover:text-foreground"
           >
-            {domain}
+            harshalogs
           </a>
         </span>
       </div>
-      <FooterSky />
+      <AsciiSky placement="footer" />
     </footer>
   );
 }

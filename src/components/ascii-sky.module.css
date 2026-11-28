@@ -1,8 +1,32 @@
+.hero {
+  --sky-height: clamp(14rem, 34vw, 22rem);
+  position: relative;
+  z-index: -1;
+  height: var(--sky-height);
+  pointer-events: none;
+}
+
 .sky {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 692.25px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to bottom,
+    black calc(var(--sky-height) - 4rem),
+    rgb(0 0 0 / 13%) calc(var(--sky-height) + 2rem),
+    transparent calc(var(--sky-height) + 16rem)
+  );
+}
+
+.footer {
   position: relative;
   height: clamp(15rem, 32vw, 25rem);
-  overflow: hidden;
   pointer-events: none;
+}
+
+.footer .sky {
+  height: 100%;
   mask-image: linear-gradient(
     to top,
     black 24%,
