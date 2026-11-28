@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-import { HomeSky } from "@/components/ascii-sky";
+import { AsciiSky } from "@/components/ascii-sky";
 import { RevealNavTracker } from "@/components/reveal-nav-tracker";
 import { SiteFooter } from "@/components/site-footer";
 import { PortfolioHeader } from "@/features/portfolio/components/portfolio-header";
@@ -14,7 +14,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     <>
       <RevealNavTracker />
       <div className="isolate w-full overflow-x-clip">
-        <HomeSky />
+        <AsciiSky placement="hero" />
         <div className="mx-auto w-full max-w-2xl px-4">
           <PortfolioHeader />
           <main>{children}</main>

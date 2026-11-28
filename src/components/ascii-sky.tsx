@@ -1,16 +1,11 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 
 import type { MountedSky } from "@/lib/ascii-sky";
 
 import styles from "./ascii-sky.module.css";
-
-export function HomeSky() {
-  return usePathname() === "/" ? <AsciiSky placement="hero" /> : null;
-}
 
 export function AsciiSky({ placement }: { placement: "hero" | "footer" }) {
   const { resolvedTheme } = useTheme();

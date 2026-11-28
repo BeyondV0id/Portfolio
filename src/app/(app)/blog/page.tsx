@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <div className="reveal-stagger reveal-page-sub flex flex-col gap-4 pb-16">
-      <h1 className="section-title">blog.</h1>
+      <h1 className="section-title">blogs.</h1>
       <BlogList posts={BLOG_POSTS} />
     </div>
   );
